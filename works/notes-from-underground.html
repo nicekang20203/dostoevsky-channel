@@ -4,44 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes from Underground — Dostoevsky</title>
-    <meta name="description" content="The first existentialist novel. The angry confession of a man who refuses to be reduced to a piano key.">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../detail-pages.css">
 </head>
 <body>
     <div class="noise-overlay"></div>
-    
     <nav class="main-nav" id="mainNav">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-initial">Д</span>
-                <span class="logo-text">Dostoevsky</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="../index.html" class="nav-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html#family">Family</a></li>
-                <li><a href="../index.html#life">Life</a></li>
-                <li><a href="../index.html#anna">Anna</a></li>
-                <li><a href="../index.html#works">Works</a></li>
-                <li><a href="../index.html#episodes">Episodes</a></li>
-                <li class="nav-cta">
-                    <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        Subscribe
-                    </a>
-                </li>
+                <li><a href="../index.html#family" data-en="Family" data-ko="가족" data-id="Keluarga">Family</a></li>
+                <li><a href="../index.html#life" data-en="Life" data-ko="생애" data-id="Kehidupan">Life</a></li>
+                <li><a href="../index.html#anna" data-en="Anna" data-ko="안나" data-id="Anna">Anna</a></li>
+                <li><a href="../index.html#works" data-en="Works" data-ko="작품" data-id="Karya">Works</a></li>
+                <li><a href="../index.html#episodes" data-en="Episodes" data-ko="에피소드" data-id="Episode">Episodes</a></li>
+                <li class="nav-cta"><a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-en="Subscribe" data-ko="구독" data-id="Langganan">Subscribe</span></a></li>
             </ul>
             <div class="lang-switch">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <span class="lang-divider">/</span>
-                <button class="lang-btn" data-lang="ko">한국어</button>
+                <button class="lang-btn active" data-lang="en">EN</button><span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="ko">한국어</button><span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="id">ID</button>
             </div>
         </div>
     </nav>
@@ -49,211 +35,54 @@
     <header class="detail-hero">
         <div class="detail-hero-content">
             <nav class="detail-breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>→</span>
-                <a href="../index.html#works">Works</a>
-                <span>→</span>
-                <span class="current">Notes from Underground</span>
+                <a href="../index.html" data-en="Home" data-ko="홈" data-id="Beranda">Home</a><span>→</span>
+                <a href="../index.html#works" data-en="Major Works" data-ko="주요 작품" data-id="Karya Utama">Major Works</a><span>→</span>
+                <span class="current" data-en="Notes from Underground" data-ko="지하로부터의 수기" data-id="Catatan dari Bawah Tanah">Notes from Underground</span>
             </nav>
-            
-            <span class="detail-year">1864</span>
-            
-            <h1 class="detail-title">
-                Notes from Underground
-                <span class="detail-title-russian">Записки из подполья</span>
-            </h1>
-            
-            <p class="detail-subtitle">
-                "I am a sick man... I am a spiteful man." The opening lines that launched existentialism.
-            </p>
+            <div class="detail-date"><span class="day">1864</span><span class="month-year" data-en="Novella" data-ko="중편소설" data-id="Novela">Novella</span></div>
+            <h1 class="detail-title" data-en="Notes from Underground" data-ko="지하로부터의 수기" data-id="Catatan dari Bawah Tanah">Notes from Underground</h1>
+            <p class="detail-subtitle" data-en="The first existentialist novel. A manifesto against rational utopianism." data-ko="최초의 실존주의 소설. 합리적 유토피아주의에 대한 선언문." data-id="Novel eksistensialis pertama. Manifesto melawan utopianisme rasional.">The first existentialist novel. A manifesto against rational utopianism.</p>
         </div>
     </header>
 
     <article class="detail-content">
-        
         <section class="detail-section">
-            <h2 class="detail-section-title">The Story</h2>
-            
-            <p>
-                The novella is divided into two parts. In the first, "Underground," a nameless narrator — a retired civil servant living in a cramped St. Petersburg apartment — delivers a frantic monologue attacking rationalism, utilitarianism, and the idea that human beings will naturally choose what is good for them.
-            </p>
-            
-            <p>
-                In the second part, "Apropos of the Wet Snow," he recounts events from sixteen years earlier: his obsessive resentment toward a military officer who once moved him out of the way, his disastrous attendance at a farewell dinner for a former schoolmate, and his cruel encounter with Liza, a young prostitute whom he deliberately humiliates after she shows him genuine compassion.
-            </p>
-            
-            <p>
-                The Underground Man is not a hero. He is petty, vindictive, self-loathing, and incapable of accepting love. Yet his savage intelligence exposes truths that comfortable people prefer to ignore.
-            </p>
+            <h2 class="detail-section-title" data-en="The Underground Man" data-ko="지하인" data-id="Manusia Bawah Tanah">The Underground Man</h2>
+            <p data-en="The unnamed narrator is a retired civil servant living in a shabby St. Petersburg apartment. He is bitter, contradictory, and deeply self-aware. He tells us he is sick, spiteful, and unattractive — and then admits he was lying about most of it. We can trust nothing he says, yet we cannot look away." data-ko="이름 없는 화자는 상트페테르부르크의 허름한 아파트에 사는 퇴직 공무원입니다. 그는 쓸쓸하고, 모순적이며, 깊이 자기 인식적입니다. 그는 자신이 병들고, 악의적이며, 매력 없다고 말합니다 — 그리고 나서 대부분 거짓말이었다고 인정합니다. 우리는 그가 말하는 것을 아무것도 믿을 수 없지만, 눈을 뗄 수도 없습니다." data-id="Narator tanpa nama adalah pensiunan pegawai negeri yang tinggal di apartemen kumuh St. Petersburg. Dia pahit, kontradiktif, dan sangat sadar diri. Dia memberitahu kita bahwa dia sakit, dengki, dan tidak menarik — dan kemudian mengakui dia berbohong tentang sebagian besar dari itu. Kita tidak bisa mempercayai apa pun yang dia katakan, namun kita tidak bisa berpaling.">The unnamed narrator is a retired civil servant living in a shabby St. Petersburg apartment. He is bitter, contradictory, and deeply self-aware. He tells us he is sick, spiteful, and unattractive — and then admits he was lying about most of it. We can trust nothing he says, yet we cannot look away.</p>
+            <p data-en="He is writing, he claims, for himself alone. Yet he addresses an imaginary audience constantly, anticipating their objections, mocking their assumptions. The Underground Man is the first great unreliable narrator in modern literature." data-ko="그는 오직 자신만을 위해 쓰고 있다고 주장합니다. 그러나 그는 끊임없이 상상의 청중에게 말을 걸며, 그들의 반론을 예상하고, 그들의 가정을 조롱합니다. 지하인은 현대 문학에서 최초의 위대한 믿을 수 없는 화자입니다." data-id="Dia menulis, klaimnya, untuk dirinya sendiri saja. Namun dia terus-menerus menyapa audiens imajiner, mengantisipasi keberatan mereka, mengejek asumsi mereka. Manusia Bawah Tanah adalah narator tidak dapat dipercaya pertama yang hebat dalam sastra modern.">He is writing, he claims, for himself alone. Yet he addresses an imaginary audience constantly, anticipating their objections, mocking their assumptions. The Underground Man is the first great unreliable narrator in modern literature.</p>
         </section>
         
         <div class="detail-quote">
-            <blockquote>
-                "I am a sick man... I am a spiteful man. I am an unattractive man. I believe my liver is diseased."
-            </blockquote>
+            <blockquote><p data-en="I am a sick man... I am a spiteful man. I am an unattractive man." data-ko="나는 병든 사람이다... 나는 악의적인 사람이다. 나는 매력 없는 사람이다." data-id="Saya orang sakit... Saya orang dengki. Saya orang yang tidak menarik.">I am a sick man... I am a spiteful man. I am an unattractive man.</p></blockquote>
             <cite>— Opening lines</cite>
         </div>
         
         <section class="detail-section">
-            <h2 class="detail-section-title">The Crystal Palace</h2>
-            
-            <p>
-                The Underground Man's primary target is the "Crystal Palace" — a reference to both the famous iron-and-glass structure at London's Great Exhibition and to Chernyshevsky's utopian novel <em>What Is to Be Done?</em>, which envisioned a rationally organized socialist future.
-            </p>
-            
-            <p>
-                The Crystal Palace represents the dream of a perfect society built on reason, where everyone acts in their enlightened self-interest and conflict becomes impossible. The Underground Man's response is savage: humans don't want perfection. They want freedom — even the freedom to act against their own interests, to be irrational, to suffer.
-            </p>
-            
-            <p>
-                "What man wants is simply independent choice, whatever that independence may cost and wherever it may lead." To be reduced to a "piano key" in a rational system is to cease being human. Better to stick out your tongue at the whole edifice.
-            </p>
-        </section>
-        
-        <div class="highlight-box">
-            <div class="big-number">2×2=4</div>
-            <div class="label">"But I tell you that twice two makes five is sometimes a very charming thing too."</div>
-        </div>
-        
-        <section class="detail-section">
-            <h2 class="detail-section-title">The First Existentialist Novel</h2>
-            
-            <p>
-                Philosophers from Nietzsche to Sartre to Camus have traced their lineage to this brief, furious book. Its themes — the absurdity of existence, the impossibility of authentic action, the trap of self-consciousness — became the foundations of existentialist thought.
-            </p>
-            
-            <p>
-                The Underground Man knows himself too well to act naturally. Every gesture becomes performance; every emotion becomes suspect. He cannot love because he immediately interrogates his love. He cannot hate cleanly because he sees the pettiness of his hatred. He is paralyzed by awareness.
-            </p>
-            
-            <p>
-                This is the modern condition, Dostoevsky suggests — the disease of hyper-consciousness that afflicts those who have lost faith in God, in reason, in everything except their own corrosive intelligence.
-            </p>
+            <h2 class="detail-section-title" data-en="Against the Crystal Palace" data-ko="수정궁에 반대하며" data-id="Melawan Istana Kristal">Against the Crystal Palace</h2>
+            <p data-en="The novella is a direct attack on the rational utopianism of Nikolai Chernyshevsky, whose novel What Is to Be Done? imagined a perfect society based on rational self-interest. The Crystal Palace — the glass-and-iron exhibition hall in London — became a symbol of this rationalist paradise." data-ko="이 중편소설은 니콜라이 체르니셰프스키의 합리적 유토피아주의에 대한 직접적인 공격입니다. 그의 소설 『무엇을 할 것인가?』는 합리적 자기 이익에 기반한 완벽한 사회를 상상했습니다. 수정궁 — 런던의 유리와 철로 된 전시관 — 은 이 합리주의적 낙원의 상징이 되었습니다." data-id="Novela ini adalah serangan langsung terhadap utopianisme rasional Nikolai Chernyshevsky, yang novelnya Apa yang Harus Dilakukan? membayangkan masyarakat sempurna berdasarkan kepentingan diri yang rasional. Istana Kristal — aula pameran kaca-dan-besi di London — menjadi simbol surga rasionalis ini.">The novella is a direct attack on the rational utopianism of Nikolai Chernyshevsky, whose novel What Is to Be Done? imagined a perfect society based on rational self-interest. The Crystal Palace — the glass-and-iron exhibition hall in London — became a symbol of this rationalist paradise.</p>
+            <p data-en="The Underground Man rejects this vision utterly. He argues that humans will never act according to their rational self-interest — that we will deliberately choose suffering, chaos, even destruction, simply to prove that we are free and not piano keys." data-ko="지하인은 이 비전을 완전히 거부합니다. 그는 인간이 결코 합리적 자기 이익에 따라 행동하지 않을 것이라고 주장합니다 — 우리가 자유롭고 피아노 건반이 아니라는 것을 증명하기 위해 의도적으로 고통, 혼돈, 심지어 파괴를 선택할 것이라고 말합니다." data-id="Manusia Bawah Tanah menolak visi ini sepenuhnya. Dia berargumen bahwa manusia tidak akan pernah bertindak sesuai dengan kepentingan diri rasional mereka — bahwa kita akan dengan sengaja memilih penderitaan, kekacauan, bahkan kehancuran, hanya untuk membuktikan bahwa kita bebas dan bukan tuts piano.">The Underground Man rejects this vision utterly. He argues that humans will never act according to their rational self-interest — that we will deliberately choose suffering, chaos, even destruction, simply to prove that we are free and not piano keys.</p>
         </section>
         
         <section class="detail-section">
-            <h2 class="detail-section-title">Characters</h2>
-            
-            <div class="characters-grid">
-                <div class="character-card">
-                    <h4>The Underground Man</h4>
-                    <p class="character-russian">Подпольный человек</p>
-                    <p>Nameless, forty years old, a retired collegiate assessor. He speaks directly to us, anticipating and mocking our objections, trapping us in his logic even as we recoil from his cruelty.</p>
-                </div>
-                
-                <div class="character-card">
-                    <h4>Liza</h4>
-                    <p class="character-russian">Лиза</p>
-                    <p>A young prostitute, perhaps twenty. When the Underground Man lectures her on her degradation, she responds with genuine feeling — which terrifies him into cruelty.</p>
-                </div>
-                
-                <div class="character-card">
-                    <h4>Zverkov</h4>
-                    <p class="character-russian">Зверков</p>
-                    <p>A successful former schoolmate. Everything the Underground Man is not: handsome, confident, socially adept. The farewell dinner scene is a masterpiece of social agony.</p>
-                </div>
-                
-                <div class="character-card">
-                    <h4>The Officer</h4>
-                    <p class="character-russian">Офицер</p>
-                    <p>A military officer who once moved the Underground Man aside without noticing him. The narrator obsesses over this slight for years, planning elaborate revenges.</p>
-                </div>
-            </div>
+            <h2 class="detail-section-title" data-en="Liza" data-ko="리자" data-id="Liza">Liza</h2>
+            <p data-en="In Part II, the Underground Man encounters Liza, a young prostitute. In a remarkable scene, he delivers a sermon on her degradation, moving her to tears with his eloquence about the life she could have. She comes to him seeking salvation — and he cruelly humiliates her, unable to accept genuine human connection." data-ko="2부에서, 지하인은 젊은 매춘부 리자를 만납니다. 주목할 만한 장면에서, 그는 그녀의 타락에 대한 설교를 하며, 그녀가 가질 수 있었던 삶에 대한 웅변으로 그녀를 눈물짓게 합니다. 그녀는 구원을 찾아 그에게 오지만 — 그는 진정한 인간적 연결을 받아들이지 못하고 잔인하게 그녀를 모욕합니다." data-id="Di Bagian II, Manusia Bawah Tanah bertemu Liza, seorang pelacur muda. Dalam adegan yang luar biasa, dia menyampaikan khotbah tentang degradasinya, mengharukan dia sampai menangis dengan kefasihannya tentang kehidupan yang bisa dia miliki. Dia datang kepadanya mencari keselamatan — dan dia dengan kejam mempermalukan dia, tidak mampu menerima koneksi manusia yang tulus.">In Part II, the Underground Man encounters Liza, a young prostitute. In a remarkable scene, he delivers a sermon on her degradation, moving her to tears with his eloquence about the life she could have. She comes to him seeking salvation — and he cruelly humiliates her, unable to accept genuine human connection.</p>
         </section>
         
         <section class="detail-section">
-            <h2 class="detail-section-title">Themes</h2>
-            
-            <p>
-                <strong>The Limits of Reason:</strong> The rationalists promise that if we understand the laws governing human behavior, we can create a perfect society. The Underground Man counters that humans will deliberately act against their interests just to prove they can — that free will is more precious than happiness.
-            </p>
-            
-            <p>
-                <strong>Spite as Proof of Freedom:</strong> "I want to live in order to satisfy all my capacities for life, and not simply my capacity for reasoning." The Underground Man's spite, his perversity, his self-destruction — all are assertions of freedom against the tyranny of rational necessity.
-            </p>
-            
-            <p>
-                <strong>The Impossibility of Action:</strong> Consciousness paralyzes. The "man of action" acts because he is stupid enough not to see the complications. The intellectual sees too clearly to move. He is trapped in his own skull.
-            </p>
-            
-            <div class="themes-list">
-                <span class="theme-tag">Free Will</span>
-                <span class="theme-tag">Alienation</span>
-                <span class="theme-tag">Spite</span>
-                <span class="theme-tag">Self-Consciousness</span>
-                <span class="theme-tag">Anti-Rationalism</span>
-                <span class="theme-tag">Suffering</span>
-            </div>
+            <h2 class="detail-section-title" data-en="Why It Matters" data-ko="왜 중요한가" data-id="Mengapa Ini Penting">Why It Matters</h2>
+            <p data-en="Notes from Underground is widely considered the first existentialist novel. It anticipates Nietzsche, Freud, and the entire twentieth-century exploration of alienation, bad faith, and the irrational depths of human nature. Sartre, Camus, and Kafka all acknowledged their debt to Dostoevsky's underground man." data-ko="『지하로부터의 수기』는 널리 최초의 실존주의 소설로 여겨집니다. 이것은 니체, 프로이트, 그리고 소외, 자기 기만, 인간 본성의 비합리적 깊이에 대한 20세기 전체의 탐구를 예견합니다. 사르트르, 카뮈, 카프카 모두 도스토예프스키의 지하인에 대한 빚을 인정했습니다." data-id="Catatan dari Bawah Tanah secara luas dianggap sebagai novel eksistensialis pertama. Novel ini mengantisipasi Nietzsche, Freud, dan seluruh eksplorasi abad kedua puluh tentang alienasi, itikad buruk, dan kedalaman irasional sifat manusia. Sartre, Camus, dan Kafka semua mengakui hutang mereka kepada manusia bawah tanah Dostoevsky.">Notes from Underground is widely considered the first existentialist novel. It anticipates Nietzsche, Freud, and the entire twentieth-century exploration of alienation, bad faith, and the irrational depths of human nature. Sartre, Camus, and Kafka all acknowledged their debt to Dostoevsky's underground man.</p>
         </section>
-        
-        <div class="detail-quote">
-            <blockquote>
-                "Man is sometimes extraordinarily, passionately, in love with suffering."
-            </blockquote>
-            <cite>— Part I, Chapter IX</cite>
-        </div>
-        
-        <section class="detail-section">
-            <h2 class="detail-section-title">Historical Context</h2>
-            
-            <p>
-                <em>Notes from Underground</em> was published in 1864, a year after Chernyshevsky's <em>What Is to Be Done?</em> had become the bible of the Russian radical movement. Chernyshevsky, writing from prison, had laid out a vision of rational egoism: once people understood what was truly in their interest, they would naturally cooperate to build a socialist utopia.
-            </p>
-            
-            <p>
-                Dostoevsky was appalled. His experience in Siberia had shown him that human beings were not rational calculators of self-interest. They were capable of gratuitous cruelty, perverse self-destruction, and inexplicable generosity — often in the same person. The Crystal Palace ignored everything that made humans human.
-            </p>
-            
-            <p>
-                The censors cut a passage in which the Underground Man suggested that faith in Christ was the only alternative to his nihilism. Dostoevsky complained that the censors had left in all the blasphemy and removed the answer. The missing passage has never been reconstructed.
-            </p>
-        </section>
-        
-        <section class="detail-section">
-            <h2 class="detail-section-title">Why It Matters</h2>
-            
-            <p>
-                Every alienated narrator since owes something to the Underground Man: Kafka's K., Camus's Meursault, Ellison's Invisible Man, Palahniuk's unnamed narrator in <em>Fight Club</em>. The book invented a mode of fiction — the confession of a self-aware monster who implicates the reader in his monstrosity.
-            </p>
-            
-            <p>
-                More than that, it diagnosed modernity. We still live in the world the Underground Man described: hyper-conscious, paralyzed by irony, unable to act without questioning our motives, seeking authenticity in a world where every gesture feels performed. The Crystal Palace is now digital; the Underground is now online.
-            </p>
-            
-            <p>
-                Dostoevsky offered no easy solutions. The Underground Man's rebellion is as sterile as the rationalism he attacks. But the diagnosis was essential. You cannot treat a disease you refuse to acknowledge.
-            </p>
-        </section>
-        
     </article>
     
     <nav class="detail-nav">
-        <a href="../index.html#works">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Back to Works
-        </a>
-        <a href="the-gambler.html">
-            Next: The Gambler
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <a href="../index.html#works"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-en="Back to Works" data-ko="작품으로 돌아가기" data-id="Kembali ke Karya">Back to Works</span></a>
+        <a href="the-gambler.html"><span data-en="Next: The Gambler" data-ko="다음: 도박꾼" data-id="Berikutnya: Penjudi">Next: The Gambler</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </nav>
 
     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-initial">Д</span>
-                    <span class="logo-text">Dostoevsky</span>
-                </div>
-                <p class="footer-tagline">A companion to the YouTube channel</p>
-                <p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="copyright">© 2025 Literature Embracing History. All rights reserved.</p>
-        </div>
+        <div class="footer-content"><div class="footer-brand"><div class="footer-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></div><p class="footer-tagline" data-en="A companion to the YouTube channel" data-ko="YouTube 채널의 동반자" data-id="Pendamping kanal YouTube">A companion to the YouTube channel</p><p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p></div></div>
+        <div class="footer-bottom"><p class="copyright">© 2025 Literature Embracing History. <span data-en="All rights reserved." data-ko="모든 권리 보유." data-id="Hak cipta dilindungi.">All rights reserved.</span></p></div>
     </footer>
-
     <script src="../script.js"></script>
 </body>
 </html>

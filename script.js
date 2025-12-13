@@ -100,18 +100,19 @@ const Navigation = {
 
 /**
  * Language Switcher Module
- * Toggles between English and Korean
+ * Toggles between English, Korean, and Indonesian
  */
 const LanguageSwitcher = {
     currentLang: 'en',
+    supportedLangs: ['en', 'ko', 'id'],
 
     init() {
         this.buttons = document.querySelectorAll('.lang-btn');
-        this.translatableElements = document.querySelectorAll('[data-en][data-ko]');
+        this.translatableElements = document.querySelectorAll('[data-en]');
         
         // Check for saved preference
         const savedLang = localStorage.getItem('dostoevsky-lang');
-        if (savedLang) {
+        if (savedLang && this.supportedLangs.includes(savedLang)) {
             this.currentLang = savedLang;
             this.updateLanguage();
         }
@@ -123,7 +124,7 @@ const LanguageSwitcher = {
         this.buttons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
-                if (lang && lang !== this.currentLang) {
+                if (lang && lang !== this.currentLang && this.supportedLangs.includes(lang)) {
                     this.setLanguage(lang);
                 }
             });
@@ -156,10 +157,11 @@ const LanguageSwitcher = {
         });
 
         // Update HTML lang attribute
-        document.documentElement.lang = this.currentLang === 'ko' ? 'ko' : 'en';
+        const langCodes = { en: 'en', ko: 'ko', id: 'id' };
+        document.documentElement.lang = langCodes[this.currentLang] || 'en';
         
         // Add body class for additional CSS hooks
-        document.body.classList.remove('lang-en', 'lang-ko');
+        document.body.classList.remove('lang-en', 'lang-ko', 'lang-id');
         document.body.classList.add(`lang-${this.currentLang}`);
     }
 };

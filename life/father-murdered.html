@@ -4,44 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Father Murdered — Dostoevsky</title>
-    <meta name="description" content="1839: Mikhail Andreevich Dostoevsky is killed by his own serfs. A patricide that would echo through The Brothers Karamazov.">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../detail-pages.css">
 </head>
 <body>
     <div class="noise-overlay"></div>
-    
     <nav class="main-nav" id="mainNav">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-initial">Д</span>
-                <span class="logo-text">Dostoevsky</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="../index.html" class="nav-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html#family">Family</a></li>
-                <li><a href="../index.html#life">Life</a></li>
-                <li><a href="../index.html#anna">Anna</a></li>
-                <li><a href="../index.html#works">Works</a></li>
-                <li><a href="../index.html#episodes">Episodes</a></li>
-                <li class="nav-cta">
-                    <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        Subscribe
-                    </a>
-                </li>
+                <li><a href="../index.html#family" data-en="Family" data-ko="가족" data-id="Keluarga">Family</a></li>
+                <li><a href="../index.html#life" data-en="Life" data-ko="생애" data-id="Kehidupan">Life</a></li>
+                <li><a href="../index.html#anna" data-en="Anna" data-ko="안나" data-id="Anna">Anna</a></li>
+                <li><a href="../index.html#works" data-en="Works" data-ko="작품" data-id="Karya">Works</a></li>
+                <li><a href="../index.html#episodes" data-en="Episodes" data-ko="에피소드" data-id="Episode">Episodes</a></li>
+                <li class="nav-cta"><a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-en="Subscribe" data-ko="구독" data-id="Langganan">Subscribe</span></a></li>
             </ul>
             <div class="lang-switch">
                 <button class="lang-btn active" data-lang="en">EN</button>
                 <span class="lang-divider">/</span>
                 <button class="lang-btn" data-lang="ko">한국어</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="id">ID</button>
             </div>
         </div>
     </nav>
@@ -49,168 +37,49 @@
     <header class="detail-hero">
         <div class="detail-hero-content">
             <nav class="detail-breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>→</span>
-                <a href="../index.html#life">Life & Times</a>
-                <span>→</span>
-                <span class="current">Father Murdered</span>
+                <a href="../index.html" data-en="Home" data-ko="홈" data-id="Beranda">Home</a><span>→</span>
+                <a href="../index.html#life" data-en="Life & Times" data-ko="생애와 시대" data-id="Kehidupan">Life & Times</a><span>→</span>
+                <span class="current" data-en="Father Murdered" data-ko="아버지 피살" data-id="Ayah Dibunuh">Father Murdered</span>
             </nav>
-            
-            <div class="detail-year">1839</div>
-            
-            <h1 class="detail-title">Father Murdered</h1>
-            
-            <p class="detail-subtitle">
-                Killed by his own serfs at the Darovoye estate. A death shrouded in mystery that would haunt Dostoevsky for forty years.
-            </p>
+            <div class="detail-date"><span class="day">6</span><span class="month-year" data-en="June 1839" data-ko="1839년 6월" data-id="Juni 1839">June 1839</span></div>
+            <h1 class="detail-title" data-en="Father Murdered" data-ko="아버지 피살" data-id="Ayah Dibunuh">Father Murdered</h1>
+            <p class="detail-subtitle" data-en="Mikhail Andreevich is killed by his serfs. The patricide that would haunt The Brothers Karamazov." data-ko="미하일 안드레예비치가 농노들에게 살해됩니다. 카라마조프가의 형제들을 괴롭힐 부친 살해." data-id="Mikhail Andreevich dibunuh oleh budak-budaknya. Pembunuhan ayah yang akan menghantui Karamazov Bersaudara.">Mikhail Andreevich is killed by his serfs. The patricide that would haunt The Brothers Karamazov.</p>
         </div>
     </header>
 
     <article class="detail-content">
-        
         <section class="detail-section">
-            <h2 class="detail-section-title">The Official Story</h2>
-            
-            <p>
-                On June 6, 1839, Mikhail Andreevich Dostoevsky was found dead on the road near the family's small estate at Darovoye, about 150 versts from Moscow. The official cause of death was recorded as an apoplectic stroke.
-            </p>
-            
-            <p>
-                But the rumors told a different story. According to family tradition and local gossip, he had been murdered by his own serfs — beaten to death, or perhaps smothered, by peasants who could no longer endure his harsh treatment. No investigation was conducted. No one was punished. The matter was quietly closed.
-            </p>
-            
-            <p>
-                Fyodor was seventeen, still a student at the Engineering Academy in St. Petersburg. He received the news by letter. According to later accounts, the shock triggered his first epileptic seizure — though this may be legend rather than fact.
-            </p>
+            <h2 class="detail-section-title" data-en="The Murder" data-ko="살인" data-id="Pembunuhan">The Murder</h2>
+            <p data-en="On June 6, 1839, Mikhail Andreevich Dostoevsky was found dead on the road near his estate at Darovoye. The official cause was listed as an apoplectic stroke. But rumors immediately spread that he had been murdered by his serfs." data-ko="1839년 6월 6일, 미하일 안드레예비치 도스토예프스키가 다로보예 영지 근처 길에서 숨진 채 발견되었습니다. 공식적인 사인은 뇌졸중으로 기록되었습니다. 그러나 그가 농노들에게 살해되었다는 소문이 즉시 퍼졌습니다." data-id="Pada tanggal 6 Juni 1839, Mikhail Andreevich Dostoevsky ditemukan tewas di jalan dekat tanah miliknya di Darovoye. Penyebab resmi tercatat sebagai stroke apoplektik. Tetapi rumor segera menyebar bahwa dia dibunuh oleh budak-budaknya.">On June 6, 1839, Mikhail Andreevich Dostoevsky was found dead on the road near his estate at Darovoye. The official cause was listed as an apoplectic stroke. But rumors immediately spread that he had been murdered by his serfs.</p>
+            <p data-en="After his wife's death, Mikhail Andreevich had declined rapidly. He drank heavily, grew increasingly brutal toward his serfs, and may have sexually exploited the village women. If the murder rumors were true, his serfs had reached their limit." data-ko="아내가 죽은 후, 미하일 안드레예비치는 급격히 쇠락했습니다. 그는 심하게 술을 마셨고, 농노들에게 점점 더 잔인해졌으며, 마을 여성들을 성적으로 착취했을 수도 있습니다. 살인 소문이 사실이라면, 그의 농노들은 한계에 도달한 것입니다." data-id="Setelah kematian istrinya, Mikhail Andreevich merosot dengan cepat. Dia banyak minum, semakin brutal terhadap budak-budaknya, dan mungkin mengeksploitasi secara seksual wanita-wanita desa. Jika rumor pembunuhan itu benar, budak-budaknya telah mencapai batas mereka.">After his wife's death, Mikhail Andreevich had declined rapidly. He drank heavily, grew increasingly brutal toward his serfs, and may have sexually exploited the village women. If the murder rumors were true, his serfs had reached their limit.</p>
         </section>
         
-        <div class="detail-quote burgundy">
-            <blockquote>
-                "Who doesn't wish for his father's death?"
-            </blockquote>
+        <div class="detail-quote">
+            <blockquote><p data-en="Who doesn't wish for his father's death?" data-ko="누가 아버지의 죽음을 바라지 않겠는가?" data-id="Siapa yang tidak menginginkan kematian ayahnya?">Who doesn't wish for his father's death?</p></blockquote>
             <cite>— Ivan Karamazov, The Brothers Karamazov</cite>
         </div>
         
         <section class="detail-section">
-            <h2 class="detail-section-title">What Really Happened?</h2>
-            
-            <p>
-                The truth remains uncertain. Modern scholars have questioned whether the murder even occurred. The only contemporary evidence is the death certificate listing apoplexy, and some historians argue that the murder story was a later embellishment.
-            </p>
-            
-            <p>
-                But the circumstantial evidence is suggestive. After his wife's death in 1837, Mikhail Andreevich had spiraled into depression and heavy drinking. He retired to Darovoye permanently and, according to accounts, became increasingly brutal toward his serfs. He took a peasant mistress and may have fathered an illegitimate child. He was deeply unpopular on the estate.
-            </p>
-            
-            <p>
-                Whether or not the serfs actually killed him, Dostoevsky clearly believed they did — or at least believed it was possible. The question of patricide, and the guilt of those who wish for a father's death, would become central to his final masterpiece.
-            </p>
+            <h2 class="detail-section-title" data-en="Forty Years of Silence" data-ko="40년의 침묵" data-id="Empat Puluh Tahun Keheningan">Forty Years of Silence</h2>
+            <p data-en="Fyodor was seventeen when his father died. For the next forty years, he rarely mentioned him. Only in his final novel, The Brothers Karamazov (1879-1880), did he confront the trauma directly." data-ko="아버지가 돌아가셨을 때 표도르는 17세였습니다. 그 후 40년 동안, 그는 아버지를 거의 언급하지 않았습니다. 마지막 소설 『카라마조프가의 형제들』(1879-1880)에서야 그는 트라우마와 직접 대면했습니다." data-id="Fyodor berusia tujuh belas tahun ketika ayahnya meninggal. Selama empat puluh tahun berikutnya, dia jarang menyebutnya. Hanya dalam novel terakhirnya, Karamazov Bersaudara (1879-1880), dia menghadapi trauma itu secara langsung.">Fyodor was seventeen when his father died. For the next forty years, he rarely mentioned him. Only in his final novel, The Brothers Karamazov (1879-1880), did he confront the trauma directly.</p>
+            <p data-en="In that novel, the dissolute Fyodor Karamazov shares his first name with both the author and his father. He is murdered by Smerdyakov, his illegitimate son — the child of a village 'holy fool' whom Fyodor may have raped, just as Mikhail Andreevich may have assaulted the women of Darovoye." data-ko="그 소설에서, 방탕한 표도르 카라마조프는 작가와 그의 아버지 모두와 이름을 공유합니다. 그는 사생아 스메르자코프에게 살해됩니다 — 표도르가 강간했을 수도 있는 마을 '성스러운 바보'의 아이로, 미하일 안드레예비치가 다로보예 여성들을 폭행했을 수도 있는 것처럼." data-id="Dalam novel itu, Fyodor Karamazov yang bejat berbagi nama depan dengan penulis dan ayahnya. Dia dibunuh oleh Smerdyakov, anak haramnya — anak dari 'orang suci bodoh' desa yang mungkin diperkosa Fyodor, seperti Mikhail Andreevich mungkin menyerang wanita-wanita Darovoye.">In that novel, the dissolute Fyodor Karamazov shares his first name with both the author and his father. He is murdered by Smerdyakov, his illegitimate son — the child of a village "holy fool" whom Fyodor may have raped, just as Mikhail Andreevich may have assaulted the women of Darovoye.</p>
         </section>
         
         <section class="detail-section">
-            <h2 class="detail-section-title">The Psychology of Patricide</h2>
-            
-            <p>
-                Freud famously argued that <em>The Brothers Karamazov</em> was shaped by Dostoevsky's own unconscious patricidal wishes, and his guilt over those wishes. Whether or not Freud was right about the psychology, the biographical parallels are striking.
-            </p>
-            
-            <p>
-                In the novel, the dissolute Fyodor Pavlovich Karamazov is murdered by his illegitimate son Smerdyakov, but the guilt spreads to all three legitimate sons — particularly Ivan, whose philosophy of "everything is permitted" provides the intellectual justification for the crime. The question haunting the novel is the question that haunted Dostoevsky: does wishing for a death make one guilty of it?
-            </p>
+            <h2 class="detail-section-title" data-en="The Freudian Reading" data-ko="프로이트적 해석" data-id="Pembacaan Freudian">The Freudian Reading</h2>
+            <p data-en="Sigmund Freud saw The Brothers Karamazov as evidence of Dostoevsky's unresolved Oedipal guilt. According to this reading, Fyodor unconsciously wished for his father's death, and spent his life atoning for that wish through his epilepsy, his gambling, and his suffering." data-ko="지그문트 프로이트는 『카라마조프가의 형제들』을 도스토예프스키의 해결되지 않은 오이디푸스적 죄책감의 증거로 보았습니다. 이 해석에 따르면, 표도르는 무의식적으로 아버지의 죽음을 바랐고, 간질, 도박, 고통을 통해 평생 그 소망에 대해 속죄했습니다." data-id="Sigmund Freud melihat Karamazov Bersaudara sebagai bukti rasa bersalah Oedipal Dostoevsky yang belum terselesaikan. Menurut pembacaan ini, Fyodor secara tidak sadar menginginkan kematian ayahnya, dan menghabiskan hidupnya menebus keinginan itu melalui epilepsinya, perjudiannya, dan penderitaannya.">Sigmund Freud saw The Brothers Karamazov as evidence of Dostoevsky's unresolved Oedipal guilt. According to this reading, Fyodor unconsciously wished for his father's death, and spent his life atoning for that wish through his epilepsy, his gambling, and his suffering.</p>
         </section>
-        
-        <div class="highlight-box">
-            <div class="big-number">17</div>
-            <div class="label">years old when his father died</div>
-        </div>
-        
-        <section class="detail-section">
-            <h2 class="detail-section-title">The Aftermath</h2>
-            
-            <p>
-                Mikhail Andreevich left little money. The estate at Darovoye was divided among the children, but Fyodor renounced his share in favor of his siblings. He would struggle with poverty for most of the next thirty years.
-            </p>
-            
-            <p>
-                The death also left him an orphan at seventeen — mother dead two years, father now gone. He had his brother Mikhail, but the older generation was erased. He was alone in St. Petersburg, studying a subject he hated, dreaming of a literary career that seemed impossibly distant.
-            </p>
-            
-            <p>
-                Some biographers see the father's death as the event that finally freed Dostoevsky to become a writer. As long as Mikhail Andreevich lived, Fyodor was expected to pursue the respectable engineering career his father had chosen for him. With the father dead, there was no one to disappoint.
-            </p>
-        </section>
-        
-        <div class="info-grid">
-            <div class="info-card">
-                <h4>Fyodor Karamazov</h4>
-                <p>The murdered father in <em>The Brothers Karamazov</em> shares his first name with Dostoevsky. Coincidence or confession?</p>
-            </div>
-            <div class="info-card">
-                <h4>Smerdyakov</h4>
-                <p>The illegitimate son who commits the actual murder — possibly echoing the illegitimate child Mikhail Andreevich allegedly fathered.</p>
-            </div>
-            <div class="info-card">
-                <h4>The Serfs</h4>
-                <p>Serfdom would not be abolished until 1861. In 1839, serfs who murdered their master faced death or Siberian exile.</p>
-            </div>
-            <div class="info-card">
-                <h4>Epilepsy</h4>
-                <p>Whether the shock triggered his first seizure is uncertain, but Dostoevsky would suffer from epilepsy for the rest of his life.</p>
-            </div>
-        </div>
-        
-        <section class="detail-section">
-            <h2 class="detail-section-title">Forty Years of Silence</h2>
-            
-            <p>
-                Dostoevsky rarely spoke of his father's death. In his letters and notebooks, there is a conspicuous absence of reflection on this formative event. He mentioned his mother often, with tenderness; his father, almost never.
-            </p>
-            
-            <p>
-                But <em>The Brothers Karamazov</em>, written in 1879-1880, broke that silence. The novel is, in many ways, a forty-year meditation on the murder at Darovoye — an attempt to understand what it means to kill a father, to wish a father dead, to be freed by a father's death.
-            </p>
-            
-            <p>
-                In the end, Dostoevsky's answer is complex. Guilt spreads like contagion. Ivan's atheism enables Smerdyakov's act. Dmitri's hatred provides the motive. Even Alyosha, the saintly brother, is implicated. The only escape from the cycle of guilt is not innocence but grace — the kind of grace Zosima preaches and Alyosha embodies.
-            </p>
-        </section>
-        
-        <div class="detail-quote">
-            <blockquote>
-                "We are all guilty for everyone, and I more than all the others."
-            </blockquote>
-            <cite>— Father Zosima, The Brothers Karamazov</cite>
-        </div>
-        
     </article>
     
     <nav class="detail-nav">
-        <a href="mothers-death.html">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Previous: Mother's Death
-        </a>
-        <a href="poor-folk.html">
-            Next: Poor Folk & Literary Fame
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <a href="mothers-death.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-en="Previous: Mother's Death" data-ko="이전: 어머니의 죽음" data-id="Sebelumnya: Kematian Ibu">Previous: Mother's Death</span></a>
+        <a href="poor-folk.html"><span data-en="Next: Poor Folk" data-ko="다음: 가난한 사람들" data-id="Berikutnya: Orang Miskin">Next: Poor Folk</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </nav>
 
     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-initial">Д</span>
-                    <span class="logo-text">Dostoevsky</span>
-                </div>
-                <p class="footer-tagline">A companion to the YouTube channel</p>
-                <p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="copyright">© 2025 Literature Embracing History. All rights reserved.</p>
-        </div>
+        <div class="footer-content"><div class="footer-brand"><div class="footer-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></div><p class="footer-tagline" data-en="A companion to the YouTube channel" data-ko="YouTube 채널의 동반자" data-id="Pendamping kanal YouTube">A companion to the YouTube channel</p><p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p></div></div>
+        <div class="footer-bottom"><p class="copyright">© 2025 Literature Embracing History. <span data-en="All rights reserved." data-ko="모든 권리 보유." data-id="Hak cipta dilindungi.">All rights reserved.</span></p></div>
     </footer>
-
     <script src="../script.js"></script>
 </body>
 </html>

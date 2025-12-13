@@ -3,45 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 26-Day Sprint — Dostoevsky & Anna</title>
-    <meta name="description" content="October 1866: A predatory contract, an impossible deadline, and the stenographer who saved everything.">
-    
+    <title>The 26-Day Sprint — Dostoevsky</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../detail-pages.css">
 </head>
 <body>
     <div class="noise-overlay"></div>
-    
     <nav class="main-nav" id="mainNav">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-initial">Д</span>
-                <span class="logo-text">Dostoevsky</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="../index.html" class="nav-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html#family">Family</a></li>
-                <li><a href="../index.html#life">Life</a></li>
-                <li><a href="../index.html#anna">Anna</a></li>
-                <li><a href="../index.html#works">Works</a></li>
-                <li><a href="../index.html#episodes">Episodes</a></li>
-                <li class="nav-cta">
-                    <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        Subscribe
-                    </a>
-                </li>
+                <li><a href="../index.html#family" data-en="Family" data-ko="가족" data-id="Keluarga">Family</a></li>
+                <li><a href="../index.html#life" data-en="Life" data-ko="생애" data-id="Kehidupan">Life</a></li>
+                <li><a href="../index.html#anna" data-en="Anna" data-ko="안나" data-id="Anna">Anna</a></li>
+                <li><a href="../index.html#works" data-en="Works" data-ko="작품" data-id="Karya">Works</a></li>
+                <li><a href="../index.html#episodes" data-en="Episodes" data-ko="에피소드" data-id="Episode">Episodes</a></li>
+                <li class="nav-cta"><a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-en="Subscribe" data-ko="구독" data-id="Langganan">Subscribe</span></a></li>
             </ul>
             <div class="lang-switch">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <span class="lang-divider">/</span>
-                <button class="lang-btn" data-lang="ko">한국어</button>
+                <button class="lang-btn active" data-lang="en">EN</button><span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="ko">한국어</button><span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="id">ID</button>
             </div>
         </div>
     </nav>
@@ -49,221 +35,54 @@
     <header class="detail-hero">
         <div class="detail-hero-content">
             <nav class="detail-breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>→</span>
-                <a href="../index.html#anna">Anna</a>
-                <span>→</span>
-                <span class="current">The 26-Day Sprint</span>
+                <a href="../index.html" data-en="Home" data-ko="홈" data-id="Beranda">Home</a><span>→</span>
+                <a href="../index.html#anna" data-en="Anna" data-ko="안나" data-id="Anna">Anna</a><span>→</span>
+                <span class="current" data-en="26-Day Sprint" data-ko="26일간의 질주" data-id="Sprint 26 Hari">26-Day Sprint</span>
             </nav>
-            
-            <div class="detail-date">
-                <span class="day">Oct</span>
-                <span class="month-year">1866</span>
-            </div>
-            
-            <h1 class="detail-title">The 26-Day Sprint</h1>
-            
-            <p class="detail-subtitle">
-                A predatory contract. An impossible deadline. And the twenty-year-old stenographer who saved everything.
-            </p>
+            <div class="detail-date"><span class="day">Oct</span><span class="month-year" data-en="1866" data-ko="1866년" data-id="1866">1866</span></div>
+            <h1 class="detail-title" data-en="The 26-Day Sprint" data-ko="26일간의 질주" data-id="Sprint 26 Hari">The 26-Day Sprint</h1>
+            <p class="detail-subtitle" data-en="How a young stenographer saved Dostoevsky from ruin — and became his wife." data-ko="젊은 속기사가 어떻게 도스토예프스키를 파멸에서 구했는지 — 그리고 그의 아내가 되었는지." data-id="Bagaimana seorang stenografer muda menyelamatkan Dostoevsky dari kehancuran — dan menjadi istrinya.">How a young stenographer saved Dostoevsky from ruin — and became his wife.</p>
         </div>
     </header>
 
     <article class="detail-content">
-        
         <section class="detail-section">
-            <h2 class="detail-section-title">The Trap</h2>
-            
-            <p>
-                In 1865, Fyodor Dostoevsky was drowning. His brother Mikhail had died the previous year, leaving behind a failed literary journal and massive debts. Dostoevsky, feeling honor-bound to provide for Mikhail's family, assumed the obligations. But a writer's income, even a famous writer's, could not cover them.
-            </p>
-            
-            <p>
-                Enter F.T. Stellovsky, a publisher with a reputation for predatory contracts. He offered 3,000 rubles in advance — desperately needed cash — for the rights to publish Dostoevsky's collected works. The catch: Dostoevsky must also deliver a new novel by November 1, 1866.
-            </p>
-            
-            <p>
-                If he failed, Stellovsky would own the rights to everything Dostoevsky wrote — past, present, and future — for nine years. Without payment. Stellovsky was betting that Dostoevsky, already overcommitted to serializing <em>Crime and Punishment</em>, would default.
-            </p>
-        </section>
-        
-        <div class="highlight-box">
-            <div class="big-number">9</div>
-            <div class="label">years — the period Stellovsky would own all of Dostoevsky's work if he defaulted</div>
-        </div>
-        
-        <section class="detail-section">
-            <h2 class="detail-section-title">October 1866</h2>
-            
-            <p>
-                By October, Dostoevsky had written nothing for the Stellovsky contract. He was consumed by <em>Crime and Punishment</em>, which was appearing in monthly installments in <em>The Russian Messenger</em>. He had less than a month. Friends suggested he hire a stenographer and dictate the novel.
-            </p>
-            
-            <p>
-                Pavel Olkhin, who ran a stenography school, recommended his best student: Anna Grigoryevna Snitkina, twenty years old, the daughter of a minor civil servant who had died two years earlier. She was serious, capable, and desperately needed the income.
-            </p>
-            
-            <p>
-                On October 4, 1866, Anna arrived at Dostoevsky's apartment. She found a man of forty-four, exhausted, irritable, clearly unwell. He suffered from epilepsy. He was a widower. He was in debt. He was also one of the most famous writers in Russia.
-            </p>
-        </section>
-        
-        <section class="detail-section">
-            <h2 class="detail-section-title">The Working Method</h2>
-            
-            <p>
-                They developed a routine. Anna would arrive at noon. Dostoevsky would pace the room, smoking, dictating in bursts. She took down his words in shorthand, a system invented by her teacher Olkhin based on German models.
-            </p>
-            
-            <p>
-                Each evening, Anna would return home and transcribe the day's work into longhand. The next day, Dostoevsky would revise her transcription while dictating new material. It was grueling work — four to six hours of dictation daily, then hours more of transcription.
-            </p>
-            
-            <p>
-                Anna was not merely a secretary. She calmed his anxieties. She kept him on schedule. When he despaired of finishing, she encouraged him. When he got lost in digressions, she gently steered him back. She was twenty years old and she was managing a genius.
-            </p>
+            <h2 class="detail-section-title" data-en="The Trap" data-ko="함정" data-id="Jebakan">The Trap</h2>
+            <p data-en="In 1866, Dostoevsky was caught in an impossible contract. The publisher Stellovsky had advanced him 3,000 rubles with a condition: deliver a new novel by November 1, or lose the rights to all his works for nine years. By October, consumed by Crime and Punishment, he had written nothing for Stellovsky." data-ko="1866년, 도스토예프스키는 불가능한 계약에 갇혔습니다. 출판업자 스텔롭스키가 그에게 3,000루블을 선불로 주면서 조건을 달았습니다: 11월 1일까지 새 소설을 제출하거나, 9년간 모든 작품에 대한 권리를 잃는다. 10월까지, 『죄와 벌』에 몰두한 그는 스텔롭스키를 위해 아무것도 쓰지 않았습니다." data-id="Pada tahun 1866, Dostoevsky terjebak dalam kontrak yang mustahil. Penerbit Stellovsky telah memberinya uang muka 3.000 rubel dengan syarat: serahkan novel baru pada 1 November, atau kehilangan hak atas semua karyanya selama sembilan tahun. Pada bulan Oktober, tenggelam dalam Kejahatan dan Hukuman, dia tidak menulis apa pun untuk Stellovsky.">In 1866, Dostoevsky was caught in an impossible contract. The publisher Stellovsky had advanced him 3,000 rubles with a condition: deliver a new novel by November 1, or lose the rights to all his works for nine years. By October, consumed by Crime and Punishment, he had written nothing for Stellovsky.</p>
         </section>
         
         <div class="detail-quote">
-            <blockquote>
-                "From the very first day I felt that I had known him for years, that we were old friends who understood each other perfectly."
-            </blockquote>
-            <cite>— Anna Snitkina, Reminiscences</cite>
+            <blockquote><p data-en="I would answer that I love you and will love you all my life." data-ko="나는 당신을 사랑하고 평생 사랑할 것이라고 대답하겠습니다." data-id="Saya akan menjawab bahwa saya mencintaimu dan akan mencintaimu seumur hidupku.">I would answer that I love you and will love you all my life.</p></blockquote>
+            <cite>— Anna Snitkina, November 8, 1866</cite>
         </div>
         
         <section class="detail-section">
-            <h2 class="detail-section-title">The Race Against Time</h2>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">OCT 4</div>
-                <div class="minute-content">
-                    <h4>First Meeting</h4>
-                    <p>Anna arrives at 11:30 AM. Dostoevsky is distracted, nervous. They discuss the project. He is not sure dictation will work. She is determined to make it work.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">OCT 7</div>
-                <div class="minute-content">
-                    <h4>Work Begins</h4>
-                    <p>The first real dictation sessions. Dostoevsky discovers he can work this way. Anna's shorthand keeps up with his rapid, sometimes chaotic speech.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">OCT 15</div>
-                <div class="minute-content">
-                    <h4>Halfway Point</h4>
-                    <p>The novel takes shape. Dostoevsky is drawing on his own gambling experiences in Wiesbaden and Baden-Baden. Anna recognizes the autobiographical intensity.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">OCT 25</div>
-                <div class="minute-content">
-                    <h4>The Final Push</h4>
-                    <p>Less than a week left. Sessions grow longer. Anna transcribes late into the night. Dostoevsky barely sleeps.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">OCT 30</div>
-                <div class="minute-content">
-                    <h4>Completion</h4>
-                    <p><em>The Gambler</em> is finished. Twenty-six days from first dictation to final manuscript. The impossible has been achieved.</p>
-                </div>
-            </div>
+            <h2 class="detail-section-title" data-en="Anna Arrives" data-ko="안나의 도착" data-id="Kedatangan Anna">Anna Arrives</h2>
+            <p data-en="On October 4, Anna Grigoryevna Snitkina — a twenty-year-old stenography student — arrived at Dostoevsky's apartment. She was there on business, sent by her teacher. She found a forty-four-year-old man, haggard, epileptic, in debt, and desperate." data-ko="10월 4일, 안나 그리고리예브나 스니트키나 — 스무 살의 속기 학생 — 가 도스토예프스키의 아파트에 도착했습니다. 그녀는 업무상 왔으며, 선생님이 보낸 것이었습니다. 그녀는 마흔네 살의 남자를 발견했습니다. 여윈 모습에, 간질 환자이고, 빚에 시달리며, 절박한 상태였습니다." data-id="Pada tanggal 4 Oktober, Anna Grigoryevna Snitkina — seorang mahasiswi stenografi berusia dua puluh tahun — tiba di apartemen Dostoevsky. Dia datang untuk urusan bisnis, dikirim oleh gurunya. Dia menemukan seorang pria berusia empat puluh empat tahun, kurus, epilepsi, berhutang, dan putus asa.">On October 4, Anna Grigoryevna Snitkina — a twenty-year-old stenography student — arrived at Dostoevsky's apartment. She was there on business, sent by her teacher. She found a forty-four-year-old man, haggard, epileptic, in debt, and desperate.</p>
+            <p data-en="They began work immediately. Dostoevsky dictated four to six hours daily; Anna transcribed her shorthand into longhand each evening. The novel was The Gambler — drawn from his own ruinous addiction to roulette." data-ko="그들은 즉시 작업을 시작했습니다. 도스토예프스키는 매일 4시간에서 6시간 동안 구술했고, 안나는 매일 저녁 속기를 정서로 필사했습니다. 소설은 『도박꾼』이었습니다 — 그 자신의 파멸적인 룰렛 중독에서 가져온 것이었습니다." data-id="Mereka segera mulai bekerja. Dostoevsky mendiktekan empat hingga enam jam setiap hari; Anna menyalin stenografinya menjadi tulisan tangan setiap malam. Novel itu adalah Penjudi — diambil dari kecanduannya sendiri yang merusak pada roulette.">They began work immediately. Dostoevsky dictated four to six hours daily; Anna transcribed her shorthand into longhand each evening. The novel was The Gambler — drawn from his own ruinous addiction to roulette.</p>
         </section>
         
         <section class="detail-section">
-            <h2 class="detail-section-title">The Delivery</h2>
-            
-            <p>
-                Stellovsky had one final trick. When Dostoevsky came to deliver the manuscript on October 31, the publisher was conveniently "out of town." His office was closed. No one would accept the manuscript or provide a receipt.
-            </p>
-            
-            <p>
-                If Dostoevsky could not prove delivery by November 1, he would be in default. Friends advised him to take the manuscript to a police station and obtain an official receipt. He did so, timestamped October 31.
-            </p>
-            
-            <p>
-                When Stellovsky returned and tried to claim default, the police receipt was produced. The contract was fulfilled. Dostoevsky's future was saved.
-            </p>
+            <h2 class="detail-section-title" data-en="The Final Trick" data-ko="마지막 속임수" data-id="Trik Terakhir">The Final Trick</h2>
+            <p data-en="On October 30, they finished. But Stellovsky had one more trick: on October 31, his office was closed. No one was available to accept the manuscript. If Dostoevsky couldn't prove delivery, he would lose everything." data-ko="10월 30일, 그들은 완성했습니다. 그러나 스텔롭스키에게는 마지막 속임수가 있었습니다: 10월 31일, 그의 사무실은 문을 닫았습니다. 원고를 받을 사람이 아무도 없었습니다. 도스토예프스키가 납품을 증명하지 못하면, 그는 모든 것을 잃을 것이었습니다." data-id="Pada tanggal 30 Oktober, mereka selesai. Tetapi Stellovsky punya satu trik lagi: pada tanggal 31 Oktober, kantornya tutup. Tidak ada yang tersedia untuk menerima naskah. Jika Dostoevsky tidak bisa membuktikan pengiriman, dia akan kehilangan segalanya.">On October 30, they finished. But Stellovsky had one more trick: on October 31, his office was closed. No one was available to accept the manuscript. If Dostoevsky couldn't prove delivery, he would lose everything.</p>
+            <p data-en="Anna found the solution. She took the manuscript to a police station, which officially recorded its receipt with a timestamp of October 31. The contract was fulfilled. Stellovsky was defeated." data-ko="안나가 해결책을 찾았습니다. 그녀는 원고를 경찰서로 가져갔고, 경찰서는 10월 31일 타임스탬프와 함께 공식적으로 수령을 기록했습니다. 계약은 이행되었습니다. 스텔롭스키는 패배했습니다." data-id="Anna menemukan solusinya. Dia membawa naskah ke kantor polisi, yang secara resmi mencatat penerimaannya dengan cap waktu 31 Oktober. Kontrak terpenuhi. Stellovsky dikalahkan.">Anna found the solution. She took the manuscript to a police station, which officially recorded its receipt with a timestamp of October 31. The contract was fulfilled. Stellovsky was defeated.</p>
         </section>
-        
-        <div class="highlight-box">
-            <div class="big-number">26</div>
-            <div class="label">days from first dictation to completed manuscript</div>
-        </div>
         
         <section class="detail-section">
-            <h2 class="detail-section-title">The Proposal</h2>
-            
-            <p>
-                With the deadline met, there was no professional reason for Anna to return. But Dostoevsky asked if she might help him with future work. She agreed. The sessions continued, now without urgency, with time for conversation.
-            </p>
-            
-            <p>
-                On November 8, Dostoevsky asked Anna's opinion of a plot he was considering. An aging artist, he said, falls in love with a young woman named Anya. What does she think would happen? Would such a girl accept him?
-            </p>
-            
-            <p>
-                Anna understood that it was no fiction. She answered: "I would answer that I love you and will love you all my life."
-            </p>
+            <h2 class="detail-section-title" data-en="The Proposal" data-ko="청혼" data-id="Lamaran">The Proposal</h2>
+            <p data-en="Eight days later, on November 8, Dostoevsky asked Anna to marry him — but he did it through a story. He described a plot about an aging artist who falls in love with a young woman named Anya. 'What would Anya answer?' he asked. 'She would say that she loves you and will love you all her life,' Anna replied. They married in February 1867." data-ko="8일 후인 11월 8일, 도스토예프스키는 안나에게 청혼했습니다 — 그러나 그는 이야기를 통해 그렇게 했습니다. 그는 안야라는 젊은 여성과 사랑에 빠진 늙은 예술가에 대한 줄거리를 묘사했습니다. '안야는 뭐라고 대답할까요?' 그가 물었습니다. '그녀는 당신을 사랑하고 평생 사랑할 것이라고 말할 것입니다'라고 안나가 대답했습니다. 그들은 1867년 2월에 결혼했습니다." data-id="Delapan hari kemudian, pada tanggal 8 November, Dostoevsky meminta Anna untuk menikah dengannya — tetapi dia melakukannya melalui cerita. Dia menggambarkan plot tentang seniman tua yang jatuh cinta pada wanita muda bernama Anya. 'Apa yang akan dijawab Anya?' tanyanya. 'Dia akan mengatakan bahwa dia mencintaimu dan akan mencintaimu seumur hidupnya,' jawab Anna. Mereka menikah pada Februari 1867.">Eight days later, on November 8, Dostoevsky asked Anna to marry him — but he did it through a story. He described a plot about an aging artist who falls in love with a young woman named Anya. "What would Anya answer?" he asked. "She would say that she loves you and will love you all her life," Anna replied. They married in February 1867.</p>
         </section>
-        
-        <div class="detail-quote">
-            <blockquote>
-                "I would answer that I love you and will love you all my life."
-            </blockquote>
-            <cite>— Anna's response to Dostoevsky's proposal</cite>
-        </div>
-        
-        <section class="detail-section">
-            <h2 class="detail-section-title">What the Sprint Revealed</h2>
-            
-            <p>
-                Twenty-six days taught them both what they needed to know. Dostoevsky discovered that Anna was not intimidated by his fame, his age, his illness, or his moods. She met his intensity with calm competence. She was strong enough to manage him.
-            </p>
-            
-            <p>
-                Anna discovered that Dostoevsky, beneath the anxiety and irritability, was a man of passionate feeling and profound depth. His work ethic astonished her. His gratitude for her help was genuine. He needed her — not as a nurse or a servant, but as a partner.
-            </p>
-            
-            <p>
-                The 26-day sprint was not just the making of a novel. It was the audition for a marriage that would last until his death — and, in Anna's devoted preservation of his legacy, long after.
-            </p>
-        </section>
-        
     </article>
     
     <nav class="detail-nav">
-        <a href="../index.html#anna">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Back to Anna
-        </a>
-        <a href="legacy.html">
-            Next: Anna's Legacy
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <a href="../index.html#anna"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-en="Back to Anna" data-ko="안나로 돌아가기" data-id="Kembali ke Anna">Back to Anna</span></a>
+        <a href="legacy.html"><span data-en="Next: Anna's Legacy" data-ko="다음: 안나의 유산" data-id="Berikutnya: Warisan Anna">Next: Anna's Legacy</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </nav>
 
     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-initial">Д</span>
-                    <span class="logo-text">Dostoevsky</span>
-                </div>
-                <p class="footer-tagline">A companion to the YouTube channel</p>
-                <p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="copyright">© 2025 Literature Embracing History. All rights reserved.</p>
-        </div>
+        <div class="footer-content"><div class="footer-brand"><div class="footer-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></div><p class="footer-tagline" data-en="A companion to the YouTube channel" data-ko="YouTube 채널의 동반자" data-id="Pendamping kanal YouTube">A companion to the YouTube channel</p><p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p></div></div>
+        <div class="footer-bottom"><p class="copyright">© 2025 Literature Embracing History. <span data-en="All rights reserved." data-ko="모든 권리 보유." data-id="Hak cipta dilindungi.">All rights reserved.</span></p></div>
     </footer>
-
     <script src="../script.js"></script>
 </body>
 </html>

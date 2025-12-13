@@ -4,490 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crime and Punishment — Dostoevsky</title>
-    <meta name="description" content="A deep exploration of Dostoevsky's masterpiece Crime and Punishment (1866) — themes, characters, historical context, and legacy.">
-    
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /* Detail Page Specific Styles */
-        .detail-hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: calc(var(--space-2xl) + 80px) var(--space-xl) var(--space-2xl);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .detail-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(ellipse at 30% 20%, rgba(107, 45, 60, 0.25) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 80%, rgba(107, 45, 60, 0.15) 0%, transparent 50%),
-                linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg-main) 100%);
-            z-index: -1;
-        }
-        
-        .detail-hero-content {
-            max-width: 900px;
-            text-align: center;
-        }
-        
-        .detail-breadcrumb {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-lg);
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-        
-        .detail-breadcrumb a {
-            color: var(--color-text-muted);
-        }
-        
-        .detail-breadcrumb a:hover {
-            color: var(--color-gold);
-        }
-        
-        .detail-breadcrumb span {
-            color: var(--color-text-muted);
-        }
-        
-        .detail-year {
-            display: inline-block;
-            padding: var(--space-sm) var(--space-md);
-            background: rgba(201, 169, 98, 0.1);
-            border: 1px solid rgba(201, 169, 98, 0.3);
-            font-family: var(--font-display);
-            font-size: 0.875rem;
-            letter-spacing: 0.15em;
-            color: var(--color-gold);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .detail-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-md);
-        }
-        
-        .detail-title-russian {
-            display: block;
-            font-family: var(--font-heading);
-            font-size: clamp(1.25rem, 3vw, 2rem);
-            font-weight: 400;
-            font-style: italic;
-            color: var(--color-text-muted);
-            margin-top: var(--space-sm);
-        }
-        
-        .detail-subtitle {
-            font-family: var(--font-body);
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--color-text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .detail-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: var(--space-2xl) var(--space-xl);
-        }
-        
-        .detail-section {
-            margin-bottom: var(--space-2xl);
-        }
-        
-        .detail-section-title {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            letter-spacing: 0.1em;
-            color: var(--color-gold);
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-md);
-            border-bottom: var(--border-subtle);
-        }
-        
-        .detail-section p {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: var(--color-text-secondary);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .detail-section p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .detail-quote {
-            padding: var(--space-xl);
-            background: var(--color-bg-card);
-            border-left: 3px solid var(--color-gold);
-            margin: var(--space-xl) 0;
-        }
-        
-        .detail-quote blockquote {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--color-cream);
-            line-height: 1.7;
-            margin: 0 0 var(--space-md) 0;
-        }
-        
-        .detail-quote cite {
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            color: var(--color-gold);
-            font-style: normal;
-        }
-        
-        .characters-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-xl);
-        }
-        
-        .character-card {
-            background: var(--color-bg-card);
-            border: var(--border-subtle);
-            padding: var(--space-lg);
-        }
-        
-        .character-card h4 {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            margin-bottom: var(--space-xs);
-        }
-        
-        .character-card .character-russian {
-            font-size: 0.875rem;
-            color: var(--color-text-muted);
-            font-style: italic;
-            margin-bottom: var(--space-md);
-        }
-        
-        .character-card p {
-            font-size: 0.95rem;
-            color: var(--color-text-secondary);
-            line-height: 1.6;
-            margin: 0;
-        }
-        
-        .themes-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        
-        .theme-tag {
-            padding: var(--space-sm) var(--space-md);
-            background: rgba(201, 169, 98, 0.1);
-            border: 1px solid rgba(201, 169, 98, 0.3);
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-gold);
-        }
-        
-        .detail-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--space-xl);
-            border-top: var(--border-subtle);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .detail-nav a {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-text-secondary);
-        }
-        
-        .detail-nav a:hover {
-            color: var(--color-gold);
-        }
-        
-        .video-embed {
-            margin: var(--space-xl) 0;
-            aspect-ratio: 16/9;
-            background: var(--color-bg-card);
-            border: var(--border-subtle);
-        }
-        
-        .video-embed iframe {
-            width: 100%;
-            height: 100%;
-        }
-        
-        @media (max-width: 768px) {
-            .characters-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .detail-nav {
-                flex-direction: column;
-                gap: var(--space-lg);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../detail-pages.css">
 </head>
 <body>
-    <!-- Noise Overlay -->
     <div class="noise-overlay"></div>
-    
-    <!-- Navigation -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-initial">Д</span>
-                <span class="logo-text">Dostoevsky</span>
-            </a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
+            <a href="../index.html" class="nav-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html#family">Family</a></li>
-                <li><a href="../index.html#life">Life</a></li>
-                <li><a href="../index.html#anna">Anna</a></li>
-                <li><a href="../index.html#works">Works</a></li>
-                <li><a href="../index.html#episodes">Episodes</a></li>
-                <li class="nav-cta">
-                    <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                        Subscribe
-                    </a>
-                </li>
+                <li><a href="../index.html#family" data-en="Family" data-ko="가족" data-id="Keluarga">Family</a></li>
+                <li><a href="../index.html#life" data-en="Life" data-ko="생애" data-id="Kehidupan">Life</a></li>
+                <li><a href="../index.html#anna" data-en="Anna" data-ko="안나" data-id="Anna">Anna</a></li>
+                <li><a href="../index.html#works" data-en="Works" data-ko="작품" data-id="Karya">Works</a></li>
+                <li><a href="../index.html#episodes" data-en="Episodes" data-ko="에피소드" data-id="Episode">Episodes</a></li>
+                <li class="nav-cta"><a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-en="Subscribe" data-ko="구독" data-id="Langganan">Subscribe</span></a></li>
             </ul>
-            
             <div class="lang-switch">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <span class="lang-divider">/</span>
-                <button class="lang-btn" data-lang="ko">한국어</button>
+                <button class="lang-btn active" data-lang="en">EN</button><span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="ko">한국어</button><span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="id">ID</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
     <header class="detail-hero">
         <div class="detail-hero-content">
             <nav class="detail-breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>→</span>
-                <a href="../index.html#works">Works</a>
-                <span>→</span>
-                <span style="color: var(--color-gold);">Crime and Punishment</span>
+                <a href="../index.html" data-en="Home" data-ko="홈" data-id="Beranda">Home</a><span>→</span>
+                <a href="../index.html#works" data-en="Major Works" data-ko="주요 작품" data-id="Karya Utama">Major Works</a><span>→</span>
+                <span class="current" data-en="Crime and Punishment" data-ko="죄와 벌" data-id="Kejahatan dan Hukuman">Crime and Punishment</span>
             </nav>
-            
-            <span class="detail-year">1866</span>
-            
-            <h1 class="detail-title">
-                Crime and Punishment
-                <span class="detail-title-russian">Преступление и наказание</span>
-            </h1>
-            
-            <p class="detail-subtitle">
-                The novel that made Dostoevsky immortal — a psychological journey into guilt, redemption, and the limits of human reason.
-            </p>
+            <div class="detail-date"><span class="day">1866</span><span class="month-year" data-en="Novel" data-ko="소설" data-id="Novel">Novel</span></div>
+            <h1 class="detail-title" data-en="Crime and Punishment" data-ko="죄와 벌" data-id="Kejahatan dan Hukuman">Crime and Punishment</h1>
+            <p class="detail-subtitle" data-en="Can a superior man transcend morality? The novel that invented the psychological thriller." data-ko="비범한 인간은 도덕을 초월할 수 있는가? 심리 스릴러를 발명한 소설." data-id="Bisakah manusia unggul melampaui moralitas? Novel yang menciptakan thriller psikologis.">Can a superior man transcend morality? The novel that invented the psychological thriller.</p>
         </div>
     </header>
 
-    <!-- Content -->
     <article class="detail-content">
-        
-        <!-- Synopsis -->
         <section class="detail-section">
-            <h2 class="detail-section-title">The Story</h2>
-            
-            <p>
-                Rodion Romanovich Raskolnikov is a former law student living in a cramped garret in St. Petersburg. Destitute and isolated, he has developed a theory: that extraordinary people — Napoleons — have the right to transgress moral law for the greater good. To prove he belongs to this elite, he murders Alyona Ivanovna, an elderly pawnbroker, with an axe. Her half-sister Lizaveta, an innocent simpleton, stumbles upon the scene; he kills her too.
-            </p>
-            
-            <p>
-                What follows is not a detective story but a psychological descent. Raskolnikov cannot enjoy his "triumph." He becomes feverish, paranoid, unable to touch the stolen money hidden beneath a rock. The brilliant investigator Porfiry Petrovich suspects him but has no evidence — only psychological pressure, which he applies with surgical precision across three unforgettable interrogation scenes.
-            </p>
-            
-            <p>
-                Salvation comes through Sonya Marmeladova, a young woman forced into prostitution to support her family. She reads Raskolnikov the story of Lazarus from the Gospel of John — the dead man raised to life. In the novel's climax, Raskolnikov confesses publicly at the Haymarket Square, then surrenders to the police. He is sentenced to eight years in Siberia. Sonya follows him. In the epilogue, he finally accepts her love and, with it, the possibility of resurrection.
-            </p>
+            <h2 class="detail-section-title" data-en="The Theory" data-ko="이론" data-id="Teori">The Theory</h2>
+            <p data-en="Rodion Romanovich Raskolnikov is a former student living in crushing poverty in St. Petersburg. In his squalid garret, he has developed a theory: humanity is divided into ordinary people, who must obey the law, and extraordinary people — Napoleons — who have the right to transgress moral law for the greater good." data-ko="로디온 로마노비치 라스콜니코프는 상트페테르부르크에서 극심한 가난 속에 사는 전직 학생입니다. 그의 비좁은 다락방에서, 그는 이론을 발전시켰습니다: 인류는 법을 따라야 하는 평범한 사람들과, 더 큰 선을 위해 도덕법을 초월할 권리가 있는 비범한 사람들 — 나폴레옹들 — 로 나뉜다." data-id="Rodion Romanovich Raskolnikov adalah mantan mahasiswa yang hidup dalam kemiskinan parah di St. Petersburg. Di loteng kumuhnya, dia telah mengembangkan sebuah teori: umat manusia dibagi menjadi orang biasa, yang harus mematuhi hukum, dan orang luar biasa — Napoleon — yang berhak melanggar hukum moral demi kebaikan yang lebih besar.">Rodion Romanovich Raskolnikov is a former student living in crushing poverty in St. Petersburg. In his squalid garret, he has developed a theory: humanity is divided into ordinary people, who must obey the law, and extraordinary people — Napoleons — who have the right to transgress moral law for the greater good.</p>
+            <p data-en="To prove himself extraordinary, Raskolnikov plans to murder Alyona Ivanovna, an elderly pawnbroker he considers a 'louse' — a parasite feeding on the poor. He will use her money to do good, to lift himself and others out of poverty. The murder, he believes, is morally justified." data-ko="자신이 비범하다는 것을 증명하기 위해, 라스콜니코프는 그가 '이' — 가난한 사람들을 착취하는 기생충 — 라고 생각하는 노파 전당포 주인 알료나 이바노브나를 살해할 계획을 세웁니다. 그는 그녀의 돈을 사용하여 선을 행하고, 자신과 다른 사람들을 가난에서 구할 것입니다. 그는 살인이 도덕적으로 정당화된다고 믿습니다." data-id="Untuk membuktikan dirinya luar biasa, Raskolnikov berencana membunuh Alyona Ivanovna, seorang tukang gadai tua yang dia anggap 'kutu' — parasit yang memakan orang miskin. Dia akan menggunakan uangnya untuk berbuat baik, untuk mengangkat dirinya dan orang lain keluar dari kemiskinan. Pembunuhan itu, menurutnya, dibenarkan secara moral.">To prove himself extraordinary, Raskolnikov plans to murder Alyona Ivanovna, an elderly pawnbroker he considers a "louse" — a parasite feeding on the poor. He will use her money to do good, to lift himself and others out of poverty. The murder, he believes, is morally justified.</p>
         </section>
         
-        <!-- Famous Quote -->
         <div class="detail-quote">
-            <blockquote>
-                "Pain and suffering are always inevitable for a large intelligence and a deep heart. The really great men must, I think, have great sadness on earth."
-            </blockquote>
-            <cite>— Part III, Chapter 5</cite>
+            <blockquote><p data-en="Pain and suffering are always inevitable for a large intelligence and a deep heart." data-ko="고통과 괴로움은 위대한 지성과 깊은 마음에는 언제나 피할 수 없는 것이다." data-id="Rasa sakit dan penderitaan selalu tak terhindarkan bagi kecerdasan yang besar dan hati yang dalam.">Pain and suffering are always inevitable for a large intelligence and a deep heart.</p></blockquote>
+            <cite>— Crime and Punishment</cite>
         </div>
         
-        <!-- Historical Context -->
         <section class="detail-section">
-            <h2 class="detail-section-title">Historical Context</h2>
-            
-            <p>
-                Dostoevsky wrote <em>Crime and Punishment</em> in desperate circumstances. He was deeply in debt, his journal <em>Epoch</em> had failed after his brother Mikhail's death in 1864, and he had signed a predatory contract with the publisher Stellovsky. He wrote much of the novel while serializing it in <em>The Russian Messenger</em>, often finishing chapters just days before publication.
-            </p>
-            
-            <p>
-                The 1860s were a turbulent decade in Russia. Tsar Alexander II had emancipated the serfs in 1861, but the reforms created as much chaos as hope. A generation of young radicals — the "men of the sixties" — embraced materialism, utilitarianism, and revolutionary politics. Nikolai Chernyshevsky's novel <em>What Is to Be Done?</em> (1863) became their bible, preaching rational egoism as the path to utopia.
-            </p>
-            
-            <p>
-                Dostoevsky saw this ideology as spiritually catastrophic. Raskolnikov's "extraordinary man" theory is a direct attack on utilitarian ethics — the belief that murder can be justified by rational calculation of greater goods. The novel asks: what happens to a human soul that tries to live by pure reason alone?
-            </p>
+            <h2 class="detail-section-title" data-en="The Murder" data-ko="살인" data-id="Pembunuhan">The Murder</h2>
+            <p data-en="The murder itself is botched, chaotic, horrifying. Raskolnikov kills not only the pawnbroker but also her innocent half-sister Lizaveta, who stumbles upon the scene. He barely escapes, and takes almost nothing of value. The theory falls apart immediately." data-ko="살인 자체는 실패하고, 혼란스럽고, 끔찍합니다. 라스콜니코프는 전당포 주인뿐만 아니라 우연히 그 장면을 목격한 무고한 이복여동생 리자베타도 죽입니다. 그는 간신히 탈출하고, 거의 아무것도 가져가지 못합니다. 이론은 즉시 무너집니다." data-id="Pembunuhan itu sendiri gagal, kacau, mengerikan. Raskolnikov membunuh tidak hanya tukang gadai tetapi juga saudara tirinya yang tidak bersalah Lizaveta, yang menemukan tempat kejadian. Dia nyaris lolos, dan hampir tidak mengambil barang berharga apa pun. Teori itu langsung runtuh.">The murder itself is botched, chaotic, horrifying. Raskolnikov kills not only the pawnbroker but also her innocent half-sister Lizaveta, who stumbles upon the scene. He barely escapes, and takes almost nothing of value. The theory falls apart immediately.</p>
+            <p data-en="What follows is not a detective story but a psychological disintegration. Raskolnikov wanders the streets of Petersburg in a fever, tormented by guilt he cannot admit to himself. The novel's genius is showing us a mind that believes it has transcended morality, while revealing that conscience cannot be escaped." data-ko="이어지는 것은 탐정 이야기가 아니라 심리적 붕괴입니다. 라스콜니코프는 열병 속에서 페테르부르크 거리를 방황하며, 자신에게 인정할 수 없는 죄책감에 시달립니다. 이 소설의 천재성은 도덕을 초월했다고 믿는 정신을 보여주면서, 양심에서 벗어날 수 없음을 드러내는 것입니다." data-id="Yang mengikuti bukanlah cerita detektif tetapi disintegrasi psikologis. Raskolnikov berkeliaran di jalanan Petersburg dalam demam, tersiksa oleh rasa bersalah yang tidak bisa dia akui pada dirinya sendiri. Kejeniusan novel ini adalah menunjukkan kepada kita pikiran yang percaya telah melampaui moralitas, sambil mengungkapkan bahwa hati nurani tidak bisa dihindari.">What follows is not a detective story but a psychological disintegration. Raskolnikov wanders the streets of Petersburg in a fever, tormented by guilt he cannot admit to himself. The novel's genius is showing us a mind that believes it has transcended morality, while revealing that conscience cannot be escaped.</p>
         </section>
         
-        <!-- Characters -->
         <section class="detail-section">
-            <h2 class="detail-section-title">Major Characters</h2>
-            
-            <div class="characters-grid">
-                <div class="character-card">
-                    <h4>Raskolnikov</h4>
-                    <p class="character-russian">Родион Романович Раскольников</p>
-                    <p>The protagonist. A brilliant but impoverished ex-student whose theory of the "extraordinary man" leads him to murder. His name derives from <em>raskol</em> (schism) — he is a man divided against himself.</p>
-                </div>
-                
-                <div class="character-card">
-                    <h4>Sonya Marmeladova</h4>
-                    <p class="character-russian">Софья Семёновна Мармеладова</p>
-                    <p>A prostitute with a pure heart. Her faith and unconditional love offer Raskolnikov the path to redemption. She represents Christian suffering and salvation.</p>
-                </div>
-                
-                <div class="character-card">
-                    <h4>Porfiry Petrovich</h4>
-                    <p class="character-russian">Порфирий Петрович</p>
-                    <p>The investigating magistrate. He has no evidence but suspects Raskolnikov immediately. His three interrogations are masterpieces of psychological warfare and dark humor.</p>
-                </div>
-                
-                <div class="character-card">
-                    <h4>Svidrigailov</h4>
-                    <p class="character-russian">Аркадий Иванович Свидригайлов</p>
-                    <p>Raskolnikov's dark double — a man who has crossed moral boundaries without guilt. His nihilism leads to suicide, showing where Raskolnikov's path ends without redemption.</p>
-                </div>
-            </div>
+            <h2 class="detail-section-title" data-en="Sonya" data-ko="소냐" data-id="Sonya">Sonya</h2>
+            <p data-en="Sonya Marmeladova is a young prostitute who has sold herself to support her alcoholic father's family. She is everything Raskolnikov is not: humble, believing, capable of genuine love. She reads to him the story of Lazarus rising from the dead — and eventually leads him to confession and redemption." data-ko="소냐 마르멜라도바는 알코올 중독 아버지의 가족을 부양하기 위해 몸을 판 젊은 매춘부입니다. 그녀는 라스콜니코프가 아닌 모든 것입니다: 겸손하고, 믿음이 있고, 진정한 사랑을 할 수 있습니다. 그녀는 그에게 죽음에서 일어난 라자로 이야기를 읽어주고 — 결국 그를 고백과 구원으로 이끕니다." data-id="Sonya Marmeladova adalah pelacur muda yang telah menjual dirinya untuk menghidupi keluarga ayahnya yang pemabuk. Dia adalah segalanya yang bukan Raskolnikov: rendah hati, beriman, mampu mencintai dengan tulus. Dia membacakan kepadanya kisah Lazarus bangkit dari kematian — dan akhirnya membawanya ke pengakuan dan penebusan.">Sonya Marmeladova is a young prostitute who has sold herself to support her alcoholic father's family. She is everything Raskolnikov is not: humble, believing, capable of genuine love. She reads to him the story of Lazarus rising from the dead — and eventually leads him to confession and redemption.</p>
         </section>
         
-        <!-- Themes -->
         <section class="detail-section">
-            <h2 class="detail-section-title">Themes</h2>
-            
-            <p>
-                <strong>The Limits of Rationalism:</strong> Raskolnikov's "extraordinary man" theory is an experiment in pure reason — can morality be transcended through intellectual superiority? The novel's answer is devastating: reason alone cannot sustain human life. The body rebels (fever, hallucinations), the conscience revolts, and the soul demands confession.
-            </p>
-            
-            <p>
-                <strong>Guilt and Confession:</strong> The "punishment" of the title is not the eight-year sentence; it is the psychological torment that begins immediately after the murder. Raskolnikov's compulsive returns to the crime scene, his near-confessions to strangers, his inability to use the stolen money — all reveal that punishment is built into the act itself.
-            </p>
-            
-            <p>
-                <strong>Resurrection:</strong> The Lazarus story is central. Just as Christ raised Lazarus from the dead, Sonya's love offers Raskolnikov spiritual resurrection. The epilogue's final image — Raskolnikov weeping at Sonya's feet — is the first moment of genuine emotional life in the entire novel.
-            </p>
-            
-            <div class="themes-list">
-                <span class="theme-tag">Guilt</span>
-                <span class="theme-tag">Redemption</span>
-                <span class="theme-tag">Nihilism</span>
-                <span class="theme-tag">Psychology</span>
-                <span class="theme-tag">Poverty</span>
-                <span class="theme-tag">Faith</span>
-                <span class="theme-tag">Free Will</span>
-            </div>
+            <h2 class="detail-section-title" data-en="Why It Matters" data-ko="왜 중요한가" data-id="Mengapa Ini Penting">Why It Matters</h2>
+            <p data-en="Crime and Punishment invented the psychological thriller. It pioneered the technique of limited third-person narration that would dominate modern fiction. And it posed questions that the twentieth century would have to answer: What happens when men believe they are beyond good and evil? What is the cost of ideology divorced from compassion?" data-ko="『죄와 벌』은 심리 스릴러를 발명했습니다. 현대 소설을 지배할 제한된 3인칭 서술 기법을 개척했습니다. 그리고 20세기가 답해야 할 질문들을 제기했습니다: 인간이 선과 악을 넘어섰다고 믿을 때 무슨 일이 일어나는가? 연민에서 분리된 이념의 대가는 무엇인가?" data-id="Kejahatan dan Hukuman menciptakan thriller psikologis. Novel ini merintis teknik narasi orang ketiga terbatas yang akan mendominasi fiksi modern. Dan mengajukan pertanyaan yang harus dijawab abad kedua puluh: Apa yang terjadi ketika manusia percaya mereka berada di luar kebaikan dan kejahatan? Apa harga ideologi yang terpisah dari belas kasih?">Crime and Punishment invented the psychological thriller. It pioneered the technique of limited third-person narration that would dominate modern fiction. And it posed questions that the twentieth century would have to answer: What happens when men believe they are beyond good and evil? What is the cost of ideology divorced from compassion?</p>
         </section>
-        
-        <!-- Why It Matters -->
-        <section class="detail-section">
-            <h2 class="detail-section-title">Why It Matters</h2>
-            
-            <p>
-                <em>Crime and Punishment</em> invented the psychological novel as we know it. Before Dostoevsky, novels depicted characters from the outside — what they did and said. Dostoevsky showed us what it feels like to be inside a mind in crisis: the racing thoughts, the irrational associations, the way guilt distorts perception.
-            </p>
-            
-            <p>
-                Every literary antihero since — from Camus's Meursault to Nabokov's Humbert Humbert to the protagonists of Breaking Bad — descends from Raskolnikov. The novel also prefigured Freudian psychology by decades: the idea that conscious reasoning masks deeper drives, that confession is therapeutic, that the unconscious demands expression.
-            </p>
-            
-            <p>
-                Most importantly, the novel remains urgently relevant. In an age of utilitarian algorithms, tech-bro "rationalism," and the persistent fantasy that intelligence exempts one from moral law, Raskolnikov's story is a warning: the extraordinary man theory always ends in blood and madness.
-            </p>
-        </section>
-        
-        <!-- Another Quote -->
-        <div class="detail-quote">
-            <blockquote>
-                "I did not kill a human being, but a principle! I killed the principle, but I did not overstep the barrier, I remained on this side... I was only capable of killing."
-            </blockquote>
-            <cite>— Part V, Chapter 4</cite>
-        </div>
-        
     </article>
     
-    <!-- Navigation -->
     <nav class="detail-nav">
-        <a href="../index.html#works">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Works
-        </a>
-        <a href="the-idiot.html">
-            Next: The Idiot
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-        </a>
+        <a href="the-gambler.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-en="Previous: The Gambler" data-ko="이전: 도박꾼" data-id="Sebelumnya: Penjudi">Previous: The Gambler</span></a>
+        <a href="the-idiot.html"><span data-en="Next: The Idiot" data-ko="다음: 백치" data-id="Berikutnya: Si Idiot">Next: The Idiot</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </nav>
 
-    <!-- Footer -->
     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-initial">Д</span>
-                    <span class="logo-text">Dostoevsky</span>
-                </div>
-                <p class="footer-tagline">A companion to the YouTube channel</p>
-                <p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p class="copyright">© 2025 Literature Embracing History. All rights reserved.</p>
-        </div>
+        <div class="footer-content"><div class="footer-brand"><div class="footer-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></div><p class="footer-tagline" data-en="A companion to the YouTube channel" data-ko="YouTube 채널의 동반자" data-id="Pendamping kanal YouTube">A companion to the YouTube channel</p><p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p></div></div>
+        <div class="footer-bottom"><p class="copyright">© 2025 Literature Embracing History. <span data-en="All rights reserved." data-ko="모든 권리 보유." data-id="Hak cipta dilindungi.">All rights reserved.</span></p></div>
     </footer>
-
     <script src="../script.js"></script>
 </body>
 </html>

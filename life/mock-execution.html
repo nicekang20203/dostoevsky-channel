@@ -3,565 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mock Execution — Dostoevsky</title>
-    <meta name="description" content="December 22, 1849: The day Dostoevsky faced a firing squad and was pardoned at the last moment. The five minutes that changed literature forever.">
-    
-    <!-- Fonts -->
+    <title>Mock Execution — Dostoevsky</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /* Detail Page Specific Styles */
-        .detail-hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: calc(var(--space-2xl) + 80px) var(--space-xl) var(--space-2xl);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .detail-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(ellipse at 50% 30%, rgba(74, 31, 42, 0.4) 0%, transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(107, 45, 60, 0.2) 0%, transparent 50%),
-                linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg-main) 100%);
-            z-index: -1;
-        }
-        
-        .detail-hero-content {
-            max-width: 900px;
-            text-align: center;
-        }
-        
-        .detail-breadcrumb {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-lg);
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-        
-        .detail-breadcrumb a {
-            color: var(--color-text-muted);
-        }
-        
-        .detail-breadcrumb a:hover {
-            color: var(--color-gold);
-        }
-        
-        .detail-breadcrumb span {
-            color: var(--color-text-muted);
-        }
-        
-        .detail-date {
-            display: inline-block;
-            padding: var(--space-md) var(--space-lg);
-            background: rgba(107, 45, 60, 0.3);
-            border: 1px solid rgba(201, 169, 98, 0.3);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .detail-date .day {
-            display: block;
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 600;
-            color: var(--color-gold);
-            line-height: 1;
-        }
-        
-        .detail-date .month-year {
-            font-family: var(--font-display);
-            font-size: 0.875rem;
-            letter-spacing: 0.15em;
-            color: var(--color-cream);
-        }
-        
-        .detail-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-lg);
-        }
-        
-        .detail-subtitle {
-            font-family: var(--font-body);
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--color-text-secondary);
-            max-width: 650px;
-            margin: 0 auto;
-        }
-        
-        .detail-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: var(--space-2xl) var(--space-xl);
-        }
-        
-        .detail-section {
-            margin-bottom: var(--space-2xl);
-        }
-        
-        .detail-section-title {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            letter-spacing: 0.1em;
-            color: var(--color-gold);
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-md);
-            border-bottom: var(--border-subtle);
-        }
-        
-        .detail-section p {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: var(--color-text-secondary);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .detail-section p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .detail-quote {
-            padding: var(--space-xl);
-            background: var(--color-bg-card);
-            border-left: 3px solid var(--color-burgundy);
-            margin: var(--space-xl) 0;
-        }
-        
-        .detail-quote blockquote {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--color-cream);
-            line-height: 1.7;
-            margin: 0 0 var(--space-md) 0;
-        }
-        
-        .detail-quote cite {
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            color: var(--color-gold);
-            font-style: normal;
-        }
-        
-        .timeline-minute {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: var(--space-lg);
-            margin-bottom: var(--space-xl);
-            padding-bottom: var(--space-xl);
-            border-bottom: var(--border-subtle);
-        }
-        
-        .timeline-minute:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .minute-time {
-            font-family: var(--font-display);
-            font-size: 0.875rem;
-            letter-spacing: 0.1em;
-            color: var(--color-gold);
-            padding-top: var(--space-xs);
-        }
-        
-        .minute-content h4 {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .minute-content p {
-            font-size: 1rem;
-            color: var(--color-text-secondary);
-            line-height: 1.7;
-            margin: 0;
-        }
-        
-        .aftermath-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-xl);
-        }
-        
-        .aftermath-card {
-            background: var(--color-bg-card);
-            border: var(--border-subtle);
-            padding: var(--space-lg);
-        }
-        
-        .aftermath-card h4 {
-            font-family: var(--font-heading);
-            font-size: 1.125rem;
-            margin-bottom: var(--space-md);
-            color: var(--color-cream);
-        }
-        
-        .aftermath-card p {
-            font-size: 0.95rem;
-            color: var(--color-text-secondary);
-            line-height: 1.6;
-            margin: 0;
-        }
-        
-        .detail-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--space-xl);
-            border-top: var(--border-subtle);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .detail-nav a {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-text-secondary);
-        }
-        
-        .detail-nav a:hover {
-            color: var(--color-gold);
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, var(--color-bg-card) 0%, rgba(107, 45, 60, 0.3) 100%);
-            border: var(--border-subtle);
-            padding: var(--space-xl);
-            margin: var(--space-xl) 0;
-            text-align: center;
-        }
-        
-        .highlight-box .big-number {
-            font-family: var(--font-display);
-            font-size: 4rem;
-            font-weight: 600;
-            color: var(--color-gold);
-            line-height: 1;
-        }
-        
-        .highlight-box .label {
-            font-family: var(--font-display);
-            font-size: 0.875rem;
-            letter-spacing: 0.15em;
-            color: var(--color-text-secondary);
-            margin-top: var(--space-sm);
-        }
-        
-        @media (max-width: 768px) {
-            .timeline-minute {
-                grid-template-columns: 1fr;
-            }
-            
-            .minute-time {
-                margin-bottom: var(--space-sm);
-            }
-            
-            .aftermath-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .detail-nav {
-                flex-direction: column;
-                gap: var(--space-lg);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../detail-pages.css">
 </head>
 <body>
-    <!-- Noise Overlay -->
     <div class="noise-overlay"></div>
-    
-    <!-- Navigation -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-initial">Д</span>
-                <span class="logo-text">Dostoevsky</span>
-            </a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
+            <a href="../index.html" class="nav-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html#family">Family</a></li>
-                <li><a href="../index.html#life">Life</a></li>
-                <li><a href="../index.html#anna">Anna</a></li>
-                <li><a href="../index.html#works">Works</a></li>
-                <li><a href="../index.html#episodes">Episodes</a></li>
-                <li class="nav-cta">
-                    <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                        Subscribe
-                    </a>
-                </li>
+                <li><a href="../index.html#family" data-en="Family" data-ko="가족" data-id="Keluarga">Family</a></li>
+                <li><a href="../index.html#life" data-en="Life" data-ko="생애" data-id="Kehidupan">Life</a></li>
+                <li><a href="../index.html#anna" data-en="Anna" data-ko="안나" data-id="Anna">Anna</a></li>
+                <li><a href="../index.html#works" data-en="Works" data-ko="작품" data-id="Karya">Works</a></li>
+                <li><a href="../index.html#episodes" data-en="Episodes" data-ko="에피소드" data-id="Episode">Episodes</a></li>
+                <li class="nav-cta"><a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-en="Subscribe" data-ko="구독" data-id="Langganan">Subscribe</span></a></li>
             </ul>
-            
             <div class="lang-switch">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <span class="lang-divider">/</span>
-                <button class="lang-btn" data-lang="ko">한국어</button>
+                <button class="lang-btn active" data-lang="en">EN</button><span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="ko">한국어</button><span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="id">ID</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
     <header class="detail-hero">
         <div class="detail-hero-content">
             <nav class="detail-breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>→</span>
-                <a href="../index.html#life">Life & Times</a>
-                <span>→</span>
-                <span style="color: var(--color-gold);">Mock Execution</span>
+                <a href="../index.html" data-en="Home" data-ko="홈" data-id="Beranda">Home</a><span>→</span>
+                <a href="../index.html#life" data-en="Life & Times" data-ko="생애와 시대" data-id="Kehidupan">Life & Times</a><span>→</span>
+                <span class="current" data-en="Mock Execution" data-ko="모의 처형" data-id="Eksekusi Palsu">Mock Execution</span>
             </nav>
-            
-            <div class="detail-date">
-                <span class="day">22</span>
-                <span class="month-year">December 1849</span>
-            </div>
-            
-            <h1 class="detail-title">The Mock Execution</h1>
-            
-            <p class="detail-subtitle">
-                The five minutes that transformed a young writer into the great chronicler of the human soul. Dostoevsky faced death — and death blinked first.
-            </p>
+            <div class="detail-date"><span class="day">22</span><span class="month-year" data-en="December 1849" data-ko="1849년 12월" data-id="Desember 1849">December 1849</span></div>
+            <h1 class="detail-title" data-en="Mock Execution" data-ko="모의 처형" data-id="Eksekusi Palsu">Mock Execution</h1>
+            <p class="detail-subtitle" data-en="Five minutes before death. The rifles raised. Then the drums rolled — and life was given back." data-ko="죽음 5분 전. 소총이 겨눠졌다. 그때 북소리가 울렸다 — 그리고 생명이 돌아왔다." data-id="Lima menit sebelum kematian. Senapan diacungkan. Lalu drum berbunyi — dan hidup dikembalikan.">Five minutes before death. The rifles raised. Then the drums rolled — and life was given back.</p>
         </div>
     </header>
 
-    <!-- Content -->
     <article class="detail-content">
-        
-        <!-- The Crime -->
         <section class="detail-section">
-            <h2 class="detail-section-title">The Crime: The Petrashevsky Circle</h2>
-            
-            <p>
-                In the late 1840s, a group of young intellectuals gathered on Friday evenings at the home of Mikhail Petrashevsky in St. Petersburg. They discussed banned books, debated socialism, and dreamed of reforming Russia. Among them was 27-year-old Fyodor Dostoevsky, already a literary celebrity after the success of his debut novel <em>Poor Folk</em>.
-            </p>
-            
-            <p>
-                The discussions were naive by revolutionary standards — more theoretical than practical. But in the paranoid atmosphere following the 1848 European revolutions, Tsar Nicholas I saw conspirators everywhere. On April 23, 1849, the secret police arrested 34 members of the circle, including Dostoevsky.
-            </p>
-            
-            <p>
-                The specific charge against Dostoevsky: he had read aloud Vissarion Belinsky's banned "Letter to Gogol," which criticized the Orthodox Church and serfdom. For this, he was sentenced to death by firing squad.
-            </p>
+            <h2 class="detail-section-title" data-en="Semyonovsky Square" data-ko="세묘노프스키 광장" data-id="Lapangan Semyonovsky">Semyonovsky Square</h2>
+            <p data-en="On December 22, 1849, twenty-one members of the Petrashevsky Circle were led to Semyonovsky Square in St. Petersburg. They had spent eight months in the Peter and Paul Fortress, awaiting trial for subversion. Now they stood in the freezing cold, dressed in white execution robes, listening to their death sentences being read." data-ko="1849년 12월 22일, 페트라셰프스키 서클의 21명의 회원들이 상트페테르부르크의 세묘노프스키 광장으로 끌려갔습니다. 그들은 8개월 동안 페트로파블롭스크 요새에서 전복죄 재판을 기다리며 지냈습니다. 이제 그들은 흰 처형복을 입고 영하의 추위 속에 서서 사형 선고문이 낭독되는 것을 들었습니다." data-id="Pada tanggal 22 Desember 1849, dua puluh satu anggota Lingkaran Petrashevsky dibawa ke Lapangan Semyonovsky di St. Petersburg. Mereka telah menghabiskan delapan bulan di Benteng Peter dan Paul, menunggu pengadilan karena subversi. Sekarang mereka berdiri dalam dingin yang membekukan, mengenakan jubah eksekusi putih, mendengarkan vonis mati mereka dibacakan.">On December 22, 1849, twenty-one members of the Petrashevsky Circle were led to Semyonovsky Square in St. Petersburg. They had spent eight months in the Peter and Paul Fortress, awaiting trial for subversion. Now they stood in the freezing cold, dressed in white execution robes, listening to their death sentences being read.</p>
+            <p data-en="Dostoevsky was in the second group of three. He watched as the first three prisoners were tied to posts. The firing squad raised their rifles. A priest offered the cross for a final kiss. The drums began their death roll." data-ko="도스토예프스키는 두 번째 3인조에 속해 있었습니다. 그는 첫 번째 세 명의 죄수들이 기둥에 묶이는 것을 지켜보았습니다. 총살대가 소총을 들어올렸습니다. 사제가 마지막 입맞춤을 위해 십자가를 내밀었습니다. 북이 사형의 북소리를 울리기 시작했습니다." data-id="Dostoevsky berada di kelompok tiga kedua. Dia menyaksikan tiga tahanan pertama diikat ke tiang. Regu tembak mengangkat senapan mereka. Seorang imam menawarkan salib untuk ciuman terakhir. Drum mulai bergulung kematian.">Dostoevsky was in the second group of three. He watched as the first three prisoners were tied to posts. The firing squad raised their rifles. A priest offered the cross for a final kiss. The drums began their death roll.</p>
         </section>
         
-        <div class="highlight-box">
-            <div class="big-number">8</div>
-            <div class="label">Months in the Peter and Paul Fortress awaiting execution</div>
-        </div>
-        
-        <!-- The Morning -->
-        <section class="detail-section">
-            <h2 class="detail-section-title">The Morning of December 22, 1849</h2>
-            
-            <p>
-                At dawn, the prisoners were loaded into carriages and driven through the frozen streets of St. Petersburg to Semyonov Square. A crowd had gathered. A scaffold had been erected. Twenty-one men were led onto the platform in their white execution shrouds.
-            </p>
-            
-            <p>
-                They were divided into groups of three. The first three — Petrashevsky, Mombelli, and Grigoriev — were tied to wooden posts. Hoods were placed over their heads. Soldiers raised their rifles.
-            </p>
-            
-            <p>
-                Dostoevsky stood in the second group. He had perhaps two minutes to live.
-            </p>
-        </section>
-        
-        <!-- Minute by Minute -->
-        <section class="detail-section">
-            <h2 class="detail-section-title">The Eternal Five Minutes</h2>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">MINUTE 1</div>
-                <div class="minute-content">
-                    <h4>The First Awareness</h4>
-                    <p>Dostoevsky later described this moment to his brother: "I cannot recall when I was ever so happy as on that day." A strange euphoria overtook him. Every sensation became painfully vivid — the cold air, the sound of a church bell, the faces around him.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">MINUTE 2</div>
-                <div class="minute-content">
-                    <h4>The Golden Dome</h4>
-                    <p>His eyes fixed on the gilded dome of a nearby church, catching the winter sunlight. "In five minutes I will merge with that light," he thought. The dome seemed to contain all the beauty he would never see again.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">MINUTE 3</div>
-                <div class="minute-content">
-                    <h4>The Division of Time</h4>
-                    <p>He began to calculate: two minutes to say farewell to his fellow prisoners, two minutes to think for the last time, one minute to look around one final time. He wondered what it would feel like when the bullets struck. He imagined the moment of death as a kind of translation into another existence.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">MINUTE 4</div>
-                <div class="minute-content">
-                    <h4>"What if I were not to die?"</h4>
-                    <p>The thought struck him with terrible force: "What if I could return to life — what infinite time would be mine! I would turn every minute into an age; I would lose nothing, I would count every moment separately, and waste nothing." This thought would haunt him for the rest of his life.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-minute">
-                <div class="minute-time">MINUTE 5</div>
-                <div class="minute-content">
-                    <h4>The Drum Roll</h4>
-                    <p>A drum sounded. The rifles were raised. The crowd fell silent. Then — another drum roll. An officer rode forward waving a white flag. The Tsar had commuted the sentences. It was all staged. They were never meant to die that day.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Quote from The Idiot -->
         <div class="detail-quote">
-            <blockquote>
-                "What if one were not to die! What if one could return to life — what an infinity! And it would all be mine! I would turn every minute into an age; I would lose nothing, I would count every moment separately, and waste nothing!"
-            </blockquote>
-            <cite>— Prince Myshkin in <em>The Idiot</em>, describing a man who faced execution</cite>
+            <blockquote><p data-en="What if I were not to die! What if life were given back to me — what infinity! I would turn every minute into an age." data-ko="만약 내가 죽지 않는다면! 만약 생명이 나에게 돌아온다면 — 얼마나 무한한가! 나는 모든 분을 시대로 바꿀 것이다." data-id="Bagaimana jika saya tidak mati! Bagaimana jika hidup dikembalikan kepada saya — betapa tak terbatasnya! Saya akan mengubah setiap menit menjadi zaman.">What if I were not to die! What if life were given back to me — what infinity! I would turn every minute into an age.</p></blockquote>
+            <cite>— Prince Myshkin, The Idiot</cite>
         </div>
         
-        <!-- The Aftermath -->
         <section class="detail-section">
-            <h2 class="detail-section-title">The Aftermath</h2>
-            
-            <p>
-                One prisoner, Nikolai Grigoriev, went permanently insane in those moments at the post. He never recovered. The psychological cruelty of the staged execution was deliberate — Tsar Nicholas I wanted to break these men before sending them to Siberia.
-            </p>
-            
-            <p>
-                Dostoevsky's sentence was commuted to four years of hard labor in Omsk, followed by compulsory military service. That same evening, still in his execution shroud, he was fitted with ten-pound leg irons and loaded onto a sledge for the 2,500-mile journey east.
-            </p>
-            
-            <p>
-                He would not return to St. Petersburg for ten years.
-            </p>
+            <h2 class="detail-section-title" data-en="The Reprieve" data-ko="사면" data-id="Penangguhan">The Reprieve</h2>
+            <p data-en="Then a drum roll. A white flag. An aide-de-camp galloped into the square with a message: Tsar Nicholas I, in his infinite mercy, had commuted the sentences. It had all been staged — a calculated act of psychological torture designed by the Tsar himself." data-ko="그때 북소리가 울렸습니다. 흰 깃발이 나타났습니다. 부관이 메시지를 들고 광장으로 말을 달려왔습니다: 니콜라이 1세 황제가 무한한 자비로 형을 감형했습니다. 모든 것이 연출이었습니다 — 차르 자신이 설계한 계획적인 심리적 고문이었습니다." data-id="Lalu suara drum. Bendera putih. Seorang ajudan berpacu ke lapangan dengan pesan: Tsar Nicholas I, dalam kemurahannya yang tak terbatas, telah mengganti hukuman. Semuanya telah dipentaskan — tindakan penyiksaan psikologis yang diperhitungkan yang dirancang oleh Tsar sendiri.">Then a drum roll. A white flag. An aide-de-camp galloped into the square with a message: Tsar Nicholas I, in his infinite mercy, had commuted the sentences. It had all been staged — a calculated act of psychological torture designed by the Tsar himself.</p>
+            <p data-en="Dostoevsky's sentence was changed to four years of hard labor in Siberia, followed by military service. But the experience of those minutes — believing he would die, watching others prepare to die, then having life suddenly restored — never left him." data-ko="도스토예프스키의 형은 시베리아에서 4년간의 중노동과 그 후 군복무로 변경되었습니다. 그러나 그 몇 분간의 경험 — 죽을 것이라고 믿고, 다른 사람들이 죽을 준비를 하는 것을 지켜보다가, 갑자기 생명이 돌아온 것 — 은 결코 그를 떠나지 않았습니다." data-id="Hukuman Dostoevsky diubah menjadi empat tahun kerja paksa di Siberia, diikuti dengan dinas militer. Tetapi pengalaman menit-menit itu — percaya dia akan mati, menyaksikan orang lain bersiap untuk mati, lalu tiba-tiba hidup dipulihkan — tidak pernah meninggalkannya.">Dostoevsky's sentence was changed to four years of hard labor in Siberia, followed by military service. But the experience of those minutes — believing he would die, watching others prepare to die, then having life suddenly restored — never left him.</p>
         </section>
         
-        <!-- What It Changed -->
         <section class="detail-section">
-            <h2 class="detail-section-title">What It Changed</h2>
-            
-            <p>
-                The mock execution fundamentally transformed Dostoevsky's worldview. The young man who went to Semyonov Square was a fashionable liberal, a follower of utopian socialism. The man who emerged was something else entirely.
-            </p>
-            
-            <div class="aftermath-grid">
-                <div class="aftermath-card">
-                    <h4>Time</h4>
-                    <p>He became obsessed with moments of extreme intensity — the seconds before death, the instant of a crime, the flash of epileptic aura. His novels would stretch single moments into dozens of pages.</p>
-                </div>
-                
-                <div class="aftermath-card">
-                    <h4>Consciousness</h4>
-                    <p>He discovered that facing death heightens consciousness to an almost unbearable degree. This hyper-awareness became the signature tone of his mature fiction.</p>
-                </div>
-                
-                <div class="aftermath-card">
-                    <h4>Freedom</h4>
-                    <p>He came to believe that suffering — not rational progress — was the path to spiritual truth. The comfortable certainties of Western liberalism no longer satisfied him.</p>
-                </div>
-                
-                <div class="aftermath-card">
-                    <h4>Literature</h4>
-                    <p>The mock execution appears directly in <em>The Idiot</em>, where Prince Myshkin describes "a man who faced execution" in excruciating detail — Dostoevsky's own experience, barely fictionalized.</p>
-                </div>
-            </div>
+            <h2 class="detail-section-title" data-en="The Five Minutes" data-ko="5분" data-id="Lima Menit">The Five Minutes</h2>
+            <p data-en="In The Idiot, Prince Myshkin describes a man who faced execution and was reprieved at the last moment. The passage is clearly autobiographical. Myshkin speaks of the five minutes the condemned man had left — how he calculated two minutes for farewells, two for last thoughts, one for a final look around." data-ko="『백치』에서, 미쉬킨 공작은 처형에 직면했다가 마지막 순간에 사면된 사람을 묘사합니다. 그 구절은 분명히 자전적입니다. 미쉬킨은 사형수에게 남은 5분에 대해 말합니다 — 어떻게 그가 작별을 위해 2분, 마지막 생각을 위해 2분, 마지막으로 주위를 둘러보기 위해 1분을 계산했는지." data-id="Dalam The Idiot, Pangeran Myshkin menggambarkan seorang pria yang menghadapi eksekusi dan diberi penangguhan di saat terakhir. Bagian itu jelas otobiografis. Myshkin berbicara tentang lima menit yang tersisa bagi pria terhukum itu — bagaimana dia menghitung dua menit untuk perpisahan, dua untuk pikiran terakhir, satu untuk pandangan terakhir ke sekeliling.">In The Idiot, Prince Myshkin describes a man who faced execution and was reprieved at the last moment. The passage is clearly autobiographical. Myshkin speaks of the five minutes the condemned man had left — how he calculated two minutes for farewells, two for last thoughts, one for a final look around.</p>
+            <p data-en="Those five minutes became the foundation of Dostoevsky's later philosophy: every moment is precious, every life sacred, and the taking of life — even by the state — is an abomination. The mock execution made him both a deeper Christian and a more radical humanist." data-ko="그 5분은 도스토예프스키의 후기 철학의 기초가 되었습니다: 모든 순간은 소중하고, 모든 생명은 신성하며, 생명을 빼앗는 것 — 국가에 의해서조차도 — 은 혐오스러운 일입니다. 모의 처형은 그를 더 깊은 기독교인이자 더 급진적인 인본주의자로 만들었습니다." data-id="Lima menit itu menjadi dasar filosofi Dostoevsky kemudian: setiap momen berharga, setiap kehidupan suci, dan mengambil nyawa — bahkan oleh negara — adalah kekejian. Eksekusi palsu membuatnya menjadi Kristen yang lebih dalam dan humanis yang lebih radikal.">Those five minutes became the foundation of Dostoevsky's later philosophy: every moment is precious, every life sacred, and the taking of life — even by the state — is an abomination. The mock execution made him both a deeper Christian and a more radical humanist.</p>
         </section>
-        
-        <!-- Final Quote -->
-        <div class="detail-quote">
-            <blockquote>
-                "Now my life will change; I shall be born again in a new form. Brother! I swear to you that I will not lose hope and will preserve my spirit and my heart in purity. I shall be born again for the better."
-            </blockquote>
-            <cite>— Dostoevsky, letter to his brother Mikhail, December 22, 1849</cite>
-        </div>
-        
-        <!-- Legacy -->
-        <section class="detail-section">
-            <h2 class="detail-section-title">Legacy</h2>
-            
-            <p>
-                Dostoevsky returned to that morning in Semyonov Square again and again throughout his life. He told and retold the story to friends, family, and eventually to all of Russia through his fiction. The experience became his origin myth — the moment when the old Dostoevsky died and the great novelist was born.
-            </p>
-            
-            <p>
-                In a sense, everything he wrote afterward was an attempt to answer the question those five minutes posed: what is a human life worth? What does it mean to be conscious of your own mortality? And how should one live if every moment might be the last?
-            </p>
-            
-            <p>
-                The Tsar meant to break him. Instead, he made him immortal.
-            </p>
-        </section>
-        
     </article>
     
-    <!-- Navigation -->
     <nav class="detail-nav">
-        <a href="../index.html#life">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Life & Times
-        </a>
-        <a href="siberia.html">
-            Next: Siberian Prison
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-        </a>
+        <a href="poor-folk.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-en="Previous: Poor Folk" data-ko="이전: 가난한 사람들" data-id="Sebelumnya: Orang Miskin">Previous: Poor Folk</span></a>
+        <a href="siberia.html"><span data-en="Next: Siberian Prison" data-ko="다음: 시베리아 감옥" data-id="Berikutnya: Penjara Siberia">Next: Siberian Prison</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </nav>
 
-    <!-- Footer -->
     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-initial">Д</span>
-                    <span class="logo-text">Dostoevsky</span>
-                </div>
-                <p class="footer-tagline">A companion to the YouTube channel</p>
-                <p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p class="copyright">© 2025 Literature Embracing History. All rights reserved.</p>
-        </div>
+        <div class="footer-content"><div class="footer-brand"><div class="footer-logo"><span class="logo-initial">Д</span><span class="logo-text">Dostoevsky</span></div><p class="footer-tagline" data-en="A companion to the YouTube channel" data-ko="YouTube 채널의 동반자" data-id="Pendamping kanal YouTube">A companion to the YouTube channel</p><p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p></div></div>
+        <div class="footer-bottom"><p class="copyright">© 2025 Literature Embracing History. <span data-en="All rights reserved." data-ko="모든 권리 보유." data-id="Hak cipta dilindungi.">All rights reserved.</span></p></div>
     </footer>
-
     <script src="../script.js"></script>
 </body>
 </html>
