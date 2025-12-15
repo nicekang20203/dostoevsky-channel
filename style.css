@@ -1977,4 +1977,573 @@ body.lang-en [lang="ko"] {
     gap: var(--space-md);
     justify-content: center;
     flex-wrap: wrap;
+
+   /* ============================================ */
+/* DEEP RESEARCH REPORTS - SHARED STYLES       */
+/* Place this file in your main site folder:   */
+/* /Dostoevsky-channel/report-styles.css       */
+/* ============================================ */
+
+/* ============================================ */
+/* CSS VARIABLES                               */
+/* ============================================ */
+:root {
+    --color-bg: #0d0d0d;
+    --color-bg-elevated: #1a1a1a;
+    --color-bg-card: rgba(255, 255, 255, 0.03);
+    --color-text: #f5f0e8;
+    --color-text-muted: rgba(245, 240, 232, 0.6);
+    --color-text-faint: rgba(245, 240, 232, 0.4);
+    --color-accent: #d4a574;
+    --color-accent-dark: #8b5a2b;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-success: #4a7c59;
+    --color-danger: #8b3a3a;
+    --color-warning: #8b6914;
+    
+    --font-display: 'Cinzel', serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'EB Garamond', serif;
+    
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 40px rgba(212, 165, 116, 0.1);
+}
+
+/* ============================================ */
+/* RESET & BASE                                */
+/* ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    min-height: 100vh;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-text);
+}
+
+/* ============================================ */
+/* HEADER                                      */
+/* ============================================ */
+.report-header {
+    position: relative;
+    padding: 3rem 1.5rem 4rem;
+    background: linear-gradient(180deg, rgba(139, 90, 43, 0.15) 0%, transparent 100%);
+    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+}
+
+.back-link:hover {
+    color: var(--color-accent);
+}
+
+.report-badge {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.report-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.report-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.report-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: var(--color-text-faint);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* ============================================ */
+/* MAIN CONTENT                                */
+/* ============================================ */
+.report-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.content-section p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+}
+
+.content-section p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+/* ============================================ */
+/* COMPONENT: Timeline                         */
+/* ============================================ */
+.timeline-container {
+    margin: 3rem 0;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+    padding-left: 1.5rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-item:hover,
+.timeline-item.active {
+    opacity: 1;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 2px solid var(--color-accent);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover::before,
+.timeline-item.active::before {
+    background: var(--color-accent);
+    box-shadow: 0 0 20px rgba(212, 165, 116, 0.5);
+}
+
+.timeline-date {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* ============================================ */
+/* COMPONENT: Data Cards                       */
+/* ============================================ */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.data-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.data-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+}
+
+.data-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.data-label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.data-sublabel {
+    font-size: 0.75rem;
+    color: var(--color-text-faint);
+    margin-top: 0.25rem;
+}
+
+/* ============================================ */
+/* COMPONENT: Comparison Table                 */
+/* ============================================ */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.comparison-table th {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.comparison-table td {
+    color: var(--color-text-muted);
+}
+
+.comparison-table tr:hover td {
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.table-highlight {
+    color: var(--color-accent) !important;
+    font-weight: 600;
+}
+
+/* ============================================ */
+/* COMPONENT: Quote Block                      */
+/* ============================================ */
+.quote-block {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 2rem 2rem 3rem;
+    background: var(--color-bg-card);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+}
+
+.quote-block::before {
+    content: '"';
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: var(--color-accent);
+    opacity: 0.3;
+    line-height: 1;
+}
+
+.quote-block p {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.quote-block cite {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: normal;
+}
+
+/* ============================================ */
+/* COMPONENT: Progress Bars                    */
+/* ============================================ */
+.progress-section {
+    margin: 2rem 0;
+}
+
+.progress-item {
+    margin-bottom: 1.5rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.progress-value {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--color-bg-elevated);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent));
+    border-radius: 4px;
+    transition: width 1s ease-out;
+}
+
+/* ============================================ */
+/* COMPONENT: Callout Box                      */
+/* ============================================ */
+.callout {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(139, 90, 43, 0.1);
+    border: 1px solid rgba(139, 90, 43, 0.3);
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.callout-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--color-accent);
+}
+
+.callout-content {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.callout-content strong {
+    color: var(--color-text);
+}
+
+/* ============================================ */
+/* FOOTER                                      */
+/* ============================================ */
+.report-footer {
+    padding: 3rem 1.5rem;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.footer-cta {
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.btn-primary:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.btn-outline:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-link {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.footer-link:hover {
+    color: var(--color-accent);
+}
+
+.footer-credit {
+    font-size: 0.85rem;
+    color: var(--color-text-faint);
+}
+
+/* ============================================ */
+/* RESPONSIVE                                  */
+/* ============================================ */
+@media (max-width: 768px) {
+    .report-header {
+        padding: 2rem 1rem 3rem;
+    }
+
+    .report-content {
+        padding: 2rem 1rem;
+    }
+
+    .report-meta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .data-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison-table {
+        font-size: 0.85rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item {
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 }
