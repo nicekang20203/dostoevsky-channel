@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Snitkina: The Savior of His Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Chosen Palette: Literary Realism. 
+         Backgrounds: Warm Neutrals (Stone-50, Stone-100) evoking parchment/paper.
+         Text: Deep Ink (Slate-900, Stone-800).
+         Accents: Muted Red (Red-800) for crisis/debt, Emerald (Emerald-800) for profit/success, Gold/Amber (Amber-700) for highlights.
+         Typography: Merriweather for headings (Serif/Literary), Inter for UI/Data (Sans-serif/Clean). 
+    -->
+
+    <!-- Application Structure Plan: 
+         Structure: A "Narrative Dashboard" layout.
+         Why: The report is a complex interplay of biography, legal thriller, and business case study. A linear scroll risks burying the connections.
+         The Dashboard uses a top-level Tab Navigation corresponding to the narrative arcs:
+         1. The Precipice (The Context/Crisis) - User explores the stakes.
+         2. The 26-Day Miracle (The Process) - User sees the data of the writing sprint.
+         3. The Economics (The Business) - User compares financial models.
+         4. The Legacy (The Outcome) - User reviews the timeline and impact.
+         
+         Key Interactions: 
+         - Tab switching updates the main content area dynamically.
+         - Interactive Charts (Chart.js) animate on view to emphasize the dramatic differences in data.
+         - "Flip cards" or toggle details for the psychological aspects (Addiction strategy).
+    -->
+
+    <!-- Visualization & Content Choices:
+         1. Report Info: The 26-day writing timeline.
+            Goal: Show the intensity and impossibility of the task.
+            Viz: Line Chart (Chart.js). "Required Pace" vs "Actual Sprint".
+            Justification: A line chart best communicates the "race against time" and the acceleration of work.
+         
+         2. Report Info: Financials (500 ruble fee vs 4000 ruble profit).
+            Goal: Demonstrate Anna's business genius.
+            Viz: Grouped Bar Chart (Chart.js).
+            Justification: Side-by-side bars make the 8x profit multiplier immediately obvious.
+         
+         3. Report Info: The daily dictation/transcription routine.
+            Goal: Explain how they physically wrote a novel in a month.
+            Viz: HTML/CSS Process Cycle Diagram.
+            Justification: A cyclic layout shows the iterative nature of their day (Dictate -> Transcribe -> Correct).
+            
+         4. Report Info: The Stellovsky Contract.
+            Goal: Explain the legal trap.
+            Viz: Interactive "Contract Clause" cards.
+            Justification: Breaking legalese into digestible, interactive chunks aids comprehension.
+
+         NO SVG or Mermaid used. All charts are Canvas (Chart.js) or styled HTML elements.
+    -->
+
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf9; /* stone-50 */
+            color: #1c1917; /* stone-900 */
+        }
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Merriweather', serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .paper-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0,0,0,0.05);
+        }
+        /* Custom scrollbar for text areas */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f4; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a8a29e; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #78716c; 
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header / Hero -->
+    <header class="bg-stone-900 text-stone-100 py-8 border-b-4 border-red-900 shadow-lg">
+        <div class="container mx-auto px-4 text-center">
+            <div class="uppercase tracking-widest text-xs text-stone-400 mb-2">Interactive Literary Archive</div>
+            <h1 class="text-3xl md:text-5xl font-bold serif-font mb-4">Anna Snitkina: The Savior of His Legacy</h1>
+            <p class="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto italic">
+                "The legacy of Dostoevsky as we know it today is, in significant part, the legacy of Anna Dostoevskaya."
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-stone-200 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 overflow-x-auto">
+            <div class="flex md:justify-center space-x-2 md:space-x-8 min-w-max py-4" id="nav-container">
+                <!-- Nav buttons injected by JS -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-8 relative">
+        <div id="app-content" class="max-w-5xl mx-auto fade-in">
+            <!-- Content injected by JS -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-800 text-stone-400 py-8 mt-auto">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">Based on the report: "Anna Snitkina: The Savior of His Legacy"</p>
+            <p class="text-xs mt-2 opacity-60">Interactive Analysis &copy; 2025</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // --- DATA STORE ---
+        const appData = {
+            chapters: [
+                { id: 'precipice', title: 'I. The Precipice (1866)', icon: '⚡' },
+                { id: 'miracle', title: 'II. The 26-Day Miracle', icon: '⏳' },
+                { id: 'economics', title: 'III. The Business', icon: '💰' },
+                { id: 'legacy', title: 'IV. The Legacy', icon: '🏛️' }
+            ],
+            content: {
+                precipice: {
+                    intro: "Autumn 1866. Fyodor Dostoevsky stood at the epicenter of a personal and professional cataclysm. While 'Crime and Punishment' captivated the public, a secret contract threatened to erase his literary identity forever.",
+                    cards: [
+                        {
+                            title: "The Predator",
+                            subtitle: "Fyodor Stellovsky",
+                            text: "A notorious speculator in human misfortune. He targeted desperate artists, having previously exploited composer Mikhail Glinka. He knew Dostoevsky was drowning in debt from his brother's failed journal.",
+                            color: "border-red-800"
+                        },
+                        {
+                            title: "The Trap",
+                            subtitle: "The Deadline",
+                            text: "Dostoevsky was obligated to deliver a new, unpublished novel of at least 12 signatures (~160 pages) by November 1, 1866. By October 1st, he had written nothing.",
+                            color: "border-orange-700"
+                        },
+                        {
+                            title: "The Consequence",
+                            subtitle: "Total Forfeiture",
+                            text: "Failure meant Stellovsky would own rights to ALL Dostoevsky's works (past and future) for 9 years without compensation. It would be essentially indentured servitude.",
+                            color: "border-red-900 bg-red-50"
+                        }
+                    ],
+                    stat: {
+                        label: "Days remaining on Oct 1",
+                        value: "30",
+                        sub: "Pages written: 0"
+                    }
+                },
+                miracle: {
+                    intro: "With the deadline looming, friends suggested a 'patchwork' novel, but Dostoevsky refused. The solution was technological: Stenography. Enter Anna Snitkina, a 20-year-old student who would change literary history.",
+                    process: [
+                        { time: "12:00 PM - 4:00 PM", task: "The Performance", detail: "Dostoevsky paces diagonally, chain-smoking, acting out scenes. Anna takes rapid shorthand." },
+                        { time: "Evening - Late Night", task: "The Transcription", detail: "Anna returns home. Decodes shorthand into longhand manuscript. A grueling second shift." },
+                        { time: "Morning", task: "The Review", detail: "Dostoevsky edits the previous day's pages while mentally prepping the next chapter." }
+                    ],
+                    chartData: {
+                        labels: ['Oct 1', 'Oct 4', 'Oct 10', 'Oct 15', 'Oct 20', 'Oct 25', 'Oct 30'],
+                        required: [0, 18, 55, 85, 115, 145, 160], // Linear path roughly
+                        actual: [0, 0, 20, 45, 80, 120, 160] // Slow start, rapid acceleration
+                    }
+                },
+                economics: {
+                    intro: "Anna didn't just save Dostoevsky from Stellovsky; she saved him from poverty. Upon returning to Russia in 1871, she launched the empire's first female-led self-publishing enterprise, revolutionizing the economics of Russian literature.",
+                    comparison: [
+                        { label: "Traditional Model", desc: "Publisher pays flat fee, keeps all profit.", value: 500, type: "Rubles (Fee)" },
+                        { label: "Anna's Model", desc: "Family takes risk, keeps copyright & profit.", value: 4000, type: "Rubles (Profit)" }
+                    ],
+                    details: "Anna studied print shops disguised as a buyer. She calculated paper costs, printing fees, and bookseller discounts (30%). Her first venture, 'Demons', cleared urgent debts immediately."
+                },
+                legacy: {
+                    intro: "The partnership stabilized Dostoevsky's chaotic existence, allowing him to produce his greatest works. Anna became his archivist, protector, and the stabilizing force behind the 'Polyphonic' novel.",
+                    timeline: [
+                        { year: "1866", event: "The Miracle", desc: "Writing 'The Gambler' in 26 days. Victory over Stellovsky." },
+                        { year: "1867", event: "Marriage & Exile", desc: "They marry and flee creditors for Europe. The struggle with gambling begins." },
+                        { year: "1871", event: "The Last Bet", desc: "Wiesbaden. Dostoevsky loses everything, has a spiritual realization, and never gambles again." },
+                        { year: "1880", event: "Brothers Karamazov", desc: "Written in Staraya Russa. The culmination of their shared suffering and triumph." },
+                        { year: "1881-1918", event: "The Keeper", desc: "After Fyodor's death, Anna dedicates 37 years to archiving his work and defending his memory." }
+                    ]
+                }
+            }
+        };
+
+        let currentChapter = 'precipice';
+
+        // --- DOM ELEMENTS & RENDER FUNCTIONS ---
+        const navContainer = document.getElementById('nav-container');
+        const contentContainer = document.getElementById('app-content');
+
+        function init() {
+            renderNav();
+            loadChapter('precipice');
+        }
+
+        function renderNav() {
+            navContainer.innerHTML = appData.chapters.map(chapter => `
+                <button 
+                    onclick="loadChapter('${chapter.id}')"
+                    class="px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap
+                    ${currentChapter === chapter.id 
+                        ? 'bg-stone-800 text-white shadow-lg transform scale-105' 
+                        : 'bg-stone-100 text-stone-600 hover:bg-stone-300 hover:text-stone-900'}">
+                    ${chapter.icon} ${chapter.title}
+                </button>
+            `).join('');
+        }
+
+        function loadChapter(id) {
+            currentChapter = id;
+            renderNav();
+            
+            // Fade out effect
+            contentContainer.classList.remove('fade-in');
+            void contentContainer.offsetWidth; // trigger reflow
+            contentContainer.classList.add('fade-in');
+
+            const data = appData.content[id];
+            
+            // INTRO BLOCK (Common to all)
+            let html = `
+                <div class="mb-10 text-center">
+                    <h2 class="text-3xl font-serif text-stone-800 mb-4 border-b-2 border-stone-300 inline-block pb-2">
+                        ${appData.chapters.find(c => c.id === id).title}
+                    </h2>
+                    <p class="text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
+                        ${data.intro}
+                    </p>
+                </div>
+            `;
+
+            // CONDITIONAL CONTENT BLOCKS
+            if (id === 'precipice') {
+                html += renderPrecipice(data);
+            } else if (id === 'miracle') {
+                html += renderMiracle(data);
+            } else if (id === 'economics') {
+                html += renderEconomics(data);
+            } else if (id === 'legacy') {
+                html += renderLegacy(data);
+            }
+
+            contentContainer.innerHTML = html;
+
+            // Initialize Charts if necessary
+            if (id === 'miracle') initMiracleChart(data.chartData);
+            if (id === 'economics') initEconomicsChart();
+        }
+
+        // --- SPECIFIC RENDERERS ---
+
+        function renderPrecipice(data) {
+            return `
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    ${data.cards.map(card => `
+                        <div class="bg-white p-6 rounded-lg paper-shadow border-t-4 ${card.color} flex flex-col h-full hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-stone-800 mb-1 serif-font">${card.title}</h3>
+                            <div class="text-xs uppercase tracking-wide text-stone-500 mb-3">${card.subtitle}</div>
+                            <p class="text-stone-600 text-sm leading-relaxed flex-grow">${card.text}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="bg-stone-900 text-stone-100 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between shadow-2xl">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-2xl font-serif text-red-400 mb-2">The Imminent Threat</h3>
+                        <p class="text-stone-400 max-w-md">With 30 days remaining, the "Land Mine" was primed. Dostoevsky was exhausted, epileptic, and facing the end of his career.</p>
+                    </div>
+                    <div class="text-center bg-stone-800 p-6 rounded-lg border border-stone-700">
+                        <div class="text-4xl font-bold text-red-500 mb-1">${data.stat.value}</div>
+                        <div class="text-sm text-stone-400 uppercase tracking-widest">Days Left</div>
+                        <div class="text-xs text-stone-500 mt-2 border-t border-stone-700 pt-2">${data.stat.sub}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderMiracle(data) {
+            return `
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    
+                    <!-- Left: The Process Diagram -->
+                    <div>
+                        <h3 class="text-xl font-serif text-stone-800 mb-6 flex items-center">
+                            <span class="bg-stone-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">A</span>
+                            The Stenographic Workflow
+                        </h3>
+                        <div class="space-y-4">
+                            ${data.process.map((step, index) => `
+                                <div class="relative pl-8 border-l-2 border-stone-300 pb-8 last:border-0 last:pb-0">
+                                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-stone-400 ring-4 ring-stone-100"></div>
+                                    <div class="bg-white p-5 rounded shadow-sm border border-stone-100 hover:border-stone-300 transition-colors">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="font-bold text-stone-800 text-lg">${step.task}</span>
+                                            <span class="text-xs font-mono bg-stone-100 px-2 py-1 rounded text-stone-600">${step.time}</span>
+                                        </div>
+                                        <p class="text-sm text-stone-600">${step.detail}</p>
+                                    </div>
+                                    ${index !== data.process.length - 1 ? `
+                                        <div class="absolute left-4 bottom-[-10px] text-stone-300 text-xl">↓</div>
+                                    ` : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="mt-8 bg-amber-50 border border-amber-200 p-4 rounded text-sm text-amber-900">
+                            <strong>Note on Style:</strong> This oral method contributed to Dostoevsky's famous "Polyphonic" style—hearing voices in the room before they hit the page.
+                        </div>
+                    </div>
+
+                    <!-- Right: The Chart -->
+                    <div>
+                        <h3 class="text-xl font-serif text-stone-800 mb-6 flex items-center">
+                            <span class="bg-stone-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">B</span>
+                            Race Against The Deadline
+                        </h3>
+                        <div class="bg-white p-4 rounded-lg shadow border border-stone-200">
+                            <div class="chart-container">
+                                <canvas id="miracleChart"></canvas>
+                            </div>
+                            <p class="mt-4 text-xs text-center text-stone-500 italic">
+                                Comparison of a steady pace vs. the actual frantic acceleration in the final days.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-stone-800 mb-2">The Delivery Drama (Nov 1)</h4>
+                            <div class="bg-stone-800 text-stone-300 p-4 rounded text-sm leading-relaxed">
+                                <span class="text-red-400 font-bold">The Trap:</span> Stellovsky fled the city, closing his office to prevent delivery.<br>
+                                <span class="text-emerald-400 font-bold">The Counter-Move:</span> Anna directed Fyodor to the district police station.<br>
+                                <span class="text-white font-bold">The Victory:</span> A time-stamped receipt from the police officer proved delivery before the deadline. The rights were saved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderEconomics(data) {
+            return `
+                <div class="flex flex-col items-center">
+                    <div class="w-full max-w-4xl bg-white p-6 md:p-10 rounded-xl shadow-lg border border-stone-200 mb-10">
+                        <h3 class="text-center text-xl font-serif text-stone-800 mb-2">Profitability: "Demons" (1873)</h3>
+                        <p class="text-center text-sm text-stone-500 mb-8">Publisher's Offer vs. Self-Publishing Realized Profit</p>
+                        
+                        <div class="chart-container mx-auto">
+                            <canvas id="economicsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl w-full">
+                        <div class="bg-stone-100 p-6 rounded-lg border-l-4 border-stone-400">
+                            <h4 class="font-bold text-stone-700 mb-2">The Old Way (Exploitation)</h4>
+                            <p class="text-sm text-stone-600">Authors sold rights for a flat fee. Publishers took zero risk but reaped all long-term rewards. Dostoevsky was offered a mere 500 rubles for <em>Demons</em>.</p>
+                        </div>
+                        <div class="bg-emerald-50 p-6 rounded-lg border-l-4 border-emerald-600">
+                            <h4 class="font-bold text-emerald-800 mb-2">The Anna Way (Entrepreneurship)</h4>
+                            <p class="text-sm text-stone-700">Anna calculated costs manually. By handling warehousing and distribution herself, she secured ~4,000 rubles profit—<strong>800% more</strong> than the standard offer.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderLegacy(data) {
+            return `
+                <div class="grid md:grid-cols-12 gap-8">
+                    <!-- Left Column: The Timeline -->
+                    <div class="md:col-span-7">
+                        <div class="relative border-l-2 border-stone-300 ml-4 md:ml-6 space-y-8 my-4">
+                            ${data.timeline.map(item => `
+                                <div class="relative pl-8">
+                                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-stone-800 ring-4 ring-stone-100"></div>
+                                    <div>
+                                        <span class="text-2xl font-serif font-bold text-stone-300 block mb-1">${item.year}</span>
+                                        <h4 class="text-lg font-bold text-stone-800">${item.event}</h4>
+                                        <p class="text-stone-600 text-sm mt-1">${item.desc}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Right Column: The Psychology & Archive -->
+                    <div class="md:col-span-5 space-y-6">
+                        
+                        <!-- Addiction Card -->
+                        <div class="bg-white p-6 rounded-lg shadow border-t-4 border-purple-800">
+                            <h3 class="text-lg font-bold text-purple-900 mb-3">Conquering the Addiction</h3>
+                            <p class="text-sm text-stone-600 mb-4">
+                                Anna's strategy for Fyodor's gambling was <strong>Non-Resistance</strong>.
+                            </p>
+                            <div class="bg-purple-50 p-4 rounded text-sm italic text-stone-700 border-l-2 border-purple-300">
+                                "She would give him her last coins, knowing he would lose them. She understood he needed to reach the nadir of despair to trigger the guilt that fueled his writing."
+                            </div>
+                            <div class="mt-4 text-xs text-right text-stone-400">
+                                - Ended in Wiesbaden, 1871
+                            </div>
+                        </div>
+
+                        <!-- Archive Card -->
+                        <div class="bg-stone-800 p-6 rounded-lg text-stone-200">
+                            <h3 class="text-lg font-bold text-white mb-3">The Keeper of the Flame</h3>
+                            <p class="text-sm opacity-90 mb-4">
+                                After Fyodor's death, Anna refused to remarry. She spent 37 years collecting manuscripts, letters, and correcting inaccuracies about his life.
+                            </p>
+                            <div class="text-xs border-t border-stone-600 pt-3 opacity-75">
+                                Died in poverty in Yalta (1918), fleeing the Revolution that destroyed the world she preserved.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- CHART INITIALIZERS ---
+
+        function initMiracleChart(data) {
+            const ctx = document.getElementById('miracleChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.labels,
+                    datasets: [
+                        {
+                            label: 'Required Pace (Linear)',
+                            data: data.required,
+                            borderColor: '#a8a29e', // stone-400
+                            borderDash: [5, 5],
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            tension: 0
+                        },
+                        {
+                            label: 'Actual Progress (The Sprint)',
+                            data: data.actual,
+                            borderColor: '#b91c1c', // red-700
+                            backgroundColor: 'rgba(185, 28, 28, 0.1)',
+                            borderWidth: 3,
+                            pointBackgroundColor: '#b91c1c',
+                            pointRadius: 4,
+                            fill: true,
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: { 
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + ' pages';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 180,
+                            title: { display: true, text: 'Pages Written' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initEconomicsChart() {
+            const ctx = document.getElementById('economicsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Traditional Publisher Offer', 'Anna\'s Self-Publishing Model'],
+                    datasets: [{
+                        label: 'Net Profit (Rubles)',
+                        data: [500, 4000],
+                        backgroundColor: [
+                            '#a8a29e', // stone-400 (Grey for old way)
+                            '#059669'  // emerald-600 (Green for new way)
+                        ],
+                        borderWidth: 0,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function() {
+                                    return "Based on the first edition of 'Demons'";
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Net Profit (Rubles)' }
+                        }
+                    },
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+        }
+
+        // Start the app
+        init();
+
+    </script>
+</body>
+</html>
