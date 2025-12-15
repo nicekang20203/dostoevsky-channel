@@ -3,803 +3,991 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dostoevsky — The Soul of Russian Literature</title>
-    <meta name="description" content="Explore the life, works, and enduring legacy of Fyodor Dostoevsky. A companion to the YouTube channel '역사를 품은 문학 / Literature Embracing History'.">
+    <title>The Savior of His Legacy — Deep Research | Dostoevsky</title>
+    <meta name="description" content="An interactive exploration of the 26-Day Miracle: how Anna Snitkina saved Dostoevsky's career and built a publishing empire.">
     
-    <!-- Fonts -->
+    <!-- Fonts (same as main site) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ========================================== */
+        /* CSS VARIABLES */
+        /* ========================================== */
+        :root {
+            --color-bg: #0d0d0d;
+            --color-bg-elevated: #1a1a1a;
+            --color-bg-card: rgba(255, 255, 255, 0.03);
+            --color-text: #f5f0e8;
+            --color-text-muted: rgba(245, 240, 232, 0.6);
+            --color-text-faint: rgba(245, 240, 232, 0.4);
+            --color-accent: #d4a574;
+            --color-accent-dark: #8b5a2b;
+            --color-border: rgba(255, 255, 255, 0.1);
+            --color-success: #4a7c59;
+            --color-danger: #8b3a3a;
+            --color-warning: #8b6914;
+            
+            --font-display: 'Cinzel', serif;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'EB Garamond', serif;
+            
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 40px rgba(212, 165, 116, 0.1);
+        }
+
+        /* ========================================== */
+        /* RESET & BASE */
+        /* ========================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-text);
+        }
+
+        /* ========================================== */
+        /* HEADER */
+        /* ========================================== */
+        .report-header {
+            position: relative;
+            padding: 3rem 1.5rem 4rem;
+            background: linear-gradient(180deg, rgba(139, 90, 43, 0.15) 0%, transparent 100%);
+            border-bottom: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover {
+            color: var(--color-accent);
+        }
+
+        .report-badge {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-accent);
+            border: 1px solid var(--color-accent);
+            padding: 0.4rem 1rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .report-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .report-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .report-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--color-text-faint);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* ========================================== */
+        /* MAIN CONTENT */
+        /* ========================================== */
+        .report-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-muted);
+        }
+
+        .content-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        /* ========================================== */
+        /* INTERACTIVE TIMELINE */
+        /* ========================================== */
+        .timeline-container {
+            margin: 3rem 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+            padding-left: 1.5rem;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .timeline-item:hover,
+        .timeline-item.active {
+            opacity: 1;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before,
+        .timeline-item.active::before {
+            background: var(--color-accent);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.5);
+        }
+
+        .timeline-date {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        /* ========================================== */
+        /* DATA CARDS */
+        /* ========================================== */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .data-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .data-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-accent);
+        }
+
+        .data-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-label {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .data-sublabel {
+            font-size: 0.75rem;
+            color: var(--color-text-faint);
+            margin-top: 0.25rem;
+        }
+
+        /* ========================================== */
+        /* COMPARISON TABLE */
+        /* ========================================== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .comparison-table th {
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            color: var(--color-text-muted);
+        }
+
+        .comparison-table tr:hover td {
+            color: var(--color-text);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .table-highlight {
+            color: var(--color-accent) !important;
+            font-weight: 600;
+        }
+
+        /* ========================================== */
+        /* QUOTE BLOCK */
+        /* ========================================== */
+        .quote-block {
+            position: relative;
+            margin: 3rem 0;
+            padding: 2rem 2rem 2rem 3rem;
+            background: var(--color-bg-card);
+            border-left: 3px solid var(--color-accent);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-block::before {
+            content: '"';
+            position: absolute;
+            left: 1rem;
+            top: 0.5rem;
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--color-accent);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        .quote-block cite {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            font-style: normal;
+        }
+
+        /* ========================================== */
+        /* PROGRESS BAR VISUALIZATION */
+        /* ========================================== */
+        .progress-section {
+            margin: 2rem 0;
+        }
+
+        .progress-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .progress-value {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--color-accent);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--color-bg-elevated);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent));
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+
+        /* ========================================== */
+        /* CALLOUT BOX */
+        /* ========================================== */
+        .callout {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(139, 90, 43, 0.1);
+            border: 1px solid rgba(139, 90, 43, 0.3);
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .callout-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--color-accent);
+        }
+
+        .callout-content {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+
+        .callout-content strong {
+            color: var(--color-text);
+        }
+
+        /* ========================================== */
+        /* FOOTER */
+        /* ========================================== */
+        .report-footer {
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .footer-cta {
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-text);
+            color: var(--color-bg);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-accent);
+            border: 1px solid var(--color-accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .footer-link:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-credit {
+            font-size: 0.85rem;
+            color: var(--color-text-faint);
+        }
+
+        /* ========================================== */
+        /* RESPONSIVE */
+        /* ========================================== */
+        @media (max-width: 768px) {
+            .report-header {
+                padding: 2rem 1rem 3rem;
+            }
+
+            .report-content {
+                padding: 2rem 1rem;
+            }
+
+            .report-meta {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .data-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item {
+                padding-left: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Noise Overlay -->
-    <div class="noise-overlay"></div>
-    
-    <!-- Navigation -->
-    <nav class="main-nav" id="mainNav">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <span class="logo-initial">Д</span>
-                <span class="logo-text">Dostoevsky</span>
-            </a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#family">Family</a></li>
-                <li><a href="#life">Life</a></li>
-                <li><a href="#anna">Anna</a></li>
-                <li><a href="#works">Works</a></li>
-                <li><a href="#episodes">Episodes</a></li>
-                <li><a href="#quotes">Quotes</a></li>
-                <li class="nav-cta">
-                    <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn-subscribe">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                        Subscribe
-                    </a>
-                </li>
-            </ul>
-            
-            <div class="lang-switch">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <span class="lang-divider">/</span>
-                <button class="lang-btn" data-lang="ko">한국어</button>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero" id="home">
-        <div class="hero-bg">
-            <div class="hero-gradient"></div>
-        </div>
+    <!-- Header -->
+    <header class="report-header">
+        <a href="../" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Dostoevsky
+        </a>
         
-        <div class="hero-content">
-            <div class="hero-eyebrow">
-                <span class="line"></span>
-                <span class="text">1821 — 1881</span>
-                <span class="line"></span>
-            </div>
-            
-            <h1 class="hero-title">
-                <span class="title-line" data-en="Fyodor" data-ko="표도르">Fyodor</span>
-                <span class="title-line title-main" data-en="Dostoevsky" data-ko="도스토예프스키">Dostoevsky</span>
-            </h1>
-            
-            <p class="hero-subtitle" data-en="The man who saw into the darkest corners of the human soul — and found light there." data-ko="인간 영혼의 가장 어두운 곳을 들여다보고, 그곳에서 빛을 발견한 사람.">
-                The man who saw into the darkest corners of the human soul — and found light there.
-            </p>
-            
-            <div class="hero-cta">
-                <a href="#family" class="btn btn-primary">
-                    <span data-en="Explore His Life" data-ko="생애 탐험하기">Explore His Life</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="#episodes" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <polygon points="5 3 19 12 5 21 5 3"/>
-                    </svg>
-                    <span data-en="Watch Episodes" data-ko="에피소드 보기">Watch Episodes</span>
-                </a>
-            </div>
-        </div>
+        <div class="report-badge">Deep Research Report</div>
         
-        <div class="hero-scroll">
-            <span data-en="Scroll to explore" data-ko="스크롤하여 탐험하기">Scroll to explore</span>
-            <div class="scroll-indicator">
-                <div class="scroll-dot"></div>
-            </div>
-        </div>
+        <h1 class="report-title">The Savior of His Legacy</h1>
         
-        <div class="hero-decoration">
-            <div class="deco-quote">
-                <span class="quote-mark">"</span>
-                <p data-en="The soul is healed by being with children." data-ko="영혼은 아이들과 함께 있을 때 치유된다.">The soul is healed by being with children.</p>
-            </div>
+        <p class="report-subtitle">
+            How a 20-year-old stenographer rescued Russia's greatest novelist from ruin — and built a publishing empire.
+        </p>
+        
+        <div class="report-meta">
+            <span class="meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                ~8 min read
+            </span>
+            <span class="meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                </svg>
+                Interactive Timeline
+            </span>
+            <span class="meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+                Data Visualization
+            </span>
         </div>
     </header>
 
-    <!-- Family & Origins Section -->
-    <section class="section family-section" id="family">
-        <div class="section-header">
-            <span class="section-number">01</span>
-            <h2 class="section-title" data-en="Family & Origins" data-ko="가족과 기원">Family & Origins</h2>
-            <p class="section-desc" data-en="The roots that shaped a literary giant" data-ko="문학 거장을 형성한 뿌리">The roots that shaped a literary giant</p>
-        </div>
+    <!-- Main Content -->
+    <main class="report-content">
         
-        <div class="family-container">
-            <div class="family-tree">
-                <!-- Father -->
-                <div class="family-member father">
-                    <div class="member-portrait">
-                        <span class="portrait-letter">М</span>
-                    </div>
-                    <div class="member-info">
-                        <span class="member-role" data-en="Father" data-ko="아버지">Father</span>
-                        <h3>Mikhail Andreevich Dostoevsky</h3>
-                        <p class="member-years">1787–1839</p>
-                        <p class="member-desc" data-en="A retired military surgeon who became a physician at Moscow's Mariinsky Hospital for the Poor. Strict, religious, and prone to dark moods, he was murdered by his own serfs in 1839 — an event that haunted Fyodor forever." data-ko="모스크바 빈민병원의 의사가 된 퇴역 군의관. 엄격하고 종교적이며 어두운 기분에 빠지기 쉬웠던 그는 1839년 자신의 농노들에 의해 살해되었습니다 — 이 사건은 표도르를 평생 괴롭혔습니다.">A retired military surgeon who became a physician at Moscow's Mariinsky Hospital for the Poor. Strict, religious, and prone to dark moods, he was murdered by his own serfs in 1839 — an event that haunted Fyodor forever.</p>
-                    </div>
-                </div>
-                
-                <!-- Mother -->
-                <div class="family-member mother">
-                    <div class="member-portrait">
-                        <span class="portrait-letter">М</span>
-                    </div>
-                    <div class="member-info">
-                        <span class="member-role" data-en="Mother" data-ko="어머니">Mother</span>
-                        <h3>Maria Fyodorovna Nechayeva</h3>
-                        <p class="member-years">1800–1837</p>
-                        <p class="member-desc" data-en="A merchant's daughter who brought warmth and culture into the household. She taught Fyodor to read using Bible stories. Her death from tuberculosis when he was fifteen left a void he tried to fill through literature." data-ko="가정에 따뜻함과 문화를 가져온 상인의 딸. 그녀는 성경 이야기로 표도르에게 읽기를 가르쳤습니다. 그가 15세 때 결핵으로 사망한 그녀의 죽음은 그가 문학을 통해 채우려 한 공허함을 남겼습니다.">A merchant's daughter who brought warmth and culture into the household. She taught Fyodor to read using Bible stories. Her death from tuberculosis when he was fifteen left a void he tried to fill through literature.</p>
-                    </div>
+        <!-- Section 1: The Crisis -->
+        <section class="content-section">
+            <div class="section-label">Part I</div>
+            <h2 class="section-title">The Trap</h2>
+            
+            <p>
+                In the summer of 1865, Fyodor Dostoevsky was a man on the edge of ruin. His wife Maria had died the previous year. His brother Mikhail — his closest confidant and business partner — had followed three months later. And Mikhail had left behind <span class="highlight">25,000 rubles of debt</span> that Fyodor, out of honor, assumed as his own.
+            </p>
+            
+            <p>
+                Desperate for money, Dostoevsky made a deal with the devil — or rather, with the publisher Fyodor Stellovsky.
+            </p>
+            
+            <div class="callout">
+                <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                <div class="callout-content">
+                    <strong>The Stellovsky Contract (1865):</strong> Dostoevsky received 3,000 rubles upfront. In exchange, he had to deliver a new novel of at least 160 pages by <strong>November 1, 1866</strong>. If he failed, Stellovsky would gain the rights to <em>all</em> of Dostoevsky's works — past, present, and future — for nine years, without paying a single kopeck more.
                 </div>
             </div>
             
-            <div class="family-context">
-                <div class="context-card childhood">
-                    <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
-                    </div>
-                    <h4 data-en="Childhood at the Hospital" data-ko="병원에서의 어린 시절">Childhood at the Hospital</h4>
-                    <p data-en="Born in the Mariinsky Hospital for the Poor, young Fyodor grew up surrounded by suffering, death, and the desperate hopes of the destitute. The hospital's patients — peasants, beggars, and outcasts — would later populate his novels." data-ko="빈민병원에서 태어난 어린 표도르는 고통, 죽음, 그리고 궁핍한 자들의 절박한 희망에 둘러싸여 성장했습니다. 병원의 환자들 — 농부, 거지, 추방자들 — 은 후에 그의 소설에 등장하게 됩니다.">Born in the Mariinsky Hospital for the Poor, young Fyodor grew up surrounded by suffering, death, and the desperate hopes of the destitute. The hospital's patients — peasants, beggars, and outcasts — would later populate his novels.</p>
-                </div>
-                
-                <div class="context-card siblings">
-                    <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 010 7.75"/>
-                        </svg>
-                    </div>
-                    <h4 data-en="Seven Siblings" data-ko="일곱 형제">Seven Siblings</h4>
-                    <p data-en="Fyodor was the second of seven children. His elder brother Mikhail became his closest confidant and later his publishing partner in the journals 'Time' and 'Epoch.' When Mikhail died in 1864, Fyodor inherited his debts — a burden that would drive him to desperate productivity." data-ko="표도르는 7명의 자녀 중 둘째였습니다. 형 미하일은 그의 가장 가까운 동반자가 되었고 후에 잡지 '시간'과 '에포크'의 출판 파트너가 되었습니다. 1864년 미하일이 사망했을 때, 표도르는 그의 빚을 물려받았고 — 이 짐이 그를 절박한 생산성으로 이끌었습니다.">Fyodor was the second of seven children. His elder brother Mikhail became his closest confidant and later his publishing partner in the journals "Time" and "Epoch." When Mikhail died in 1864, Fyodor inherited his debts — a burden that would drive him to desperate productivity.</p>
-                </div>
-                
-                <div class="context-card estate">
-                    <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h4 data-en="The Darovoye Estate" data-ko="다로보예 영지">The Darovoye Estate</h4>
-                    <p data-en="The family's small country estate in Tula province offered summer escapes from Moscow. Here young Fyodor encountered peasant life firsthand — their faith, suffering, and resilience. A peasant named Marey who comforted him during a childhood panic would appear in his late writing as a symbol of the Russian soul." data-ko="툴라 지방에 있는 가족의 작은 시골 영지는 모스크바에서의 여름 피난처를 제공했습니다. 이곳에서 어린 표도르는 농민 생활을 직접 경험했습니다 — 그들의 신앙, 고통, 그리고 회복력. 어린 시절 공황 상태에서 그를 위로해 준 마레이라는 농부는 그의 후기 작품에서 러시아 영혼의 상징으로 등장합니다.">The family's small country estate in Tula province offered summer escapes from Moscow. Here young Fyodor encountered peasant life firsthand — their faith, suffering, and resilience. A peasant named Marey who comforted him during a childhood panic would appear in his late writing as a symbol of the Russian soul.</p>
-                </div>
-            </div>
-            
-            <div class="family-quote">
-                <blockquote>
-                    <span class="quote-mark">"</span>
-                    <p data-en="I came from a pious Russian family... As far back as I can remember, I remember the love of my parents." data-ko="나는 경건한 러시아 가정에서 왔습니다... 기억하는 한, 나는 부모님의 사랑을 기억합니다.">I came from a pious Russian family... As far back as I can remember, I remember the love of my parents.</p>
-                </blockquote>
-                <cite>— Dostoevsky, <em>A Writer's Diary</em></cite>
-            </div>
-        </div>
-    </section>
+            <p>
+                By October 1866, Dostoevsky had written nothing for Stellovsky. He was busy with <em>Crime and Punishment</em>, serializing it in <em>The Russian Messenger</em>. With <span class="highlight">less than a month remaining</span>, friends urged him to hire help.
+            </p>
+        </section>
 
-    <!-- Life Section -->
-    <section class="section life-section" id="life">
-        <div class="section-header">
-            <span class="section-number">02</span>
-            <h2 class="section-title" data-en="Life & Times" data-ko="생애와 시대">Life & Times</h2>
-            <p class="section-desc" data-en="From the execution ground to literary immortality" data-ko="처형장에서 문학적 불멸로">From the execution ground to literary immortality</p>
-        </div>
-        
-        <div class="life-container">
-            <div class="timeline">
-                <div class="timeline-item" data-year="1821">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">November 11, 1821</span>
-                        <h3><a href="life/birth-moscow.html" data-en="Birth in Moscow" data-ko="모스크바에서 출생">Birth in Moscow</a></h3>
-                        <p data-en="Born in the Mariinsky Hospital for the Poor, where his father worked as a physician. This early exposure to suffering would shape his entire literary vision." data-ko="아버지가 의사로 일하던 빈민병원에서 태어났습니다. 이 초기의 고통에 대한 경험이 그의 전체 문학적 비전을 형성하게 됩니다.">Born in the Mariinsky Hospital for the Poor, where his father worked as a physician. This early exposure to suffering would shape his entire literary vision.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-year="1837">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">1837</span>
-                        <h3><a href="life/mothers-death.html" data-en="Mother's Death & Engineering School" data-ko="어머니의 죽음과 공학학교">Mother's Death & Engineering School</a></h3>
-                        <p data-en="Maria Dostoevskaya dies of tuberculosis. Father sends Fyodor to the Military Engineering Academy in St. Petersburg, where he reads voraciously — Pushkin, Gogol, Balzac, Hugo — while hating his engineering studies." data-ko="마리아 도스토예프스카야가 결핵으로 사망합니다. 아버지는 표도르를 상트페테르부르크의 군사공학아카데미로 보내고, 그곳에서 그는 공학 공부를 싫어하면서도 열심히 읽습니다 — 푸쉬킨, 고골, 발자크, 위고.">Maria Dostoevskaya dies of tuberculosis. Father sends Fyodor to the Military Engineering Academy in St. Petersburg, where he reads voraciously — Pushkin, Gogol, Balzac, Hugo — while hating his engineering studies.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-year="1839">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">1839</span>
-                        <h3><a href="life/father-murdered.html" data-en="Father Murdered" data-ko="아버지 피살">Father Murdered</a></h3>
-                        <p data-en="Mikhail Andreevich is killed by his own serfs at Darovoye — possibly beaten to death, though officially recorded as an apoplectic stroke. This patricide would echo through The Brothers Karamazov four decades later." data-ko="미하일 안드레예비치가 다로보예에서 자신의 농노들에 의해 살해됩니다 — 아마도 구타로 사망했지만, 공식적으로는 뇌졸중으로 기록되었습니다. 이 부친 살해는 40년 후 카라마조프가의 형제들에 메아리칠 것입니다.">Mikhail Andreevich is killed by his own serfs at Darovoye — possibly beaten to death, though officially recorded as an apoplectic stroke. This patricide would echo through The Brothers Karamazov four decades later.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-year="1846">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">1846</span>
-                        <h3><a href="life/poor-folk.html" data-en="Poor Folk & Literary Fame" data-ko="가난한 사람들과 문학적 명성">Poor Folk & Literary Fame</a></h3>
-                        <p data-en="His debut novel Poor Folk is praised by Russia's leading critic Vissarion Belinsky, who proclaims a 'new Gogol.' Overnight, the 24-year-old becomes a literary sensation in St. Petersburg." data-ko="그의 데뷔 소설 '가난한 사람들'이 러시아 최고의 비평가 비사리온 벨린스키에게 찬사를 받고, 그는 '새로운 고골'을 선언합니다. 하룻밤 사이에 24세의 그는 상트페테르부르크에서 문학적 센세이션이 됩니다.">His debut novel Poor Folk is praised by Russia's leading critic Vissarion Belinsky, who proclaims a "new Gogol." Overnight, the 24-year-old becomes a literary sensation in St. Petersburg.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item highlight" data-year="1849">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">December 22, 1849</span>
-                        <h3><a href="life/mock-execution.html" data-en="Mock Execution" data-ko="모의 처형">Mock Execution</a></h3>
-                        <p data-en="Arrested for participating in the Petrashevsky Circle, he faced a firing squad — only to be pardoned at the last moment. Those minutes before the expected death transformed him forever. Prince Myshkin in The Idiot would describe this exact experience." data-ko="페트라셰프스키 서클 참여로 체포되어 총살형을 앞두고 서 있었지만, 마지막 순간에 사면되었습니다. 예상된 죽음 앞에 선 그 몇 분이 그를 영원히 변화시켰습니다. '백치'의 미쉬킨 공작이 바로 이 경험을 묘사할 것입니다.">Arrested for participating in the Petrashevsky Circle, he faced a firing squad — only to be pardoned at the last moment. Those minutes before the expected death transformed him forever. Prince Myshkin in The Idiot would describe this exact experience.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-year="1854">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">1850–1854</span>
-                        <h3><a href="life/siberia.html" data-en="Siberian Prison" data-ko="시베리아 감옥">Siberian Prison</a></h3>
-                        <p data-en="Four years of hard labor in Omsk. Among murderers and thieves, he discovered the depths of human nature — both its darkness and its capacity for redemption. The only book allowed: the New Testament, which he read and reread until its words became part of him." data-ko="옴스크에서 4년간의 중노동. 살인자와 도둑들 사이에서 그는 인간 본성의 깊이 — 그 어둠과 구원의 가능성 모두를 발견했습니다. 유일하게 허용된 책: 신약성경, 그는 그 말씀이 자신의 일부가 될 때까지 읽고 또 읽었습니다.">Four years of hard labor in Omsk. Among murderers and thieves, he discovered the depths of human nature — both its darkness and its capacity for redemption. The only book allowed: the New Testament, which he read and reread until its words became part of him.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-year="1866">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">1866</span>
-                        <h3><a href="works/crime-and-punishment.html" data-en="Crime and Punishment" data-ko="죄와 벌">Crime and Punishment</a></h3>
-                        <p data-en="His masterpiece emerges from financial desperation — written while gambling away advances and fleeing creditors. In the same year, he hired a young stenographer named Anna Snitkina to help write The Gambler in 26 days. She would become his salvation." data-ko="그의 걸작이 재정적 절망에서 탄생합니다 — 선금을 도박으로 탕진하고 채권자들을 피해 도망치면서 집필했습니다. 같은 해, 그는 26일 만에 '도박꾼'을 쓰기 위해 안나 스니트키나라는 젊은 속기사를 고용했습니다. 그녀는 그의 구원이 될 것입니다.">His masterpiece emerges from financial desperation — written while gambling away advances and fleeing creditors. In the same year, he hired a young stenographer named Anna Snitkina to help write The Gambler in 26 days. She would become his salvation.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-year="1881">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">February 9, 1881</span>
-                        <h3><a href="life/death.html" data-en="Death in St. Petersburg" data-ko="상트페테르부르크에서 서거">Death in St. Petersburg</a></h3>
-                        <p data-en="Thirty thousand people attended his funeral. He left behind The Brothers Karamazov — his final testament on faith, doubt, and the mystery of human freedom. Anna would spend the next 37 years preserving his legacy." data-ko="3만 명이 그의 장례식에 참석했습니다. 그는 『카라마조프가의 형제들』을 남겼습니다 — 신앙, 의심, 그리고 인간 자유의 신비에 대한 그의 마지막 증언. 안나는 그 후 37년간 그의 유산을 보존하는 데 헌신했습니다.">Thirty thousand people attended his funeral. He left behind The Brothers Karamazov — his final testament on faith, doubt, and the mystery of human freedom. Anna would spend the next 37 years preserving his legacy.</p>
-                    </div>
-                </div>
-            </div>
+        <!-- Section 2: The 26 Days -->
+        <section class="content-section">
+            <div class="section-label">Part II</div>
+            <h2 class="section-title">The 26-Day Miracle</h2>
             
-            <div class="life-sidebar">
-                <div class="portrait-frame">
-                    <div class="portrait-inner">
-                        <div class="portrait-placeholder">
-                            <span class="portrait-initial">Ф.М.Д</span>
-                            <span class="portrait-caption" data-en="Fyodor Mikhailovich Dostoevsky" data-ko="표도르 미하일로비치 도스토예프스키">Fyodor Mikhailovich Dostoevsky</span>
-                        </div>
-                    </div>
-                    <div class="portrait-ornament top-left"></div>
-                    <div class="portrait-ornament top-right"></div>
-                    <div class="portrait-ornament bottom-left"></div>
-                    <div class="portrait-ornament bottom-right"></div>
-                </div>
-                
-                <div class="life-stats">
-                    <div class="stat">
-                        <span class="stat-number">11</span>
-                        <span class="stat-label" data-en="Novels" data-ko="장편 소설">Novels</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label" data-en="Years in Prison" data-ko="감옥에서의 세월">Years in Prison</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label" data-en="Legacy" data-ko="유산">Legacy</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Anna Section -->
-    <section class="section anna-section" id="anna">
-        <div class="section-header">
-            <span class="section-number">03</span>
-            <h2 class="section-title" data-en="Anna Snitkina" data-ko="안나 스니트키나">Anna Snitkina</h2>
-            <p class="section-desc" data-en="The woman who saved Dostoevsky" data-ko="도스토예프스키를 구한 여인">The woman who saved Dostoevsky</p>
-        </div>
-        
-        <div class="anna-container">
-            <div class="anna-hero">
-                <div class="anna-portrait">
-                    <div class="portrait-inner">
-                        <span class="portrait-letter">А</span>
-                        <span class="portrait-name">Anna Grigoryevna</span>
-                    </div>
-                    <div class="portrait-frame-deco"></div>
-                </div>
-                
-                <div class="anna-intro">
-                    <div class="intro-badge" data-en="October 1866" data-ko="1866년 10월">October 1866</div>
-                    <h3 data-en="26 Days That Changed Everything" data-ko="모든 것을 바꾼 26일">26 Days That Changed Everything</h3>
-                    <p data-en="Dostoevsky was trapped. A predatory contract with publisher Stellovsky required him to deliver a new novel by November 1st, or forfeit the rights to ALL his works for nine years. He had written nothing. With less than a month remaining, he hired a 20-year-old stenographer recommended by a friend." data-ko="도스토예프스키는 함정에 빠졌습니다. 출판업자 스텔로프스키와의 악랄한 계약은 11월 1일까지 새 소설을 제출하지 않으면 9년간 모든 작품의 권리를 박탈당하는 조건이었습니다. 그는 아무것도 쓰지 못한 상태였습니다. 한 달도 남지 않은 상황에서, 그는 친구의 추천으로 20세의 속기사를 고용했습니다.">Dostoevsky was trapped. A predatory contract with publisher Stellovsky required him to deliver a new novel by November 1st, or forfeit the rights to ALL his works for nine years. He had written nothing. With less than a month remaining, he hired a 20-year-old stenographer recommended by a friend.</p>
-                    <p data-en="Her name was Anna Grigoryevna Snitkina. She would become the most important person in his life." data-ko="그녀의 이름은 안나 그리고리예브나 스니트키나. 그녀는 그의 인생에서 가장 중요한 사람이 될 것입니다.">Her name was Anna Grigoryevna Snitkina. She would become the most important person in his life.</p>
-                </div>
-            </div>
+            <p>
+                On October 4, 1866, a young woman arrived at Dostoevsky's apartment on Stolyarny Lane. Her name was <span class="highlight">Anna Grigoryevna Snitkina</span>. She was 20 years old, had just graduated from stenography school, and had been recommended by her professor.
+            </p>
             
-            <div class="anna-timeline">
-                <div class="anna-event">
-                    <div class="event-date">
-                        <span class="date-day">4</span>
-                        <span class="date-month" data-en="Oct" data-ko="10월">Oct</span>
-                        <span class="date-year">1866</span>
-                    </div>
-                    <div class="event-content">
-                        <h4 data-en="First Meeting" data-ko="첫 만남">First Meeting</h4>
-                        <p data-en="Anna arrives at Dostoevsky's chaotic apartment. He is 44, epileptic, addicted to gambling, and drowning in debt. She is calm, organized, and determined." data-ko="안나가 도스토예프스키의 혼란스러운 아파트에 도착합니다. 그는 44세, 간질환자, 도박 중독자, 빚에 허덕이는 상태. 그녀는 차분하고 정리정돈을 잘하며 단호합니다.">Anna arrives at Dostoevsky's chaotic apartment. He is 44, epileptic, addicted to gambling, and drowning in debt. She is calm, organized, and determined.</p>
-                    </div>
-                </div>
-                
-                <div class="anna-event">
-                    <div class="event-date">
-                        <span class="date-day">30</span>
-                        <span class="date-month" data-en="Oct" data-ko="10월">Oct</span>
-                        <span class="date-year">1866</span>
-                    </div>
-                    <div class="event-content">
-                        <h4 data-en="The Gambler Completed" data-ko="도박꾼 완성">The Gambler Completed</h4>
-                        <p data-en="Working 4-6 hours daily, Dostoevsky dictates while Anna transcribes at record speed. The 160-page novel is finished with one day to spare. Contract fulfilled. Career saved." data-ko="매일 4-6시간 작업하며, 도스토예프스키가 구술하고 안나가 기록적인 속도로 받아씁니다. 160페이지의 소설이 하루 여유를 두고 완성됩니다. 계약 이행. 경력 구출.">Working 4-6 hours daily, Dostoevsky dictates while Anna transcribes at record speed. The 160-page novel is finished with one day to spare. Contract fulfilled. Career saved.</p>
-                    </div>
-                </div>
-                
-                <div class="anna-event">
-                    <div class="event-date">
-                        <span class="date-day">8</span>
-                        <span class="date-month" data-en="Nov" data-ko="11월">Nov</span>
-                        <span class="date-year">1866</span>
-                    </div>
-                    <div class="event-content">
-                        <h4 data-en="The Proposal" data-ko="청혼">The Proposal</h4>
-                        <p data-en="Dostoevsky proposes through a story — asking Anna's opinion about a plot where an aging writer falls for a young woman. 'I would answer that I love you and will love you all my life,' she replies." data-ko="도스토예프스키는 이야기를 통해 청혼합니다 — 노년의 작가가 젊은 여인을 사랑하게 되는 줄거리에 대한 안나의 의견을 묻습니다. '나는 당신을 사랑하고 평생 사랑할 것입니다'라고 그녀가 대답합니다.">Dostoevsky proposes through a story — asking Anna's opinion about a plot where an aging writer falls for a young woman. "I would answer that I love you and will love you all my life," she replies.</p>
-                    </div>
-                </div>
-                
-                <div class="anna-event">
-                    <div class="event-date">
-                        <span class="date-day">15</span>
-                        <span class="date-month" data-en="Feb" data-ko="2월">Feb</span>
-                        <span class="date-year">1867</span>
-                    </div>
-                    <div class="event-content">
-                        <h4 data-en="Marriage" data-ko="결혼">Marriage</h4>
-                        <p data-en="They marry in St. Petersburg. Anna is 20, Dostoevsky is 45. Soon after, they flee Russia to escape creditors, beginning four years of European wandering." data-ko="상트페테르부르크에서 결혼합니다. 안나는 20세, 도스토예프스키는 45세. 곧 그들은 채권자들을 피해 러시아를 떠나 4년간의 유럽 방랑을 시작합니다.">They marry in St. Petersburg. Anna is 20, Dostoevsky is 45. Soon after, they flee Russia to escape creditors, beginning four years of European wandering.</p>
-                    </div>
-                </div>
-            </div>
+            <p>
+                What happened next was one of the most remarkable feats in literary history.
+            </p>
             
-            <div class="anna-roles">
-                <h3 class="roles-title" data-en="What Anna Became" data-ko="안나가 된 것">What Anna Became</h3>
-                
-                <div class="roles-grid">
-                    <div class="role-card">
-                        <div class="role-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 20h9"/>
-                                <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                            </svg>
-                        </div>
-                        <h4 data-en="Stenographer & Editor" data-ko="속기사 & 편집자">Stenographer & Editor</h4>
-                        <p data-en="All major works after 1866 were dictated to her. She transcribed The Idiot, Demons, A Raw Youth, and The Brothers Karamazov. Her shorthand allowed Dostoevsky to write faster than ever." data-ko="1866년 이후 모든 주요 작품이 그녀에게 구술되었습니다. 그녀는 백치, 악령, 미성년, 카라마조프가의 형제들을 필사했습니다. 그녀의 속기 덕분에 도스토예프스키는 그 어느 때보다 빠르게 글을 쓸 수 있었습니다.">All major works after 1866 were dictated to her. She transcribed The Idiot, Demons, A Raw Youth, and The Brothers Karamazov. Her shorthand allowed Dostoevsky to write faster than ever.</p>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <div class="timeline-item active">
+                        <div class="timeline-date">October 4, 1866</div>
+                        <div class="timeline-title">First Meeting</div>
+                        <div class="timeline-desc">Anna arrives at noon. Dostoevsky is nervous, pacing. He tests her skills with a passage from <em>The Russian Messenger</em>. She passes. They agree to start the next day.</div>
                     </div>
                     
-                    <div class="role-card">
-                        <div class="role-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-                            </svg>
-                        </div>
-                        <h4 data-en="Business Manager" data-ko="사업 관리자">Business Manager</h4>
-                        <p data-en="She pioneered self-publishing in Russia, cutting out exploitative publishers. By 1880, Dostoevsky was financially stable for the first time in his life. She managed all contracts, handled creditors, and ended his gambling addiction by 1871." data-ko="그녀는 러시아에서 자가출판을 개척하여 착취적인 출판업자들을 배제했습니다. 1880년까지 도스토예프스키는 인생 처음으로 재정적으로 안정되었습니다. 그녀는 모든 계약을 관리하고, 채권자들을 처리하고, 1871년까지 그의 도박 중독을 끝냈습니다.">She pioneered self-publishing in Russia, cutting out exploitative publishers. By 1880, Dostoevsky was financially stable for the first time in his life. She managed all contracts, handled creditors, and ended his gambling addiction by 1871.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-date">October 5–15</div>
+                        <div class="timeline-title">Finding the Rhythm</div>
+                        <div class="timeline-desc">Daily sessions from 12pm to 4pm. Dostoevsky dictates while pacing; Anna transcribes in shorthand. Each evening, she converts her notes to longhand at home. He writes 10–15 pages per day.</div>
                     </div>
                     
-                    <div class="role-card">
-                        <div class="role-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-                            </svg>
-                        </div>
-                        <h4 data-en="Wife & Mother" data-ko="아내 & 어머니">Wife & Mother</h4>
-                        <p data-en="She bore four children (two survived to adulthood), weathered his epileptic seizures, endured his gambling relapses, and provided the emotional stability that allowed him to create his greatest works." data-ko="그녀는 네 자녀를 낳았고(둘이 성인까지 생존), 그의 간질 발작을 견뎠고, 그의 도박 재발을 견뎠으며, 그가 최고의 작품들을 창작할 수 있도록 정서적 안정을 제공했습니다.">She bore four children (two survived to adulthood), weathered his epileptic seizures, endured his gambling relapses, and provided the emotional stability that allowed him to create his greatest works.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-date">October 16–25</div>
+                        <div class="timeline-title">The Sprint</div>
+                        <div class="timeline-desc">Sessions extend to 6 hours. Dostoevsky dictates the gambling scenes — drawn directly from his own experiences at the roulette tables of Wiesbaden. Anna works through the night transcribing.</div>
                     </div>
                     
-                    <div class="role-card">
-                        <div class="role-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
-                            </svg>
-                        </div>
-                        <h4 data-en="Legacy Guardian" data-ko="유산 수호자">Legacy Guardian</h4>
-                        <p data-en="After his death in 1881, she lived 37 more years. She published his complete works, wrote memoirs, collected his letters, and in 1906 established the first Dostoevsky museum room. She died in 1918, having ensured his immortality." data-ko="1881년 그의 사망 후, 그녀는 37년을 더 살았습니다. 그녀는 그의 전집을 출판하고, 회고록을 쓰고, 그의 편지들을 수집했으며, 1906년에는 최초의 도스토예프스키 박물관 방을 설립했습니다. 그녀는 1918년에 그의 불멸을 확보한 채 사망했습니다.">After his death in 1881, she lived 37 more years. She published his complete works, wrote memoirs, collected his letters, and in 1906 established the first Dostoevsky museum room. She died in 1918, having ensured his immortality.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-date">October 26–29</div>
+                        <div class="timeline-title">Final Push</div>
+                        <div class="timeline-desc">The climax and denouement take shape. Anna transcribes with bleeding fingers. Dostoevsky, exhausted but exhilarated, dictates the final confrontation between Alexei and Polina.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">October 30, 1866</div>
+                        <div class="timeline-title">Completion</div>
+                        <div class="timeline-desc"><em>The Gambler</em> is finished — 160 pages, as required. One day ahead of the deadline. Stellovsky's trap is escaped.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">November 8, 1866</div>
+                        <div class="timeline-title">The Proposal</div>
+                        <div class="timeline-desc">Nine days after finishing the novel, Dostoevsky proposes — through a story about an aging writer who falls for a young woman. Anna accepts. "I love you and will love you all my life."</div>
                     </div>
                 </div>
             </div>
             
-            <div class="anna-quote">
-                <blockquote>
-                    <span class="quote-mark">"</span>
-                    <p data-en="I gave him my youth, my labor, my entire life. And I am happy that I was able to do this for the man I loved more than anything in the world." data-ko="나는 그에게 내 젊음, 내 노동, 내 전 생애를 바쳤습니다. 그리고 세상에서 가장 사랑했던 남자를 위해 이것을 할 수 있었다는 것이 행복합니다.">I gave him my youth, my labor, my entire life. And I am happy that I was able to do this for the man I loved more than anything in the world.</p>
-                </blockquote>
-                <cite>— Anna Dostoevskaya, <em>Reminiscences</em></cite>
+            <div class="data-grid">
+                <div class="data-card">
+                    <div class="data-number">26</div>
+                    <div class="data-label">Days to Complete</div>
+                    <div class="data-sublabel">Oct 4 – Oct 30</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-number">160</div>
+                    <div class="data-label">Pages Written</div>
+                    <div class="data-sublabel">~6 pages/day average</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-number">4–6</div>
+                    <div class="data-label">Hours/Day</div>
+                    <div class="data-sublabel">Dictation sessions</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-number">1</div>
+                    <div class="data-label">Day to Spare</div>
+                    <div class="data-sublabel">Deadline: Nov 1</div>
+                </div>
             </div>
-            
-            <div class="anna-cta">
-                <a href="anna/26-days.html" class="btn btn-outline">
-                    <span data-en="The 26-Day Sprint" data-ko="26일간의 질주">The 26-Day Sprint</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="anna/legacy.html" class="btn btn-outline">
-                    <span data-en="Anna's Legacy" data-ko="안나의 유산">Anna's Legacy</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Works Section -->
-    <section class="section works-section" id="works">
-        <div class="section-header">
-            <span class="section-number">04</span>
-            <h2 class="section-title" data-en="Major Works" data-ko="주요 작품">Major Works</h2>
-            <p class="section-desc" data-en="Novels that changed how we understand the human soul" data-ko="인간 영혼에 대한 이해를 바꾼 소설들">Novels that changed how we understand the human soul</p>
-        </div>
-        
-        <div class="works-grid">
-            <article class="work-card featured">
-                <div class="work-year">1866</div>
-                <div class="work-content">
-                    <h3 class="work-title">
-                        <a href="works/crime-and-punishment.html">
-                            <span class="title-en">Crime and Punishment</span>
-                            <span class="title-ru">Преступление и наказание</span>
-                            <span class="title-ko">죄와 벌</span>
-                        </a>
-                    </h3>
-                    <p class="work-desc" data-en="Raskolnikov, a poverty-stricken ex-student in St. Petersburg, convinces himself that he is an extraordinary man — a Napoleon — who can transgress moral law. He murders an elderly pawnbroker with an axe. What follows is not a detective story but a journey into the murderer's disintegrating psyche, his cat-and-mouse game with the brilliant investigator Porfiry, and his eventual confession through the love of Sonya, a prostitute who reads him the story of Lazarus." data-ko="상트페테르부르크의 빈곤한 전직 학생 라스콜니코프는 자신이 도덕법을 초월할 수 있는 비범한 인간 — 나폴레옹 — 이라고 스스로를 설득합니다. 그는 도끼로 노파 전당포 주인을 살해합니다. 이어지는 것은 탐정 이야기가 아니라 살인자의 붕괴하는 정신 속으로의 여정, 뛰어난 수사관 포르피리와의 고양이와 쥐 게임, 그리고 그에게 라자로 이야기를 읽어주는 매춘부 소냐의 사랑을 통한 최종적인 고백입니다.">Raskolnikov, a poverty-stricken ex-student in St. Petersburg, convinces himself that he is an extraordinary man — a Napoleon — who can transgress moral law. He murders an elderly pawnbroker with an axe. What follows is not a detective story but a journey into the murderer's disintegrating psyche, his cat-and-mouse game with the brilliant investigator Porfiry, and his eventual confession through the love of Sonya, a prostitute who reads him the story of Lazarus.</p>
-                    <div class="work-themes">
-                        <span class="theme" data-en="Guilt" data-ko="죄책감">Guilt</span>
-                        <span class="theme" data-en="Redemption" data-ko="구원">Redemption</span>
-                        <span class="theme" data-en="Nihilism" data-ko="허무주의">Nihilism</span>
-                        <span class="theme" data-en="Psychology" data-ko="심리학">Psychology</span>
-                    </div>
-                </div>
-                <a href="works/crime-and-punishment.html" class="work-link" data-en="Read More →" data-ko="더 읽기 →">Read More →</a>
-            </article>
+        <!-- Section 3: Anna's Business Revolution -->
+        <section class="content-section">
+            <div class="section-label">Part III</div>
+            <h2 class="section-title">The Business Revolution</h2>
             
-            <article class="work-card">
-                <div class="work-year">1864</div>
-                <div class="work-content">
-                    <h3 class="work-title">
-                        <a href="works/notes-from-underground.html">
-                            <span class="title-en">Notes from Underground</span>
-                            <span class="title-ru">Записки из подполья</span>
-                            <span class="title-ko">지하로부터의 수기</span>
-                        </a>
-                    </h3>
-                    <p class="work-desc" data-en="The angry confession of an unnamed narrator who refuses to be a 'piano key' in the Crystal Palace of rational utopianism. Widely considered the first existentialist novel, it attacks the naive belief that humans will choose what's good for them once enlightened. 'Man is stupid, phenomenally stupid,' the Underground Man declares, but he'd rather have his perverse freedom than be 'an organ stop.'" data-ko="합리적 유토피아주의의 수정궁에서 '피아노 건반'이 되기를 거부하는 무명 화자의 분노에 찬 고백. 널리 최초의 실존주의 소설로 여겨지며, 인간이 깨달으면 자신에게 좋은 것을 선택할 것이라는 순진한 믿음을 공격합니다. '인간은 바보다, 현상적으로 바보다'라고 지하인이 선언하지만, 그는 '오르간 마개'가 되느니 차라리 그의 비뚤어진 자유를 갖겠다고 합니다.">The angry confession of an unnamed narrator who refuses to be a "piano key" in the Crystal Palace of rational utopianism. Widely considered the first existentialist novel, it attacks the naive belief that humans will choose what's good for them once enlightened. "Man is stupid, phenomenally stupid," the Underground Man declares, but he'd rather have his perverse freedom than be "an organ stop."</p>
-                    <div class="work-themes">
-                        <span class="theme" data-en="Free Will" data-ko="자유의지">Free Will</span>
-                        <span class="theme" data-en="Alienation" data-ko="소외">Alienation</span>
-                        <span class="theme" data-en="Irrationality" data-ko="비합리성">Irrationality</span>
-                    </div>
-                </div>
-                <a href="works/notes-from-underground.html" class="work-link" data-en="Read More →" data-ko="더 읽기 →">Read More →</a>
-            </article>
+            <p>
+                Anna Snitkina didn't just save <em>The Gambler</em>. She saved Dostoevsky's entire future. After their marriage in February 1867, she took control of his business affairs — and transformed them completely.
+            </p>
             
-            <article class="work-card">
-                <div class="work-year">1866</div>
-                <div class="work-content">
-                    <h3 class="work-title">
-                        <a href="works/the-gambler.html">
-                            <span class="title-en">The Gambler</span>
-                            <span class="title-ru">Игрок</span>
-                            <span class="title-ko">도박꾼</span>
-                        </a>
-                    </h3>
-                    <p class="work-desc" data-en="Written in just 26 days with Anna's help, this semi-autobiographical novella draws directly from Dostoevsky's own ruinous gambling addiction. Alexei, a young tutor, becomes consumed by roulette, watching himself spiral into degradation even as he observes his own destruction with clinical detachment. The novel captures the irrational compulsion that kept Dostoevsky at the tables until Anna saved him." data-ko="안나의 도움으로 단 26일 만에 쓰여진 이 반자전적 중편소설은 도스토예프스키 자신의 파멸적인 도박 중독에서 직접 영감을 받았습니다. 젊은 가정교사 알렉세이는 룰렛에 빠져들어, 임상적 초연함으로 자신의 파멸을 관찰하면서도 타락의 나락으로 빠져드는 자신을 지켜봅니다. 이 소설은 안나가 그를 구할 때까지 도스토예프스키를 도박대에 묶어둔 비합리적 충동을 포착합니다.">Written in just 26 days with Anna's help, this semi-autobiographical novella draws directly from Dostoevsky's own ruinous gambling addiction. Alexei, a young tutor, becomes consumed by roulette, watching himself spiral into degradation even as he observes his own destruction with clinical detachment. The novel captures the irrational compulsion that kept Dostoevsky at the tables until Anna saved him.</p>
-                    <div class="work-themes">
-                        <span class="theme" data-en="Addiction" data-ko="중독">Addiction</span>
-                        <span class="theme" data-en="Self-destruction" data-ko="자기파괴">Self-destruction</span>
-                    </div>
-                </div>
-                <a href="works/the-gambler.html" class="work-link" data-en="Read More →" data-ko="더 읽기 →">Read More →</a>
-            </article>
+            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-text); margin: 2rem 0 1rem;">The Problem: Exploitative Publishing</h3>
             
-            <article class="work-card">
-                <div class="work-year">1869</div>
-                <div class="work-content">
-                    <h3 class="work-title">
-                        <a href="works/the-idiot.html">
-                            <span class="title-en">The Idiot</span>
-                            <span class="title-ru">Идиот</span>
-                            <span class="title-ko">백치</span>
-                        </a>
-                    </h3>
-                    <p class="work-desc" data-en="Can a truly good man survive in a corrupt world? Prince Myshkin, a Christ-like figure returning to Russia after treatment for epilepsy in Switzerland, possesses infinite compassion and honesty. He becomes entangled with the beautiful, tormented Nastasya Filippovna and the proud Aglaya. His goodness proves powerless against the darkness around him. Myshkin's famous description of facing execution — those eternal five minutes — came directly from Dostoevsky's mock execution." data-ko="진정으로 선한 사람이 부패한 세상에서 살아남을 수 있을까? 스위스에서 간질 치료 후 러시아로 돌아온 그리스도와 같은 인물 미쉬킨 공작은 무한한 연민과 정직함을 지녔습니다. 그는 아름답고 고통받는 나스타샤 필리포브나와 자존심 강한 아글라야와 얽히게 됩니다. 그의 선함은 주변의 어둠에 무력함을 증명합니다. 처형에 직면한 미쉬킨의 유명한 묘사 — 그 영원한 5분 — 은 도스토예프스키의 모의 처형에서 직접 가져온 것입니다.">Can a truly good man survive in a corrupt world? Prince Myshkin, a Christ-like figure returning to Russia after treatment for epilepsy in Switzerland, possesses infinite compassion and honesty. He becomes entangled with the beautiful, tormented Nastasya Filippovna and the proud Aglaya. His goodness proves powerless against the darkness around him. Myshkin's famous description of facing execution — those eternal five minutes — came directly from Dostoevsky's mock execution.</p>
-                    <div class="work-themes">
-                        <span class="theme" data-en="Innocence" data-ko="순수">Innocence</span>
-                        <span class="theme" data-en="Beauty" data-ko="아름다움">Beauty</span>
-                        <span class="theme" data-en="Tragedy" data-ko="비극">Tragedy</span>
-                    </div>
-                </div>
-                <a href="works/the-idiot.html" class="work-link" data-en="Read More →" data-ko="더 읽기 →">Read More →</a>
-            </article>
+            <p>
+                Before Anna, Dostoevsky sold his work to publishers for flat fees. He received no royalties, no matter how well the books sold. Publishers like Stellovsky grew rich; Dostoevsky remained in debt.
+            </p>
             
-            <article class="work-card">
-                <div class="work-year">1872</div>
-                <div class="work-content">
-                    <h3 class="work-title">
-                        <a href="works/demons.html">
-                            <span class="title-en">Demons</span>
-                            <span class="title-ru">Бесы</span>
-                            <span class="title-ko">악령</span>
-                        </a>
-                    </h3>
-                    <p class="work-desc" data-en="A prophetic political novel about revolutionary terrorism, inspired by the real-life murder of a student by the nihilist cell led by Sergei Nechayev. Stavrogin, the charismatic center around which all characters orbit, embodies complete moral emptiness — a man so spiritually dead he can neither believe nor disbelieve. The novel eerily predicted 20th-century totalitarianism." data-ko="허무주의자 세르게이 네차예프가 이끄는 조직에 의한 실제 학생 살해 사건에서 영감을 받은, 혁명적 테러리즘에 관한 예언적 정치 소설. 모든 인물들이 궤도를 도는 카리스마적 중심인 스타브로긴은 완전한 도덕적 공허함을 체현합니다 — 영적으로 너무 죽어서 믿지도 불신하지도 못하는 남자. 이 소설은 섬뜩하게도 20세기 전체주의를 예측했습니다.">A prophetic political novel about revolutionary terrorism, inspired by the real-life murder of a student by the nihilist cell led by Sergei Nechayev. Stavrogin, the charismatic center around which all characters orbit, embodies complete moral emptiness — a man so spiritually dead he can neither believe nor disbelieve. The novel eerily predicted 20th-century totalitarianism.</p>
-                    <div class="work-themes">
-                        <span class="theme" data-en="Nihilism" data-ko="허무주의">Nihilism</span>
-                        <span class="theme" data-en="Revolution" data-ko="혁명">Revolution</span>
-                        <span class="theme" data-en="Evil" data-ko="악">Evil</span>
-                    </div>
-                </div>
-                <a href="works/demons.html" class="work-link" data-en="Read More →" data-ko="더 읽기 →">Read More →</a>
-            </article>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Work</th>
+                        <th>Publisher Payment</th>
+                        <th>Publisher's Profit*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Poor Folk (1846)</td>
+                        <td>350 rubles</td>
+                        <td>~2,000 rubles</td>
+                    </tr>
+                    <tr>
+                        <td>Crime and Punishment (1866)</td>
+                        <td>~15,000 rubles</td>
+                        <td>~50,000+ rubles</td>
+                    </tr>
+                    <tr>
+                        <td>The Gambler (1866)</td>
+                        <td>3,000 rubles**</td>
+                        <td class="table-highlight">Rights to ALL works</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 0.8rem; color: var(--color-text-faint); margin-top: -1rem;">
+                * Estimated from multiple printings. ** Part of predatory Stellovsky contract.
+            </p>
             
-            <article class="work-card">
-                <div class="work-year">1880</div>
-                <div class="work-content">
-                    <h3 class="work-title">
-                        <a href="works/brothers-karamazov.html">
-                            <span class="title-en">The Brothers Karamazov</span>
-                            <span class="title-ru">Братья Карамазовы</span>
-                            <span class="title-ko">카라마조프가의 형제들</span>
-                        </a>
-                    </h3>
-                    <p class="work-desc" data-en="Dostoevsky's final and greatest novel. The murder of the dissolute Fyodor Karamazov sets his three sons against each other: the intellectual atheist Ivan, the sensual Dmitri, and the saintly Alyosha. Ivan's 'Grand Inquisitor' chapter — where Christ returns to Seville only to be condemned by the Church — remains the most powerful confrontation between faith and reason in literature. Contains echoes of his father's murder." data-ko="도스토예프스키의 마지막이자 가장 위대한 소설. 방탕한 표도르 카라마조프의 살해가 그의 세 아들을 서로 대립시킵니다: 지적 무신론자 이반, 관능적인 드미트리, 성자 같은 알료샤. 이반의 '대심문관' 장 — 그리스도가 세비야로 돌아왔지만 교회에 의해 정죄되는 — 은 문학에서 신앙과 이성 사이의 가장 강력한 대결로 남아 있습니다. 그의 아버지 살해의 메아리가 담겨 있습니다.">Dostoevsky's final and greatest novel. The murder of the dissolute Fyodor Karamazov sets his three sons against each other: the intellectual atheist Ivan, the sensual Dmitri, and the saintly Alyosha. Ivan's "Grand Inquisitor" chapter — where Christ returns to Seville only to be condemned by the Church — remains the most powerful confrontation between faith and reason in literature. Contains echoes of his father's murder.</p>
-                    <div class="work-themes">
-                        <span class="theme" data-en="Faith" data-ko="신앙">Faith</span>
-                        <span class="theme" data-en="Doubt" data-ko="의심">Doubt</span>
-                        <span class="theme" data-en="Freedom" data-ko="자유">Freedom</span>
-                        <span class="theme" data-en="Patricide" data-ko="부친살해">Patricide</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-text); margin: 2rem 0 1rem;">Anna's Solution: Self-Publishing</h3>
+            
+            <p>
+                In 1871, Anna convinced Dostoevsky to try something radical: <span class="highlight">publish his own books</span>. She learned every aspect of the business — printing costs, paper quality, distribution networks, bookstore relationships.
+            </p>
+            
+            <div class="progress-section">
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span class="progress-label">Demons (1872) — Self-published edition</span>
+                        <span class="progress-value">3,500 copies sold</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%;"></div>
                     </div>
                 </div>
-                <a href="works/brothers-karamazov.html" class="work-link" data-en="Read More →" data-ko="더 읽기 →">Read More →</a>
-            </article>
-        </div>
-    </section>
+                
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span class="progress-label">A Writer's Diary (1876–77)</span>
+                        <span class="progress-value">6,000+ subscribers</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+                
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span class="progress-label">The Brothers Karamazov (1880)</span>
+                        <span class="progress-value">4,000+ copies (first edition)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-block">
+                <p>By 1880, for the first time in his life, Dostoevsky was financially stable. He owned his own home. He had savings. He could write without the terror of creditors.</p>
+                <cite>— Joseph Frank, <em>Dostoevsky: A Writer in His Time</em></cite>
+            </div>
+        </section>
 
-    <!-- Episodes Section -->
-    <section class="section episodes-section" id="episodes">
-        <div class="section-header">
-            <span class="section-number">05</span>
-            <h2 class="section-title" data-en="Video Episodes" data-ko="영상 에피소드">Video Episodes</h2>
-            <p class="section-desc" data-en="Watch our documentary series on YouTube" data-ko="YouTube에서 다큐멘터리 시리즈를 시청하세요">Watch our documentary series on YouTube</p>
-        </div>
-        
-        <div class="channel-banner">
-            <div class="channel-info">
-                <div class="channel-logo">
-                    <span>역사를 품은 문학</span>
+        <!-- Section 4: The Gambling Cure -->
+        <section class="content-section">
+            <div class="section-label">Part IV</div>
+            <h2 class="section-title">The Gambling Cure</h2>
+            
+            <p>
+                Between 1862 and 1871, Dostoevsky was consumed by gambling addiction. He lost fortunes at the roulette tables of Baden-Baden, Wiesbaden, and Homburg. He pawned Anna's wedding ring, her earrings, her winter coat. He sent desperate letters begging for money, only to lose it again within hours.
+            </p>
+            
+            <div class="data-grid">
+                <div class="data-card">
+                    <div class="data-number">9</div>
+                    <div class="data-label">Years of Addiction</div>
+                    <div class="data-sublabel">1862–1871</div>
                 </div>
-                <div class="channel-text">
-                    <h3>Literature Embracing History</h3>
-                    <p data-en="Books contain the breath of their times. We explore how history shaped the greatest works of literature." data-ko="책에는 시대의 숨결이 담겨 있습니다. 역사가 어떻게 위대한 문학 작품들을 형성했는지 탐구합니다.">Books contain the breath of their times. We explore how history shaped the greatest works of literature.</p>
+                <div class="data-card">
+                    <div class="data-number">~100k</div>
+                    <div class="data-label">Rubles Lost</div>
+                    <div class="data-sublabel">Estimated total</div>
                 </div>
-            </div>
-            <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn btn-youtube">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                <span data-en="Subscribe on YouTube" data-ko="YouTube 구독하기">Subscribe on YouTube</span>
-            </a>
-        </div>
-        
-        <div class="playlists-container">
-            <div class="playlist-item">
-                <div class="playlist-header">
-                    <h3 data-en="Dostoevsky Series" data-ko="도스토예프스키 시리즈">Dostoevsky Series</h3>
-                    <p data-en="The life, works, and legacy of Russia's greatest novelist" data-ko="러시아 최고의 소설가의 생애, 작품, 그리고 유산">The life, works, and legacy of Russia's greatest novelist</p>
+                <div class="data-card">
+                    <div class="data-number">1871</div>
+                    <div class="data-label">Final Gamble</div>
+                    <div class="data-sublabel">Wiesbaden</div>
                 </div>
-                <div class="playlist-embed">
-                    <iframe 
-                        src="https://www.youtube.com/embed/videoseries?list=PL6KvxpvsO1zmmK3jXckgWMboNiFd8vtgZ" 
-                        title="Dostoevsky Series Playlist"
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="data-card">
+                    <div class="data-number">0</div>
+                    <div class="data-label">Relapses After</div>
+                    <div class="data-sublabel">Complete recovery</div>
                 </div>
-                <a href="https://youtube.com/playlist?list=PL6KvxpvsO1zmmK3jXckgWMboNiFd8vtgZ" target="_blank" class="playlist-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                    <span data-en="View Full Playlist on YouTube" data-ko="YouTube에서 전체 재생목록 보기">View Full Playlist on YouTube</span>
-                </a>
             </div>
             
-            <div class="playlist-item">
-                <div class="playlist-header">
-                    <h3 data-en="100 Books That Breathe History" data-ko="역사를 품은 100권">100 Books That Breathe History</h3>
-                    <p data-en="Literature that shaped and was shaped by its time" data-ko="시대를 형성하고 시대에 의해 형성된 문학">Literature that shaped and was shaped by its time</p>
-                </div>
-                <div class="playlist-embed">
-                    <iframe 
-                        src="https://www.youtube.com/embed/videoseries?list=PL6KvxpvsO1zmBr9fK99KNDb5l7Bkc7sDq" 
-                        title="100 Books That Breathe History Playlist"
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <a href="https://youtube.com/playlist?list=PL6KvxpvsO1zmBr9fK99KNDb5l7Bkc7sDq" target="_blank" class="playlist-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                    <span data-en="View Full Playlist on YouTube" data-ko="YouTube에서 전체 재생목록 보기">View Full Playlist on YouTube</span>
-                </a>
+            <p>
+                Then, in April 1871, something changed. Dostoevsky had a gambling loss in Wiesbaden — not his worst, but something broke. He wrote to Anna:
+            </p>
+            
+            <div class="quote-block">
+                <p>A great thing has happened to me: I have rid myself of the vile fantasy that has tormented me for almost ten years. For ten years (or rather, since my brother's death, when I was suddenly crushed by debts) I dreamed of winning. I dreamed seriously, passionately... Now it is all finished! This was absolutely the LAST time!</p>
+                <cite>— Dostoevsky, letter to Anna, April 28, 1871</cite>
             </div>
-        </div>
-        
-        <div class="episodes-more">
-            <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank" class="btn btn-outline">
-                <span data-en="View All Episodes" data-ko="모든 에피소드 보기">View All Episodes</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-    </section>
+            
+            <p>
+                He never gambled again. Scholars still debate what finally cured him. Some credit Anna's patience; others point to the birth of their son Fyodor. Richard Rosenthal's psychological analysis suggests the 1871 Wiesbaden experience involved a pivotal moment of spiritual reckoning.
+            </p>
+            
+            <p>
+                Whatever the cause, the result was clear: <span class="highlight">the last decade of Dostoevsky's life was his most productive</span>. Free from gambling, financially stable thanks to Anna, he wrote <em>A Writer's Diary</em> and <em>The Brothers Karamazov</em>.
+            </p>
+        </section>
 
-    <!-- Quotes Section -->
-    <section class="section quotes-section" id="quotes">
-        <div class="section-header">
-            <span class="section-number">06</span>
-            <h2 class="section-title" data-en="Words That Endure" data-ko="영원히 남는 말">Words That Endure</h2>
-            <p class="section-desc" data-en="Quotes from the master of the human soul" data-ko="인간 영혼의 대가가 남긴 말">Quotes from the master of the human soul</p>
-        </div>
-        
-        <div class="quotes-carousel">
-            <div class="quote-card active">
-                <div class="quote-decoration">
-                    <span class="quote-mark open">"</span>
-                </div>
-                <blockquote>
-                    <p class="quote-text" data-en="Pain and suffering are always inevitable for a large intelligence and a deep heart." data-ko="고통과 괴로움은 위대한 지성과 깊은 마음에는 언제나 피할 수 없는 것이다.">Pain and suffering are always inevitable for a large intelligence and a deep heart.</p>
-                </blockquote>
-                <cite class="quote-source">— Crime and Punishment</cite>
-            </div>
+        <!-- Section 5: Legacy -->
+        <section class="content-section">
+            <div class="section-label">Part V</div>
+            <h2 class="section-title">Anna's 37 Years</h2>
             
-            <div class="quote-card">
-                <div class="quote-decoration">
-                    <span class="quote-mark open">"</span>
-                </div>
-                <blockquote>
-                    <p class="quote-text" data-en="The degree of civilization in a society can be judged by entering its prisons." data-ko="한 사회의 문명 수준은 그 감옥에 들어가 보면 알 수 있다.">The degree of civilization in a society can be judged by entering its prisons.</p>
-                </blockquote>
-                <cite class="quote-source">— The House of the Dead</cite>
-            </div>
+            <p>
+                Dostoevsky died on February 9, 1881. He was 59. Anna was 34.
+            </p>
             
-            <div class="quote-card">
-                <div class="quote-decoration">
-                    <span class="quote-mark open">"</span>
-                </div>
-                <blockquote>
-                    <p class="quote-text" data-en="Man is sometimes extraordinarily, passionately, in love with suffering." data-ko="인간은 때때로 비범하게, 열정적으로, 고통과 사랑에 빠진다.">Man is sometimes extraordinarily, passionately, in love with suffering.</p>
-                </blockquote>
-                <cite class="quote-source">— Notes from Underground</cite>
-            </div>
+            <p>
+                She lived another <span class="highlight">37 years</span> — longer than their entire marriage — and devoted every one of them to his legacy.
+            </p>
             
-            <div class="quote-card">
-                <div class="quote-decoration">
-                    <span class="quote-mark open">"</span>
-                </div>
-                <blockquote>
-                    <p class="quote-text" data-en="Beauty will save the world." data-ko="아름다움이 세상을 구원할 것이다.">Beauty will save the world.</p>
-                </blockquote>
-                <cite class="quote-source">— The Idiot</cite>
-            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Anna's Achievement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1881–1906</td>
+                        <td>Published seven editions of his complete works</td>
+                    </tr>
+                    <tr>
+                        <td>1883</td>
+                        <td>Published his collected letters</td>
+                    </tr>
+                    <tr>
+                        <td>1893</td>
+                        <td>Began cataloging his manuscripts and notes</td>
+                    </tr>
+                    <tr>
+                        <td>1906</td>
+                        <td class="table-highlight">Established the first Dostoevsky museum room</td>
+                    </tr>
+                    <tr>
+                        <td>1911</td>
+                        <td>Published <em>Reminiscences</em>, her memoir</td>
+                    </tr>
+                    <tr>
+                        <td>1918</td>
+                        <td>Died in Yalta, aged 71</td>
+                    </tr>
+                </tbody>
+            </table>
             
-            <div class="quote-card">
-                <div class="quote-decoration">
-                    <span class="quote-mark open">"</span>
-                </div>
-                <blockquote>
-                    <p class="quote-text" data-en="If God does not exist, everything is permitted." data-ko="신이 존재하지 않는다면, 모든 것이 허용된다.">If God does not exist, everything is permitted.</p>
-                </blockquote>
-                <cite class="quote-source">— The Brothers Karamazov</cite>
+            <div class="quote-block">
+                <p>I gave him my youth, my labor, my entire life. And I am happy that I was able to do this for the man I loved more than anything in the world.</p>
+                <cite>— Anna Dostoevskaya, <em>Reminiscences</em> (1911)</cite>
             </div>
-        </div>
-        
-        <div class="quotes-nav">
-            <button class="quote-nav-btn prev" aria-label="Previous quote">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-            </button>
-            <div class="quote-dots">
-                <button class="quote-dot active" data-index="0" aria-label="Quote 1"></button>
-                <button class="quote-dot" data-index="1" aria-label="Quote 2"></button>
-                <button class="quote-dot" data-index="2" aria-label="Quote 3"></button>
-                <button class="quote-dot" data-index="3" aria-label="Quote 4"></button>
-                <button class="quote-dot" data-index="4" aria-label="Quote 5"></button>
-            </div>
-            <button class="quote-nav-btn next" aria-label="Next quote">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </button>
-        </div>
-    </section>
+        </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-initial">Д</span>
-                    <span class="logo-text">Dostoevsky</span>
-                </div>
-                <p class="footer-tagline" data-en="A companion to the YouTube channel" data-ko="YouTube 채널의 동반자">A companion to the YouTube channel</p>
-                <p class="footer-channel">역사를 품은 문학 / Literature Embracing History</p>
-            </div>
-            
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4 data-en="Explore" data-ko="탐험하기">Explore</h4>
-                    <ul>
-                        <li><a href="#family" data-en="Family & Origins" data-ko="가족과 기원">Family & Origins</a></li>
-                        <li><a href="#life" data-en="Life & Times" data-ko="생애와 시대">Life & Times</a></li>
-                        <li><a href="#anna" data-en="Anna Snitkina" data-ko="안나 스니트키나">Anna Snitkina</a></li>
-                        <li><a href="#works" data-en="Major Works" data-ko="주요 작품">Major Works</a></li>
-                        <li><a href="#episodes" data-en="Video Episodes" data-ko="영상 에피소드">Video Episodes</a></li>
-                        <li><a href="#quotes" data-en="Quotes" data-ko="명언">Quotes</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4 data-en="Connect" data-ko="연결하기">Connect</h4>
-                    <ul>
-                        <li>
-                            <a href="https://www.youtube.com/@historyliterature2025/videos" target="_blank">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                                </svg>
-                                YouTube
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <footer class="report-footer">
+        <div class="footer-cta">
+            <a href="https://youtube.com/playlist?list=PL6KvxpvsO1zmmK3jXckgWMboNiFd8vtgZ" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                Watch the Dostoevsky Series
+            </a>
         </div>
         
-        <div class="footer-bottom">
-            <p class="copyright">© 2025 Literature Embracing History. <span data-en="All rights reserved." data-ko="모든 권리 보유.">All rights reserved.</span></p>
-            <p class="footer-note" data-en="Made with passion for literature and history." data-ko="문학과 역사에 대한 열정으로 만들었습니다.">Made with passion for literature and history.</p>
+        <div class="footer-links">
+            <a href="../" class="footer-link">← Back to Main Site</a>
+            <a href="../#anna" class="footer-link">Anna Snitkina Section</a>
+            <a href="../#works" class="footer-link">Dostoevsky's Works</a>
         </div>
+        
+        <p class="footer-credit">
+            역사를 품은 문학 / Literature Embracing History<br>
+            © 2025. Made with passion for literature and history.
+        </p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Simple interaction script -->
+    <script>
+        // Animate timeline items on scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+
+        // Animate progress bars on scroll
+        const progressBars = document.querySelectorAll('.progress-fill');
+        
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.style.width;
+                    entry.target.style.width = '0%';
+                    setTimeout(() => {
+                        entry.target.style.width = width;
+                    }, 100);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        progressBars.forEach(bar => {
+            progressObserver.observe(bar);
+        });
+    </script>
+
 </body>
 </html>
